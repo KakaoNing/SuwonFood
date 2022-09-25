@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:id="@+id/header"
+    android:padding="10dp"
+    android:background="#006AFF">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_launcher_background"
+        tools:ignore="ImageContrastCheck"
+        android:id="@+id/drawer_profile"/>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_name"
+        android:textSize="35sp"
+        android:layout_toRightOf="@+id/drawer_profile"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/drawer_name"/>
+
+    <Button
+        android:id="@+id/drawer_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/drawer_name"
+        android:layout_marginLeft="100dp"
+        android:backgroundTint="#FFD400"
+        android:text="@string/text3"
+        android:textSize="25sp" />
+
+
+</RelativeLayout>

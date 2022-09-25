@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recipe_introduce">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="한줄특징 작성란"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="#FF0000"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="제목작성"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="#0EFF26"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:text="설명란"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="#B9A80F"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text=" 요리타임 평가"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="#E100FF"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
