@@ -53,6 +53,9 @@ class RecipeActivity : AppCompatActivity() {
 
         recipe_pager.adapter = RecipePagerAdapter(this)
 
+        recipe_pager.run{
+            isUserInputEnabled= false
+        }
 
         TabLayoutMediator(recipe_tab,recipe_pager) {tab,positon ->
             when(positon){

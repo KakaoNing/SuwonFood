@@ -57,23 +57,29 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:text="일단 탭 레이아웃 생각중임"
+            android:text="ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ"
             android:textSize="30dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ListView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/opt_community_notice_cook_recycle_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/opt_community_cook_recycle_image"/>
 
 
 
 
+    </LinearLayout>
 
-
-    </ListView>
 
 
 
