@@ -8,30 +8,55 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:text="요리완성"
-            android:textSize="30dp"/>
+        <TableRow>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:text="레시피"
-            android:textSize="30dp" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="요리완성"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="레시피 가져오기"/>
+
+        </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/opt_recycle_recipe_done_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            tools:listitem="@layout/item_recipe_done_image">
 
 
 
+        </androidx.recyclerview.widget.RecyclerView>
 
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#83FC68">
+
+
+
+        </androidx.viewpager2.widget.ViewPager2>
 
 
 
     </TableLayout>
+
+
+
+
+
+
+
+
+
+
 
 
 

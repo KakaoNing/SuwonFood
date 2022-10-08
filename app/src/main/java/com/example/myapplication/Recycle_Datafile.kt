@@ -2,6 +2,19 @@ package com.example.myapplication
 
 import android.graphics.drawable.Drawable
 import java.util.jar.Attributes
+data class done_image_recycle_data(
+    val image: Int
+)
+
+data class cookware_recycle_list_data(
+    val name : String
+)
+data class recipe_recycle_list_data(
+
+    val name : String,
+    val value: String
+
+)
 
 //cook notice image의 데이터
 data class cook_recycle_image_data(

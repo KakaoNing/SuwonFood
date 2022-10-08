@@ -9,21 +9,30 @@
         <entry key="..\:/Food_Project/app/src/main/res/layout/base_community_layout.xml" value="0.2712962962962963" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/base_main_layout.xml" value="0.1" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/base_recipe_layout.xml" value="0.5208333333333334" />
-        <entry key="..\:/Food_Project/app/src/main/res/layout/community_notice_cook.xml" value="0.33" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/community_notice_cook.xml" value="0.25" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/community_notice_free.xml" value="0.25" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/community_notice_qna.xml" value="0.33" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_home_left.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_home_middle.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_home_right.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_cookware.xml" value="0.25" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_done.xml" value="0.33" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_introduce.xml" value="0.5208333333333334" />
-        <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_recipe.xml" value="0.5208333333333334" />
-        <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_source.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_recipe.xml" value="0.33" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_recipe_pager1.xml" value="0.28020833333333334" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_recipe_viewpager1.xml" value="0.28020833333333334" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_recipe_viewpager2.xml" value="0.26197916666666665" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/fragment_recipe_source.xml" value="0.33" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/item_recipe_done_image.xml" value="0.3734375" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/item_recipe_source_list.xml" value="0.37447916666666664" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/opt_community_cook_list_image.xml" value="0.5197916666666667" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/opt_community_cook_list_letter.xml" value="0.5197916666666667" />
-        <entry key="..\:/Food_Project/app/src/main/res/layout/opt_community_cook_recycle_image.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/opt_community_cook_recycle_image.xml" value="0.33" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/opt_community_free_recycle_letter.xml" value="0.3770833333333333" />
         <entry key="..\:/Food_Project/app/src/main/res/layout/opt_community_qna_recycle_letter.xml" value="0.37447916666666664" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/opt_recipe_cookware_item.xml" value="0.37447916666666664" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/opt_recipe_source_data.xml" value="0.37604166666666666" />
+        <entry key="..\:/Food_Project/app/src/main/res/layout/opt_recipe_source_list.xml" value="0.5197916666666667" />
         <entry key="..\:/Food_Project/app/src/main/res/menu/toolbar_menu.xml" value="0.5208333333333334" />
       </map>
     </option>

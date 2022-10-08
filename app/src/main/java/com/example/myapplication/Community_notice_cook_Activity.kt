@@ -6,7 +6,7 @@ import android.service.autofill.UserData
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.community_notice_cook.*
-import kotlinx.android.synthetic.main.opt_community_cook_recycle_image.*
+import kotlinx.android.synthetic.main.item_community_cook_recycle_image.*
 
 class Community_notice_cook_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
