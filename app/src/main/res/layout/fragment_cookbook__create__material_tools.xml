@@ -3,14 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home_right">
+    tools:context=".Cookbook_Create_MaterialTools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="오른쪽화면"
-        android:textSize="50sp"
-        android:gravity="center" />
+        android:src="@drawable/cookware"/>
 
 </FrameLayout>

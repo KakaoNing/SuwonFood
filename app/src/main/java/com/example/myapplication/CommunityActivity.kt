@@ -14,16 +14,13 @@ class CommunityActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_communuity)
-
-
-
         //툴바 설정
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
-
+        //버튼 클릭 이벤트
         community_button_cook.setOnClickListener {
             var intent = Intent(this,Community_notice_cook_Activity::class.java)
             startActivity(intent)
@@ -40,9 +37,6 @@ class CommunityActivity : AppCompatActivity() {
         }
 
     }
-
-
-
 
 
 

@@ -3,17 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".recipe_cookware">
-
+    tools:context=".Cookbook_Create_cookware">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/opt_recycle_cookbook_cookware"
+            android:id="@+id/opt_recycle_recipe_cookware"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_cookbook_create_item"/>
+            tools:listitem="@layout/item_recipe_cookware_item"/>
 
     </LinearLayout>
+
 
 </TableLayout>

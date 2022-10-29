@@ -45,11 +45,8 @@ class RecipeActivity : AppCompatActivity() {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) { // 탭 선택 안된상태로 변경 되었을때
-
             }
         })
-
-
 
         recipe_pager.adapter = RecipePagerAdapter(this)
 
@@ -64,22 +61,8 @@ class RecipeActivity : AppCompatActivity() {
             }
 
 
-
-
         }.attach()
-
-
-
-
-
-
-
-
-
-
     }
-
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){

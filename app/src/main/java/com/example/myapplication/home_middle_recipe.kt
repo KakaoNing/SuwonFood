@@ -6,27 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_home_middle.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [home_frag_middle.newInstance] factory method to
- * create an instance of this fragment.
- */
-class home_frag_middle : Fragment() {
-    // TODO: Rename and change types of parameters
+class home_middle_recipe : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var homerecipe:Button
-
-
 
     init{
         instance = this
@@ -43,16 +31,14 @@ class home_frag_middle : Fragment() {
         }
     }
     companion object {
-
-        private var instance: home_frag_middle? = null
-        fun getInstance():home_frag_middle?{
+        private var instance: home_middle_recipe? = null
+        fun getInstance():home_middle_recipe?{
             return instance
         }
 
-
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            home_frag_middle().apply {
+            home_middle_recipe().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -79,7 +65,7 @@ class home_frag_middle : Fragment() {
     ): View? {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_middle,container,false)
+        return inflater.inflate(R.layout.fragment_home_middle_recipe,container,false)
     }
 
 

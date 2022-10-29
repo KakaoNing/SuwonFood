@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home_right_cookbook">
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="User의 요리책"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="center">
+
+        <!--레시피 작성 버튼-->
+        <Button
+            android:id="@+id/cookbook_button_Create"
+            android:layout_width="156dp"
+            android:layout_height="157dp"
+            android:layout_marginStart="36dp"
+            android:text="레시피 작성"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <!--레시피 가져오기 버튼-->
+        <Button
+            android:id="@+id/cookbook_button_Import"
+            android:layout_width="156dp"
+            android:layout_height="157dp"
+            android:layout_marginStart="24dp"
+            android:text="레시피        가져오기"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.179"
+            app:layout_constraintStart_toEndOf="@+id/cookbook_button_Create"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <!--요리타임 레시피관리 버튼-->
+        <Button
+            android:id="@+id/cookbook_button_CookingtimeManagement"
+            android:layout_width="156dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:text="요리타임    레시피관리"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cookbook_button_Import"
+            tools:ignore="MissingConstraints" />
+
+        <!--레시피 관리 버튼-->
+        <Button
+            android:id="@+id/cookbook_button_Management"
+            android:layout_width="156dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:text="레시피 관리"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toStartOf="@+id/cookbook_button_CookingtimeManagement"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cookbook_button_Create"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
