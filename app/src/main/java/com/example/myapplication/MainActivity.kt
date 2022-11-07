@@ -36,7 +36,10 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this,CommunityActivity::class.java)
             startActivity(intent)
         }
-
+        home_rec.setOnClickListener {
+            var intent = Intent(this,RecipeSearchActivity::class.java)
+            startActivity(intent)
+        }
         
 
 
