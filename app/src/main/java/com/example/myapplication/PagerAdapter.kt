@@ -103,3 +103,26 @@ class cookbook_RecyclerRecipeCookwareAdapter(private val items_cookware: ArrayLi
         val name = itemView.findViewById<TextView>(R.id.recycle_recipe_cookware_data)
     }
 }
+class cookbook_management_ViewPager2adapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
+    var fragments:ArrayList<Fragment> = ArrayList()
+
+    override fun getItemCount(): Int {
+        return fragments.size
+    }
+
+    override fun createFragment(position: Int): Fragment {
+        return fragments[position]
+    }
+
+    fun addFragment(fragment: Fragment){
+        fragments.add(fragment)
+        notifyItemInserted(fragments.size-1)
+
+    }
+
+    fun removeFragement(){
+        fragments.removeLast()
+        notifyItemRemoved(fragments.size)
+    }
+
+}

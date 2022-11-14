@@ -6,11 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".Cookbook_CookingtimeManagement_Activity">
 
-    <TextView
+    <Button
+        android:id="@+id/cookbook_cookingtime_recipe_management_button_list"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:background="#80FF0000"
+        android:text="요리타임
+        레시피 관리"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/cookbook_cookingtime_recipe_management_viewpager_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/cookbook_cookingtime_recipe_management_viewpager_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="레시피 관리 화면"
-        android:gravity="center"
-        />
+        android:layout_height="600dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

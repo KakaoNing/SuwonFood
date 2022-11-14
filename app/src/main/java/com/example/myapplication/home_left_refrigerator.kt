@@ -1,15 +1,22 @@
 package com.example.myapplication
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.databinding.DialogRefrigeratorAddMaterialBinding
 import kotlinx.android.synthetic.main.fragment_home_left_refrigerator.*
 
-class home_left_refrigerator : Fragment() {
+class home_left_refrigerator : DialogFragment() {
+
 
     val refrigerator_Data_Array:ArrayList<refrigerator_recycle_data> = java.util.ArrayList()
     lateinit var refrigerator_recyclerViewGroup1:RecyclerView
@@ -48,5 +55,13 @@ class home_left_refrigerator : Fragment() {
             LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
         refigerator_vlist2.setHasFixedSize(true)
         refigerator_vlist2.adapter=RecyclerRecipeSourceAdapter(items)
+
+        val dialogBinding=DialogRefrigeratorAddMaterialBinding.inflate(layoutInflater)
+        item_regierator_addbutton.setOnClickListener {
+            Log.d("Log","다이얼로그성공")
+            val builder=AlertDialog.Builder(context)
+            builder.setTitle("재료 추가")
+            builder.setView(dialogBinding.root)
+        }
     }
 }

@@ -6,4 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".Cookbook_create_writing_recipe">
 
+    <FrameLayout
+        android:id="@+id/cookbook_create_Recipe_creation_box"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cookbook_create_finished_picture"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#80FFF000"
+        android:gravity="center"
+        android:text="완성 사진"
+        android:textSize="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cookbook_create_Recipe_creation_box"
+        app:layout_constraintVertical_bias="0.213" />
+
+    <Button
+        android:id="@+id/cookbook_create_additional_picture"
+        android:layout_width="65dp"
+        android:layout_height="35dp"
+        android:text="추가"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cookbook_create_finished_picture" />
+    <Button
+        android:id="@+id/cookbook_create_finished_button"
+        android:layout_width="65dp"
+        android:layout_height="35dp"
+        android:text="완료"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cookbook_create_finished_picture" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

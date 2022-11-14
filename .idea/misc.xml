@@ -27,9 +27,12 @@
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_communuity.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_cookingtime_management.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_cookingtime_management2.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_create.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_create.xml" value="0.1" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_create_finished_storage.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_create_recipe.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_create_writing_recipe.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_import.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_management.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_cookbook_management.xml" value="0.18" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_main.xml" value="0.16168478260869565" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_recipe.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/activity_refrigerator.xml" value="0.22871376811594202" />
@@ -37,12 +40,24 @@
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/base_main_layout.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/base_recipe_layout.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/community_notice_cook.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/community_notice_free.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/community_notice_qna.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/community_notice_free.xml" value="0.25" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/community_notice_qna.xml" value="0.33" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/dialog_refrigerator_add_material.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/dialogbinding.xml" value="0.18333333333333332" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__cookingtime_management__tab1.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__cookingtime_management__tab2.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__cookingtime_management__tab3.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__create__material_tools.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__create_cookbook.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__create_cookware.xml" value="0.17983789260385005" />
-        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_home_left_refrigerator.xml" value="0.1" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__create_finished_ending.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__management__tab1.xml" value="0.2" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__management__tab2.xml" value="0.1" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook__management__tab3.xml" value="0.1286231884057971" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook_create__material.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook_create__recipe_creation_box_fragment.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_cookbook_create_cooking_utensils.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_home_left_refrigerator.xml" value="0.22" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_home_middle_recipe.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_home_right.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFood2222/app/src/main/res/layout/fragment_home_right_cookbook.xml" value="0.36614583333333334" />

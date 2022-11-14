@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cookbook_Create_finished_Storage">
+
+        <TextView
+            android:id="@+id/cookbook_Create_Recipe_text"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:background="#80FF0000"
+            android:text="레시피작성"
+            android:textSize="50dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/cookbook_Create_Storagebutton"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="52dp"
+            android:text="저장"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cookbook_Create_Recipe_text" />
+
+        <Button
+            android:id="@+id/cookbook_Create_cookingtime_Storagebutton"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:text="저장 후
+요리타임"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cookbook_Create_Storagebutton"
+            app:layout_constraintTop_toTopOf="@+id/cookbook_Create_Storagebutton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

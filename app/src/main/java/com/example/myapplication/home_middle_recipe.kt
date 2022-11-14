@@ -68,7 +68,4 @@ class home_middle_recipe : Fragment() {
         return inflater.inflate(R.layout.fragment_home_middle_recipe,container,false)
     }
 
-
-
-
 }

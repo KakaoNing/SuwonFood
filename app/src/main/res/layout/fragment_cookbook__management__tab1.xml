@@ -1,14 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Cookbook_Management_Tab1Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/foodrecipe_image4"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="48dp"
+        android:background="#80FF0000"
+        android:gravity="center"
+        android:text="food image4"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintStart_toStartOf="@+id/foodrecipe_title4"
+        app:layout_constraintTop_toBottomOf="@+id/foodrecipe_title2" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/foodrecipe_image3"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="48dp"
+        android:background="#80FF0000"
+        android:gravity="center"
+        android:text="food image3"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintStart_toStartOf="@+id/foodrecipe_title3"
+        app:layout_constraintTop_toBottomOf="@+id/foodrecipe_title1" />
+
+    <TextView
+        android:id="@+id/foodrecipe_image2"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="72dp"
+        android:background="#80FF0000"
+        android:gravity="center"
+        android:text="food image2"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintStart_toStartOf="@+id/foodrecipe_title2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/foodrecipe_image1"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="72dp"
+        android:background="#80FF0000"
+        android:gravity="center"
+        android:text="food image1"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintStart_toStartOf="@+id/foodrecipe_title1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/foodrecipe_title1"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:background="#800000FF"
+        android:text="food title1"
+        android:textSize="30dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodrecipe_image1" />
+
+    <TextView
+        android:id="@+id/foodrecipe_title4"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:background="#800000FF"
+        android:text="food title4"
+        android:textSize="30dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/foodrecipe_title3"
+        app:layout_constraintTop_toBottomOf="@+id/foodrecipe_image4" />
+
+    <TextView
+        android:id="@+id/foodrecipe_title3"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:background="#800000FF"
+        android:text="food title3"
+        android:textSize="30dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodrecipe_image3" />
+
+    <TextView
+        android:id="@+id/foodrecipe_title2"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:background="#800000FF"
+        android:text="food title2"
+        android:textSize="30dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/foodrecipe_title1"
+        app:layout_constraintTop_toBottomOf="@+id/foodrecipe_image2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
