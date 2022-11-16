@@ -32,7 +32,7 @@
             android:name=".RecipeActivity"
             android:exported="true" />
         <activity
-            android:name=".RecipeSearchActivity"
+            android:name=".RecipeActivity2"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

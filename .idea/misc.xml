@@ -20,12 +20,20 @@
         <entry key="..\:/Food_Project/app/src/main/res/menu/toolbar_menu.xml" value="0.5208333333333334" />
         <entry key="..\:/Users/USER/OneDrive/Documents/GitHub/SuwonFood/app/src/main/res/layout/recipe_search.xml" value="0.358695652173913" />
         <entry key="..\:/Users/USER/SuwonFood-taetae/app/src/main/res/layout/recipe_search.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/activity_communuity.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/activity_main.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/activity_recipe.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/activity_recipe2.xml" value="0.30055579307396324" />
         <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/activity_recipesearch.xml" value="0.17755825734549138" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/base_main_layout.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/recipe_search.xml" value="0.17806484295845998" />
       </map>
     </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="androidx.annotation.RequiresApi" />
+    </list>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
