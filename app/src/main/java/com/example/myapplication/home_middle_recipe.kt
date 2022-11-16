@@ -49,7 +49,7 @@ class home_middle_recipe : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homerecipe = view.findViewById(R.id.home_recipe)
+        homerecipe = view.findViewById(R.id.home_recipe_viewpager2)
 
         homerecipe.setOnClickListener {
             var intent = Intent(context,RecipeActivity::class.java)
