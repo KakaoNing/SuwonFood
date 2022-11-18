@@ -5,11 +5,8 @@
     <item android:id="@+id/tool_search"
         android:title="@string/search"
         android:icon="@drawable/search"
-        app:showAsAction="ifRoom"/>
-    <item android:id="@+id/tool_mic"
-        android:title="@string/mic"
-        android:icon="@drawable/mic"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
+
 
 
 

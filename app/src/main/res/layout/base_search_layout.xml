@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/opt_search_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
+        app:queryHint="검색어를  입력하세요"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/opt_recycle_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_search_recycle" />
+
+
+</LinearLayout>

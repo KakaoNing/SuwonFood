@@ -33,7 +33,6 @@ class RecipeActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
 
-
         //탭 설정
         recipe_tab.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
             override fun onTabReselected(tab: TabLayout.Tab?) { // 이미 선택된 탭 다시 되었을때
@@ -41,6 +40,7 @@ class RecipeActivity : AppCompatActivity() {
             }
 
             override fun onTabSelected(tab: TabLayout.Tab?) {  // 탭 선택되었을때
+                tab?.position?.let{recipe_pager.setCurrentItem(it,false)}
 
             }
 
@@ -51,11 +51,16 @@ class RecipeActivity : AppCompatActivity() {
 
 
 
+
+
         recipe_pager.adapter = RecipePagerAdapter(this)
 
+        recipe_pager.run{
+            isUserInputEnabled= false
+        }
 
-        TabLayoutMediator(recipe_tab,recipe_pager) {tab,positon ->
-            when(positon){
+        TabLayoutMediator(recipe_tab,recipe_pager) {tab,position ->
+            when(position){
                 0 -> tab.text = "소개"
                 1 -> tab.text = "조리도구"
                 2 -> tab.text = "재료"

@@ -8,8 +8,7 @@
 
 
 
-    <!--인클루드 툴바-->
-    <include layout="@layout/opt_main_toolbar" />
+
 
 
 

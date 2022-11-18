@@ -5,9 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".recipe_introduce">
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="375dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="17dp"
+        android:background="#88FFAB40">
 
         <TextView
             android:layout_width="match_parent"
@@ -15,28 +17,36 @@
             android:text="한줄특징 작성란"
             android:textSize="30dp"
             android:gravity="center"
-            android:background="#FF0000"/>
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:backgroundTintMode="screen" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:text="제목작성"
             android:textSize="30dp"
             android:gravity="center"
-            android:background="#0EFF26"/>
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:backgroundTintMode="screen"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:text="설명란"
             android:textSize="30dp"
             android:gravity="center"
-            android:background="#B9A80F"/>
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:backgroundTintMode="screen" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:text=" 요리타임 평가"
             android:textSize="30dp"
             android:gravity="center"
-            android:background="#E100FF"/>
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:backgroundTintMode="screen" />
 
 
 

@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_recipe_cookware.*
+import kotlinx.android.synthetic.main.fragment_recipe_source.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,17 +40,26 @@ class recipe_cookware : Fragment() {
         return inflater.inflate(R.layout.fragment_recipe_cookware, container, false)
     }
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val items = arrayListOf(
+            recipe_cookware_recycle_data("조리도구")
+        )
+
+        opt_recycle_recipe_cookware.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        opt_recycle_recipe_cookware.setHasFixedSize(true)
+        opt_recycle_recipe_cookware.adapter = RecyclerRecipeCookwareAdapter(items)
+    }
+
+
+
+
+
+
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment recipe_cookware.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
         fun newInstance(param1: String, param2: String) =
             recipe_cookware().apply {
                 arguments = Bundle().apply {

@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="false"
     android:visibility="visible"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/letter_back">
 
     <!-- 레시피 화면 -->
 
@@ -15,7 +16,7 @@
     <!--인클루드 레시피의 뷰-->
     <include layout="@layout/base_recipe_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 
     <!--네이게이션바-->
@@ -29,18 +30,20 @@
 
     </com.google.android.material.navigation.NavigationView>
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:layout_marginBottom="50dp"
-        >
-        <TextView
-
-            android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="17dp"
+        android:gravity="bottom">
+        <ImageView
+            android:layout_width="375dp"
             android:layout_height="wrap_content"
-            android:text="ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ"
-            android:hint=""/>
+            android:src="@drawable/bottom_line"
+            android:layout_marginBottom="50dp"
+            />
 
     </LinearLayout>
 
@@ -53,15 +56,20 @@
         android:weightSum="10">
 
 
+
         <Button
+            android:id="@+id/home_them"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="5dp"
-            android:text="테마별" />
-
+            android:background="@drawable/color_green_gradient_circle"
+            android:text="테마별"
+            android:backgroundTintMode="screen"
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,20 +77,28 @@
             android:layout_marginBottom="5dp"
             android:layout_weight="3"
             android:gravity="center"
-
-
-            android:text="레시피" />
+            android:text="레시피"
+            android:background="@drawable/color_green_gradient_circle"
+            android:backgroundTintMode="screen"
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"/>
         <Button
+            android:id="@+id/home_community"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="5dp"
-            android:text="요리타임" />
+            android:background="@drawable/color_green_gradient_circle"
+            android:backgroundTintMode="screen"
+            android:text="요리타임"
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"/>
 
 
-    </LinearLayout>
+
+    </LinearLayout>   <!--하단의 버튼-->
 
 
 
