@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home_middle_recipe">
+    tools:context=".Home.home_middle_recipe">
 
     <TextView
         android:id="@+id/middle_recipe_Recommendation_button"
@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:text="좋은 글귀"
         android:textSize="40dp"
+        android:background="#FF9797"
         android:layout_marginTop="100dp"
         android:layout_marginLeft="40dp"/>
     <Button
@@ -33,12 +34,10 @@
         android:text="버튼2"
         android:textSize="30dp"/>
 
-    <Button
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/home_recipe_viewpager2"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:text="레시피"
-        android:textSize="100dp"
         android:layout_gravity="center"/>
 
 </FrameLayout>

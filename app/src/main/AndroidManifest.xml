@@ -14,43 +14,43 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".Cookbook_Create_finished_Storage"
+            android:name=".Cookbook.Write.Cookbook_Create_Finished_Storage"
             android:exported="false" />
         <activity
-            android:name=".Cookbook_create_writing_recipe"
+            android:name=".Cookbook.Write.Cookbook_Create_Writing_Recipe"
             android:exported="false" />
         <activity
-            android:name=".Cookbook_CookingtimeManagement_Activity"
+            android:name=".Cookbook.CookingManager.Cookbook_CookingtimeManagement_Activity"
             android:exported="false" />
         <activity
-            android:name=".Cookbook_Management_Activity"
+            android:name=".Cookbook.Manager.Cookbook_Management_Activity"
             android:exported="false" />
         <activity
-            android:name=".Cookbook_Import_Activity"
+            android:name=".Cookbook.Cookbook_Import_Activity"
             android:exported="false" />
         <activity
-            android:name=".Cookbook_Create_Activity"
+            android:name=".Cookbook.Write.Cookbook_Create_Activity"
             android:exported="false" />
         <activity
-            android:name=".RefrigeratorActivity"
+            android:name=".Refrigerator.RefrigeratorActivity"
             android:exported="false" />
         <activity
-            android:name=".Community_notice_free_Activity"
+            android:name=".Community.Community_Notice_Free_Activity"
             android:exported="false" />
         <activity
-            android:name=".Community_notice_qna_Activity"
+            android:name=".Community.Community_Notice_Qna_Activity"
             android:exported="false" />
         <activity
-            android:name=".Community_notice_cook_Activity"
+            android:name=".Community.Community_Notice_Cook_Activity"
             android:exported="false" />
         <activity
-            android:name=".CommunityActivity"
+            android:name=".Community.CommunityActivity"
             android:exported="false" />
         <activity
-            android:name=".RecipeActivity"
+            android:name=".Recipe.RecipeActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Other.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cookbook_Management_Tab1Fragment">
+    tools:context=".Cookbook.Manager.Cookbook_Management_Tab1Fragment">
 
     <TextView
         android:id="@+id/foodrecipe_image4"

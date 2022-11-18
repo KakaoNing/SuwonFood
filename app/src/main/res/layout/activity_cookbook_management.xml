@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home_right_cookbook">
+    tools:context=".Home.Home_Right">
 
     <Button
         android:id="@+id/cookbook_recipe_management_button_list"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cookbook_Create_finished_Storage">
+    tools:context=".Cookbook.Write.Cookbook_Create_Finished_Storage">
 
         <TextView
             android:id="@+id/cookbook_Create_Recipe_text"

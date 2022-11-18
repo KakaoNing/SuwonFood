@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cookbook_create_writing_recipe">
+    tools:context=".Cookbook.Write.Cookbook_Create_Writing_Recipe">
 
     <FrameLayout
         android:id="@+id/cookbook_create_Recipe_creation_box"
