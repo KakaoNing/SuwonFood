@@ -19,6 +19,7 @@ import com.example.myapplication.R
 import kotlinx.android.synthetic.main.base_main_layout.*
 
 
+//홈 뷰페이저 Fragment이다.
 class home_viewpager : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,16 +35,18 @@ class home_viewpager : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        //어뎁터 선언
+        //pagerAdapter의 초기화 설정(PagerFragmentStateAdapter사용)
         val pagerAdapter= PagerFragmentStateAdapter(requireActivity())
 
-        //메인화면 레이아웃을 어뎁터에 추가
+        //pagerAdapter어뎁터에 홈화면 프래그먼트 3개를 추가
         pagerAdapter.Fragmentadd(home_left())
         pagerAdapter.Fragmentadd(home_middle())
         pagerAdapter.Fragmentadd(home_right())
 
         //어뎁터를 홈페이저의 어뎁터에 복사
         home_pager.adapter=pagerAdapter
+
+        //페이저 어뎁터 맨 처음 화면을 중간에 있는 home_middle()로 설정
         home_pager.setCurrentItem(1, false)
 
     }

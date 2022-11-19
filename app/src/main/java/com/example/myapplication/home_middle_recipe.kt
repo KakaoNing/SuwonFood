@@ -12,44 +12,14 @@ import com.example.myapplication.R
 //import com.example.myapplication.Recipe.RecipeActivity
 import com.example.myapplication.RecipeActivity
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-
-
-
 // 메인화면 레시피 추천 Activity
 
 class Home_Middle_Recipe : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
     private lateinit var homerecipe: Button
 
-    init{
-        instance = this
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-    companion object {
-        private var instance: Home_Middle_Recipe? = null
-        fun getInstance(): Home_Middle_Recipe?{
-            return instance
-        }
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Home_Middle_Recipe().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 
     override fun onCreateView(
@@ -78,6 +48,7 @@ class Home_Middle_Recipe : Fragment() {
 
         //클릭시 레시피 화면으로  이동
         homerecipe.setOnClickListener {
+            //RecipeActivity::class.java로 화면전환(intent 사용)
             var intent = Intent(context, RecipeActivity::class.java)
             startActivity(intent)
 
