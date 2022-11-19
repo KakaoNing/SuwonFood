@@ -21,6 +21,8 @@
     android:backgroundTintMode="screen"
     android:fontFamily="@font/diary" />
 
+
+
     <EditText
         android:id="@+id/write_community_notice_free_title"
         android:layout_width="350dp"
