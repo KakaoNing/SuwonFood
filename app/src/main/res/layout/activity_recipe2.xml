@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDF5"
+    tools:context=".RecipeActivity">
+
+    <ImageButton
+        android:id="@+id/btn_recipe_food2"
+        android:layout_width="323dp"
+        android:layout_height="180dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="340dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"></ImageButton>
+
+    <LinearLayout
+        android:id="@+id/recipe_title2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="520dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="177dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:maxLength="7"
+            android:text="foodname"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/recipe_title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_recipe_food1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="177dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:maxLength="7"
+                android:text="foodname"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"></TextView>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_recipe_food1"
+            android:layout_width="320dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="116dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"></ImageButton>
+
+        <TextView
+            android:id="@+id/recipe_today_title"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="50dp"
+            android:text="오늘의 레시피!"
+            android:textColor="#000000"
+            android:textSize="20sp"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <EditText
+                android:id="@+id/edit"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:hint="enter text to search"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="158dp"
+                android:layout_height="match_parent"
+                android:onClick="mOnClick"
+                android:text="search"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
