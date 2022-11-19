@@ -93,42 +93,6 @@ class RecipePagerAdapter(fragment: RecipeActivity) : FragmentStateAdapter(fragme
 
 }
 
-//요리책화면 레시피 가져오기 중 좋아요누른 레시피 어댑터 : viewpager
-class CookBookGetFavoriteAdapter(var list: ArrayList<String>):  RecyclerView.Adapter<CookBookGetFavoriteAdapter.ListAdapter>(){
-
-    class ListAdapter(val layout: View): RecyclerView.ViewHolder(layout)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter {
-        return ListAdapter(LayoutInflater.from(parent.context).inflate(R.layout.item_cookbook_get_favorite, parent, false))
-    }
-
-    override fun onBindViewHolder(holder: ListAdapter, position: Int) {
-        holder.layout.goodimport_textImg.text = list[position]
-    }
-
-    override fun getItemCount(): Int {
-        return list.size
-    }
-}
-
-//요리책화면 레시피 가져오기 중 추천 레시피 어댑터 : viewpager
-class CookBookGetRecommandAdapter(var list: ArrayList<String>):  RecyclerView.Adapter<CookBookGetRecommandAdapter.ListAdapter>(){
-
-    class ListAdapter(val layout: View): RecyclerView.ViewHolder(layout)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter {
-        return ListAdapter(LayoutInflater.from(parent.context).inflate(R.layout.item_cookbook_get_recommand, parent, false))
-    }
-
-    override fun onBindViewHolder(holder: ListAdapter, position: Int) {
-        holder.layout.recommendimport_textImg.text = list[position]
-    }
-
-    override fun getItemCount(): Int {
-        return list.size
-    }
-}
-
 //요리책화면 레시피 관리중 뷰페이저 어댑터
 class CookBookManagementAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
     var fragments:ArrayList<Fragment> = ArrayList()

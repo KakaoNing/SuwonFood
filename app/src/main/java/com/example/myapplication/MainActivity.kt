@@ -17,21 +17,36 @@ import kotlinx.android.synthetic.main.base_main_layout.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    //네비게이션뷰 변수 설정
     lateinit var navigationView: NavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //네비게이션 설정
+        //네비게이션 설정(28~35)
+        //activity_main에 navigationView설정
         navigationView=findViewById(R.id.navigationView)
+
+        //main_frame의 화면을 home_viewpager로 설정(home_viewpager는 프래그먼트)
         supportFragmentManager.beginTransaction().replace(R.id.main_frame, home_viewpager()).commit()
+
+        //네비게이션뷰 클릭시 자동 닫히는 함수
         navigationView.setNavigationItemSelectedListener(this)
 
-        //툴바 설정
+        //툴바 설정 38~45
+        //toolbar초기화
         setSupportActionBar(findViewById(R.id.toolbar))
+
+        //뒤로가기 버튼
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        //네비게이션 띄우는 인디케이터 튤바에 생성
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
-        supportActionBar!!.setDisplayShowTitleEnabled(false)
+
+        /*supportActionBar!!.setDisplayShowTitleEnabled(false)*/
+
+
         //커뮤니티 버튼 클릭 이동
         home_community.setOnClickListener {
             var intent = Intent(this, CommunityActivity::class.java)

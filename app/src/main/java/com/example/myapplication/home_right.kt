@@ -74,8 +74,8 @@ class home_right : Fragment() {
         //cookbook_management 클릭이벤트 작동
         cookbook_cookingtimemanagement.setOnClickListener {
 
-            //Cookbook_CookingtimeManagement_Activity::class.java로 화면전환(intent 사용)
-            var intent = Intent(context, Cookbook_CookingtimeManagement_Activity::class.java)
+            //Cookbook_Community_Activity::class.java로 화면전환(intent 사용)
+            var intent = Intent(context, Cookbook_Community_Activity::class.java)
             startActivity(intent)
         }
         /*
