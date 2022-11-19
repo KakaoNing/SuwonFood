@@ -18,13 +18,8 @@ import com.example.myapplication.R
 import kotlinx.android.synthetic.main.base_main_layout.*
 import kotlinx.android.synthetic.main.fragment_home_middle.*
 import kotlinx.android.synthetic.main.fragment_home_middle_recipe.*
-
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
+//
 class home_middle : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
 
     init{
         instance = this
@@ -32,25 +27,12 @@ class home_middle : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
     companion object {
         private var instance: home_middle? = null
         fun getInstance(): home_middle?{
             return instance
         }
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            home_middle().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 
 
