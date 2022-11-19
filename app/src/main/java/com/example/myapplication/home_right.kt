@@ -67,7 +67,7 @@ class home_right : Fragment() {
             startActivity(intent)
         }
 
-        //요리타임관리 버튼
+        //요리타임관리 버튼71~80
         //cookbook_button_CookingtimeManagement버튼 불러오기
         cookbook_cookingtimemanagement = view.findViewById(R.id.cookbook_button_CookingtimeManagement)
 
@@ -78,27 +78,19 @@ class home_right : Fragment() {
             var intent = Intent(context, Cookbook_Community_Activity::class.java)
             startActivity(intent)
         }
-        /*
 
-        //레시피 작성 버튼
+
+        //레시피 작성 버튼84~93
+        //cookbook_button_Create버튼 불러오기
         cookbook_create = view.findViewById(R.id.cookbook_button_Create)
 
+        //cookbook_create 클릭이벤트 작동
         cookbook_create.setOnClickListener {
-            var intent = Intent(context, Cookbook_Create_Activity::class.java)
+
+            //Cookbook_Write_Activity::class.java로 화면전환(intent 사용)
+            var intent = Intent(context, Cookbook_Write_Activity::class.java)
             startActivity(intent)
         }
-
-
-
-
-
-        //요리타임관리 버튼
-        cookbook_cookingtimemanagement = view.findViewById(R.id.cookbook_button_CookingtimeManagement)
-
-        cookbook_cookingtimemanagement.setOnClickListener {
-            var intent = Intent(context, Cookbook_CookingtimeManagement_Activity::class.java)
-            startActivity(intent)
-        }*/
 
     }
 }

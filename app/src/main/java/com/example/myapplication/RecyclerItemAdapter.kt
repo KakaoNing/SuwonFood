@@ -38,6 +38,7 @@ class RecyclerRefrigeratorSourceAdapter(private val items_source: ArrayList<refr
     }
 }
 
+
 //레시피 조리도구 리사이클러
 class RecyclerRecipeCookwareAdapter(private val items_cookware: ArrayList<recipe_cookware_recycle_data>) : RecyclerView.Adapter<RecyclerRecipeCookwareAdapter.CustomViewHolder>() {
 
@@ -154,6 +155,7 @@ class CookBookGetFavoriteAdapter(var list: ArrayList<String>):  RecyclerView.Ada
         return list.size
     }
 }
+
 
 //요리책화면 레시피 가져오기 중 추천 레시피 어댑터 : RecyclerView
 class CookBookGetRecommandAdapter(var list: ArrayList<String>):  RecyclerView.Adapter<CookBookGetRecommandAdapter.ListAdapter>(){
@@ -372,11 +374,65 @@ class RecyclerSearchAdapter(private val items_search: ArrayList<search_recycle_d
 
     }
 
-
-
-
-
-
 }
 
+
+//요리도구 리사이클러
+class RecyclerWriteCookwareAdapter(private val items_qna: ArrayList<recipe_write_Cookwarerecycle_data>) : RecyclerView.Adapter<RecyclerWriteCookwareAdapter.CustomViewHolder>() {
+
+    override fun getItemCount(): Int = items_qna.size
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerWriteCookwareAdapter.CustomViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_cookbook_write_material, parent, false)
+        return CustomViewHolder(view).apply {
+            itemView.setOnClickListener {
+                val curPos: Int = adapterPosition
+                val profile: recipe_write_Cookwarerecycle_data = items_qna.get(curPos)
+            }
+        }
+    }
+
+
+    override fun onBindViewHolder(
+        holder: RecyclerWriteCookwareAdapter.CustomViewHolder, position: Int) {
+        holder.profile.setImageResource(items_qna.get(position).image)
+        holder.title.text = items_qna.get(position).title
+    }
+
+    inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val profile = itemView.findViewById<ImageView>(R.id.cookbook_write_cookware_image)
+        val title = itemView.findViewById<TextView>(R.id.cookbook_write_cookware_title)
+    }
+}
+
+//재료 리사이클러
+class RecyclerWriteMatarialAdapter(private val items_qna: ArrayList<recipe_write_Matarialrecycle_data>) : RecyclerView.Adapter<RecyclerWriteMatarialAdapter.CustomViewHolder>() {
+
+
+    override fun getItemCount(): Int = items_qna.size
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerWriteMatarialAdapter.CustomViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_cookbook_write_material, parent, false)
+        return CustomViewHolder(view).apply {
+            itemView.setOnClickListener {
+                val curPos: Int = adapterPosition
+                val profile: recipe_write_Matarialrecycle_data = items_qna.get(curPos)
+
+            }
+
+        }
+    }
+
+
+    override fun onBindViewHolder(
+        holder: RecyclerWriteMatarialAdapter.CustomViewHolder, position: Int) {
+        holder.profile.setImageResource(items_qna.get(position).image)
+        holder.title.text = items_qna.get(position).title
+    }
+
+    inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val profile = itemView.findViewById<ImageView>(R.id.cookbook_write_material_image)
+        val title = itemView.findViewById<TextView>(R.id.cookbook_write_material_title)
+    }
+}
 

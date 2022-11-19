@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context=".Cookbook_Write_Activity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+                <TextView
+                    android:id="@+id/cookbook_edit_add_editView_text"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:text="한줄소개" />
+
+                <EditText
+                    android:id="@+id/cookbook_edit_add_editView_edit"
+                    android:layout_width="353dp"
+                    android:layout_height="38dp"
+                    android:inputType="text"/>
+
+                <TextView
+                    android:id="@+id/cookbook_edit_add_title_text"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:text="제목" />
+
+                <EditText
+                    android:id="@+id/cookbook_edit_add_title_edit"
+                    android:layout_width="353dp"
+                    android:layout_height="38dp"
+                    android:inputType="text" />
+                <TextView
+                    android:id="@+id/cookbook_edit_add_content_text"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:text="내용" />
+
+                <EditText
+                    android:id="@+id/cookbook_edit_add_content_edit"
+                    android:layout_width="353dp"
+                    android:layout_height="38dp"
+                    android:inputType="text" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/cookbook_create_cooking_utensils_text"
+                        android:layout_width="56dp"
+                        android:layout_height="20dp"
+                        android:text="조리도구" />
+                    <Button
+                        android:id="@+id/cookbook_create_cooking_utensils_button"
+                        android:layout_width="65dp"
+                        android:layout_height="35dp"
+                        android:text="추가"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cookbook_Create_cooking_cookware_recycler_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/cookbook_Create_cooking_Material_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="재료"/>
+                    <Button
+                        android:id="@+id/cookbook_create_cooking_Material_button"
+                        android:layout_width="65dp"
+                        android:layout_height="35dp"
+                        android:text="추가"/>
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cookbook_Create_cooking_material_recycler_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cookbook_create_cooking_Material_button"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="이전"/>
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="다음"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/cookbook_create_finished_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="#80FFF000"
+                    android:gravity="center"
+                    android:text="완성 사진"
+                    android:textSize="60dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/picture_add_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="사진 추가"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="완료"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -10,6 +10,17 @@ data class refrigerator_source_recycle_data(
     val context:String
 )
 
+//레시피 작성 중 요리재료 리사이클러 데이터
+data class recipe_write_Matarialrecycle_data(
+    val image: Int,
+    val title:String
+)
+
+//레시피 작성 중 요리도구 리사이클러 데이터
+data class recipe_write_Cookwarerecycle_data(
+    val image: Int,
+    val title:String
+)
 
 //레시피 완료화면 리사이클러 데이터
 data class recipe_done_image_recycle_data(

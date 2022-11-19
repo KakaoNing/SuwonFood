@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class recipe_recipe_viewpager2 : Fragment() {
+class Cookbook_Write_Box_Fragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +16,7 @@ class recipe_recipe_viewpager2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_recipe_recipe_viewpager2, container, false)
+        return inflater.inflate(R.layout.fragment_cookbook__write__box_, container, false)
     }
+
 }
