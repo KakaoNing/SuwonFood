@@ -34,6 +34,8 @@
         android:text="버튼2"
         android:textSize="30dp"/>
 
+
+    <!---안쪽의 레시피에서의 뷰페이저-->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/home_recipe_viewpager2"
         android:layout_width="match_parent"

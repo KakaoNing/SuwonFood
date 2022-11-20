@@ -58,8 +58,9 @@
         <entry key="..\:/Food_PJ/app/src/main/res/drawable/base_plus_img.xml" value="0.32" />
         <entry key="..\:/Food_PJ/app/src/main/res/drawable/base_question_img.xml" value="0.32" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/activity_cookbook_write.xml" value="0.5208333333333334" />
-        <entry key="..\:/Food_PJ/app/src/main/res/layout/activity_main.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food_PJ/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/activity_search.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food_PJ/app/src/main/res/layout/base_main_layout.xml" value="0.5" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/base_recipe_layout.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/base_search_layout.xml" value="0.5" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/community_notice_cook.xml" value="0.5208333333333334" />
@@ -75,7 +76,11 @@
         <entry key="..\:/Food_PJ/app/src/main/res/layout/fragment_cookbook__write__material.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/fragment_first.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/fragment_home_left.xml" value="0.3359375" />
+        <entry key="..\:/Food_PJ/app/src/main/res/layout/fragment_home_middle.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food_PJ/app/src/main/res/layout/fragment_home_middle_recipe.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food_PJ/app/src/main/res/layout/fragment_home_navi_check_viewpager.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/fragment_home_right.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food_PJ/app/src/main/res/layout/fragment_recipe_done.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/fragment_second.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/item_community_cook_notice_recycle.xml" value="0.434375" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/item_cookbook_write_cookware.xml" value="0.5208333333333334" />
@@ -83,6 +88,7 @@
         <entry key="..\:/Food_PJ/app/src/main/res/layout/item_cookbook_write_source_recycle.xml" value="0.33489583333333334" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/item_recipe_source_recycle.xml" value="0.3359375" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/item_search_recycle.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food_PJ/app/src/main/res/layout/opt_main_toolbar.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/write_community_notice_cook.xml" value="0.33" />
         <entry key="..\:/Food_PJ/app/src/main/res/layout/write_community_notice_free.xml" value="0.5208333333333334" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFoodFood/app/src/main/res/layout/activity_communuity.xml" value="0.1875" />
