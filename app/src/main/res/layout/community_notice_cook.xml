@@ -74,7 +74,7 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/opt_community_notice_cook_recycle_image"
+            android:id="@+id/opt_community_notice_cook_recycle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

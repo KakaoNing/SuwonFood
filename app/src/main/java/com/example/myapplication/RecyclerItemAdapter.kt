@@ -1,6 +1,7 @@
 package com.example.myapplication
 
-import android.util.Log
+import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,8 @@ import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_cookbook_get_favorite.view.*
 import kotlinx.android.synthetic.main.item_cookbook_get_recommand.view.*
+
+
 
 
 //냉장고 재료 리사이클러
@@ -37,6 +40,8 @@ class RecyclerRefrigeratorSourceAdapter(private val items_source: ArrayList<refr
         val context=itemView.findViewById<TextView>(R.id.item_regierator_material_content)
     }
 }
+
+
 
 
 //레시피 조리도구 리사이클러
@@ -69,6 +74,8 @@ class RecyclerRecipeCookwareAdapter(private val items_cookware: ArrayList<recipe
 
 
 }
+
+
 
 
 //레시피 재료 리사이클러
@@ -104,39 +111,8 @@ class RecyclerRecipeSourceAdapter(private val items_source: ArrayList<recipe_sou
     }
 
 
-// Qna게시판 리사이클러
-class RecyclerQnaImgAdapter(private val items_qna: ArrayList<community_qna_recycle_data>) : RecyclerView.Adapter<RecyclerQnaImgAdapter.CustomViewHolder>() {
 
 
-        override fun getItemCount(): Int = items_qna.size
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerQnaImgAdapter.CustomViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_community_qna_notice_recycle, parent, false)
-            return CustomViewHolder(view).apply {
-                itemView.setOnClickListener {
-                    val curPos: Int = adapterPosition
-                    val profile: community_qna_recycle_data = items_qna.get(curPos)
-
-                }
-
-            }
-        }
-
-
-        override fun onBindViewHolder(
-            holder: RecyclerQnaImgAdapter.CustomViewHolder, position: Int) {
-            holder.profile.setImageResource(items_qna.get(position).profile)
-            holder.title.text = items_qna.get(position).title
-
-        }
-
-        inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            val profile = itemView.findViewById<ImageView>(R.id.recycle_qna_profile)
-            val title = itemView.findViewById<TextView>(R.id.recycle_qna_title)
-        }
-
-
-    }
 
 //요리책화면 레시피 가져오기 중 좋아요누른 레시피 어댑터 : RecyclerView
 class CookBookGetFavoriteAdapter(var list: ArrayList<String>):  RecyclerView.Adapter<CookBookGetFavoriteAdapter.ListAdapter>(){
@@ -155,6 +131,8 @@ class CookBookGetFavoriteAdapter(var list: ArrayList<String>):  RecyclerView.Ada
         return list.size
     }
 }
+
+
 
 
 //요리책화면 레시피 가져오기 중 추천 레시피 어댑터 : RecyclerView
@@ -176,84 +154,354 @@ class CookBookGetRecommandAdapter(var list: ArrayList<String>):  RecyclerView.Ad
 }
 
 
-// 자유게시판 리사이클러
-class RecyclerFreeImgAdapter(private val items_free: ArrayList<community_free_recycle_data>) : RecyclerView.Adapter<RecyclerFreeImgAdapter.CustomViewHolder>() {
-        override fun getItemCount(): Int = items_free.size
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerFreeImgAdapter.CustomViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_community_free_notice_recycle, parent, false)
-            return CustomViewHolder(view).apply {
-                itemView.setOnClickListener {
-                    val curPos: Int = adapterPosition
-                    val profile: community_free_recycle_data = items_free.get(curPos)
-
-                }
-
-            }
-        }
-
-        override fun onBindViewHolder(holder: RecyclerFreeImgAdapter.CustomViewHolder, position: Int) {
-            holder.profile.setImageResource(items_free.get(position).profile)
-            holder.title.text = items_free.get(position).title
-
-        }
-
-        inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            val profile = itemView.findViewById<ImageView>(R.id.recycle_free_profile)
-            val title = itemView.findViewById<TextView>(R.id.recycle_free_title)
-        }
-
-    }
-
 
 // 요리 게시판 리사이클러
-class RecyclerCookImgAdapter(private val items_cook: ArrayList<community_cook_recycle_data>) : RecyclerView.Adapter<RecyclerCookImgAdapter.CustomViewHolder>() {
+//https://greensky0026.tistory.com/226 이쪽 참고함 recycler 를 searchview하기
+class RecyclerCookAdapter(var items_cook: ArrayList<community_cook_recycle_data>) : RecyclerView.Adapter<RecyclerCookAdapter.ViewHolder>(), Filterable {
 
-        override fun getItemCount(): Int = items_cook.size
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerCookImgAdapter.CustomViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_community_cook_notice_recycle, parent, false)
-            return CustomViewHolder(view).apply {
-                itemView.setOnClickListener {
-                    val curPos: Int = adapterPosition
-                    val profile: community_cook_recycle_data = items_cook.get(curPos)
+    //선언
+    var filteredCookCycle = ArrayList<community_cook_recycle_data>()
+    var itemFilter = ItemFilter()
 
+
+    //이너클래스 안에 선언
+    inner class ViewHolder(itemView: View, con:Context) : RecyclerView.ViewHolder(itemView) {
+
+        var recycle_cook_profile : ImageView
+        var recycle_cook_name : TextView
+        var recycle_cook_img : ImageView
+        var recycle_cook_title : TextView
+
+
+        init {
+            recycle_cook_profile = itemView.findViewById(R.id.recycle_cook_profile)
+            recycle_cook_name = itemView.findViewById(R.id.recycle_cook_name)
+            recycle_cook_img = itemView.findViewById(R.id.recycle_cook_img)
+            recycle_cook_title = itemView.findViewById(R.id.recycle_cook_title)
+
+        }
+
+    }
+
+    //배열관리를 위한 filter구현
+    init {
+        filteredCookCycle.addAll(items_cook)
+    }
+
+    //리사이클러 구현
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val con = parent.context
+        val inflater = con.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val view = inflater.inflate(R.layout.item_community_cook_notice_recycle, parent, false)
+
+        return ViewHolder(view, con)
+    }
+
+    //리사이클러 각 item값 지정
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val cook_notice: community_cook_recycle_data = filteredCookCycle[position]
+        holder.recycle_cook_profile.setImageResource(items_cook.get(position).profile)
+        holder.recycle_cook_name.text = cook_notice.name
+        holder.recycle_cook_img.setImageResource(items_cook.get(position).img)
+        holder.recycle_cook_title.text=cook_notice.title
+    }
+
+    //필터를 통한 아이템의 카운트를 셈
+    override fun getItemCount(): Int {
+        return filteredCookCycle.size
+    }
+
+    //필터 구현을 위한 get
+    override fun getFilter(): Filter {
+        return itemFilter
+    }
+    //배열 초기화시 필요함 검색마다 초기화해야하기때문
+    fun initFilteredPersons() {
+        filteredCookCycle.clear()
+        filteredCookCycle.addAll(items_cook)
+    }
+
+
+    //필터의 이너클래스
+    inner class ItemFilter : Filter() {
+        override fun performFiltering(charSequence: CharSequence): FilterResults {
+            val filterString = charSequence.toString()
+            val results = FilterResults()
+
+            //검색이 필요없을 경우를 위해 원본 배열을 복제
+            val filteredList: ArrayList<community_cook_recycle_data> = ArrayList<community_cook_recycle_data>()
+            //공백제외 아무런 값이 없을 경우 -> 원본 배열
+            if (filterString.trim { it <= ' ' }.isEmpty()) {
+                results.values = items_cook
+                results.count = items_cook.size
+
+                return results
+                //공백제외 2글자 이인 경우
+            } else if (filterString.trim { it <= ' ' }.length <= 2) {
+                for (cook_notice in items_cook) {
+                    if (cook_notice.title.contains(filterString)) {
+                        filteredList.add(cook_notice)
+                    }
                 }
-
+                //그 외의 경우(공백제외 2글자 초과)
+            } else {
+                for (cook_notice in items_cook) {
+                    if (cook_notice.title.contains(filterString)){
+                        filteredList.add(cook_notice)
+                    }
+                }
             }
+            results.values = filteredList
+            results.count = filteredList.size
+
+            return results
         }
 
-        override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-            holder.profile.setImageResource(items_cook.get(position).profile)
-            holder.name.text = items_cook.get(position).name
-            holder.img.text = items_cook.get(position).img
-            holder.title.text = items_cook.get(position).title
-
-        }
-
-
-        //커스텀 뷰 홀더의 클래스
-        //사이클에 있는 뷰 참조하는곳
-        inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            val profile = itemView.findViewById<ImageView>(R.id.recycle_cook_profile)
-            val name = itemView.findViewById<TextView>(R.id.recycle_cook_name)
-            val img = itemView.findViewById<Button>(R.id.recycle_cook_img)
-            val title = itemView.findViewById<TextView>(R.id.recycle_cook_title)
-
+        //결과 출력을 위한 배열에 추가
+        @SuppressLint("NotifyDataSetChanged")
+        override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults) {
+            filteredCookCycle.clear()
+            filteredCookCycle.addAll(filterResults.values as ArrayList<community_cook_recycle_data>)
+            notifyDataSetChanged()
         }
     }
+
+}
+
+
+
+
+// 자유게시판 리사이클러
+//https://greensky0026.tistory.com/226 이쪽 참고함 recycler 를 searchview하기
+class RecyclerFreeAdapter(private val items_free: ArrayList<community_free_recycle_data>) : RecyclerView.Adapter<RecyclerFreeAdapter.ViewHolder>(),Filterable {
+    //선언
+    var filteredFreeCycle = ArrayList<community_free_recycle_data>()
+    var itemFilter = ItemFilter()
+
+
+    //이너클래스 안에 선언
+    inner class ViewHolder(itemView: View, con: Context) : RecyclerView.ViewHolder(itemView) {
+
+        var recycle_free_profile: ImageView
+        var recycle_free_title: TextView
+
+
+        init {
+            recycle_free_profile = itemView.findViewById(R.id.recycle_free_profile)
+            recycle_free_title = itemView.findViewById(R.id.recycle_free_title)
+
+        }
+
+    }
+
+    //배열관리를 위한 filter구현
+    init {
+        filteredFreeCycle.addAll(items_free)
+    }
+
+    //리사이클러 구현
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val con = parent.context
+        val inflater = con.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val view = inflater.inflate(R.layout.item_community_free_notice_recycle, parent, false)
+
+        return ViewHolder(view, con)
+    }
+
+    //리사이클러 각 item값 지정
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val free_notice: community_free_recycle_data = filteredFreeCycle[position]
+        holder.recycle_free_profile.setImageResource(items_free.get(position).profile)
+        holder.recycle_free_title.text = free_notice.title
+    }
+
+    //필터를 통한 아이템의 카운트를 셈
+    override fun getItemCount(): Int {
+        return filteredFreeCycle.size
+    }
+
+    //필터 구현을 위한 get
+    override fun getFilter(): Filter {
+        return itemFilter
+    }
+
+    //배열 초기화시 필요함 검색마다 초기화해야하기때문
+    fun initFilteredPersons() {
+        filteredFreeCycle.clear()
+        filteredFreeCycle.addAll(items_free)
+    }
+
+
+    //필터의 이너클래스
+    inner class ItemFilter : Filter() {
+        override fun performFiltering(charSequence: CharSequence): FilterResults {
+            val filterString = charSequence.toString()
+            val results = FilterResults()
+
+            //검색이 필요없을 경우를 위해 원본 배열을 복제
+            val filteredList: ArrayList<community_free_recycle_data> =
+                ArrayList<community_free_recycle_data>()
+            //공백제외 아무런 값이 없을 경우 -> 원본 배열
+            if (filterString.trim { it <= ' ' }.isEmpty()) {
+                results.values = items_free
+                results.count = items_free.size
+
+                return results
+                //공백제외 2글자 이인 경우
+            } else if (filterString.trim { it <= ' ' }.length <= 2) {
+                for (free_notice in items_free) {
+                    if (free_notice.title.contains(filterString)) {
+                        filteredList.add(free_notice)
+                    }
+                }
+                //그 외의 경우(공백제외 2글자 초과)
+            } else {
+                for (free_notice in items_free) {
+                    if (free_notice.title.contains(filterString)) {
+                        filteredList.add(free_notice)
+                    }
+                }
+            }
+            results.values = filteredList
+            results.count = filteredList.size
+
+            return results
+        }
+
+        //결과 출력을 위한 배열에 추가
+        @SuppressLint("NotifyDataSetChanged")
+        override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults) {
+            filteredFreeCycle.clear()
+            filteredFreeCycle.addAll(filterResults.values as ArrayList<community_free_recycle_data>)
+            notifyDataSetChanged()
+        }
+    }
+}
+
+
+
+// Qna게시판 리사이클러
+class RecyclerQnaAdapter(private val items_qna: ArrayList<community_qna_recycle_data>) : RecyclerView.Adapter<RecyclerQnaAdapter.ViewHolder>(),Filterable {
+    //선언
+    var filteredQnaCycle = ArrayList<community_qna_recycle_data>()
+    var itemFilter = ItemFilter()
+
+
+    //이너클래스 안에 선언
+    inner class ViewHolder(itemView: View, con: Context) : RecyclerView.ViewHolder(itemView) {
+
+        var recycle_qna_profile: ImageView
+        var recycle_qna_title: TextView
+
+
+        init {
+            recycle_qna_profile = itemView.findViewById(R.id.recycle_qna_profile)
+            recycle_qna_title = itemView.findViewById(R.id.recycle_qna_title)
+
+        }
+
+    }
+
+    //배열관리를 위한 filter구현
+    init {
+        filteredQnaCycle.addAll(items_qna)
+    }
+
+    //리사이클러 구현
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val con = parent.context
+        val inflater = con.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val view = inflater.inflate(R.layout.item_community_qna_notice_recycle, parent, false)
+
+        return ViewHolder(view, con)
+    }
+
+    //리사이클러 각 item값 지정
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val free_notice: community_qna_recycle_data = filteredQnaCycle[position]
+        holder.recycle_qna_profile.setImageResource(items_qna.get(position).profile)
+        holder.recycle_qna_title.text = free_notice.title
+    }
+
+    //필터를 통한 아이템의 카운트를 셈
+    override fun getItemCount(): Int {
+        return filteredQnaCycle.size
+    }
+
+    //필터 구현을 위한 get
+    override fun getFilter(): Filter {
+        return itemFilter
+    }
+
+    //배열 초기화시 필요함 검색마다 초기화해야하기때문
+    fun initFilteredPersons() {
+        filteredQnaCycle.clear()
+        filteredQnaCycle.addAll(items_qna)
+    }
+
+
+    //필터의 이너클래스
+    inner class ItemFilter : Filter() {
+        override fun performFiltering(charSequence: CharSequence): FilterResults {
+            val filterString = charSequence.toString()
+            val results = FilterResults()
+
+            //검색이 필요없을 경우를 위해 원본 배열을 복제
+            val filteredList: ArrayList<community_qna_recycle_data> = ArrayList<community_qna_recycle_data>()
+            //공백제외 아무런 값이 없을 경우 -> 원본 배열
+            if (filterString.trim { it <= ' ' }.isEmpty()) {
+                results.values = items_qna
+                results.count = items_qna.size
+
+                return results
+                //공백제외 2글자 이인 경우
+            } else if (filterString.trim { it <= ' ' }.length <= 2) {
+                for (qna_notice in items_qna) {
+                    if (qna_notice.title.contains(filterString)) {
+                        filteredList.add(qna_notice)
+                    }
+                }
+                //그 외의 경우(공백제외 2글자 초과)
+            } else {
+                for (qna_notice in items_qna) {
+                    if (qna_notice.title.contains(filterString)) {
+                        filteredList.add(qna_notice)
+                    }
+                }
+            }
+            results.values = filteredList
+            results.count = filteredList.size
+
+            return results
+        }
+
+        //결과 출력을 위한 배열에 추가
+        @SuppressLint("NotifyDataSetChanged")
+        override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults) {
+            filteredQnaCycle.clear()
+            filteredQnaCycle.addAll(filterResults.values as ArrayList<community_qna_recycle_data>)
+            notifyDataSetChanged()
+        }
+    }
+}
+
+
 
 
 //  레시피 완성 리사이클러
 class RecyclerRecipeDoneImageAdapter(private val items_done_image: ArrayList<recipe_done_image_recycle_data>) : RecyclerView.Adapter<RecyclerRecipeDoneImageAdapter.CustomViewHolder>() {
 
 
-
     override fun getItemCount(): Int = items_done_image.size
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerRecipeDoneImageAdapter.CustomViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recipe_done_recycle, parent, false)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerRecipeDoneImageAdapter.CustomViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_recipe_done_recycle, parent, false)
         return CustomViewHolder(view).apply {
             itemView.setOnClickListener {
                 val curPos: Int = adapterPosition
@@ -264,7 +512,10 @@ class RecyclerRecipeDoneImageAdapter(private val items_done_image: ArrayList<rec
     }
 
 
-    override fun onBindViewHolder(holder: RecyclerRecipeDoneImageAdapter.CustomViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: RecyclerRecipeDoneImageAdapter.CustomViewHolder,
+        position: Int
+    ) {
         holder.image.setImageResource(items_done_image.get(position).image)
     }
 
@@ -273,108 +524,8 @@ class RecyclerRecipeDoneImageAdapter(private val items_done_image: ArrayList<rec
         val image = itemView.findViewById<ImageView>(R.id.recycle_recipe_done_image)
 
     }
-
-
 }
 
-
-// 검색 리사이클러 구현안됌
-class RecyclerSearchAdapter(private val items_search: ArrayList<search_recycle_data>) : RecyclerView.Adapter<RecyclerSearchAdapter.CustomViewHolder>(),Filterable {
-
-
-    var TAG = "PhoneBookListAdapter"
-
-    var filteredPersons = ArrayList<search_recycle_data>()
-    var itemFilter = ItemFilter()
-
-    init {
-        filteredPersons.addAll(items_search)
-    }
-
-    override fun getFilter(): Filter {
-        return itemFilter
-    }
-
-
-
-    inner class ItemFilter : Filter() {
-        override fun performFiltering(charSequence: CharSequence): FilterResults {
-            val filterString = charSequence.toString()
-            val results = FilterResults()
-            Log.d(TAG, "charSequence : $charSequence")
-
-            //검색이 필요없을 경우를 위해 원본 배열을 복제
-            val filteredList: ArrayList<search_recycle_data> = ArrayList<search_recycle_data>()
-            //공백제외 아무런 값이 없을 경우 -> 원본 배열
-            if (filterString.trim { it <= ' ' }.isEmpty()) {
-                results.values = items_search
-                results.count = items_search.size
-
-                return results
-                //공백제외 2글자 이하인 경우 -> 이름으로만 검색
-            } else if (filterString.trim { it <= ' ' }.length <= 2) {
-                for (person in items_search) {
-                    if (person.name.contains(filterString)) {
-                        filteredList.add(person)
-                    }
-                }
-                //그 외의 경우(공백제외 2글자 초과) -> 이름/전화번호로 검색
-            } else {
-                for (person in items_search) {
-                    if (person.name.contains(filterString) || person.inform.contains(filterString)) {
-                        filteredList.add(person)
-                    }
-                }
-            }
-            results.values = filteredList
-            results.count = filteredList.size
-
-            return results
-        }
-
-        override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults) {
-            filteredPersons.clear()
-            filteredPersons.addAll(filterResults.values as ArrayList<search_recycle_data>)
-            notifyDataSetChanged()
-        }
-    }
-
-
-
-    override fun getItemCount(): Int = items_search.size
-
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): RecyclerSearchAdapter.CustomViewHolder {
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_search_recycle, parent, false)
-        return CustomViewHolder(view).apply {
-            itemView.setOnClickListener {
-                val curPos: Int = adapterPosition
-                val profile: search_recycle_data = items_search.get(curPos)
-            }
-
-        }
-    }
-
-
-    override fun onBindViewHolder(holder: RecyclerSearchAdapter.CustomViewHolder, position: Int) {
-        holder.profile.setImageResource(items_search.get(position).profile)
-        holder.name.text = items_search.get(position).name
-        holder.inform.text = items_search.get(position).name
-    }
-
-
-    inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val profile = itemView.findViewById<ImageView>(R.id.recycle_search_profile)
-        val name = itemView.findViewById<Button>(R.id.recycle_search_name)
-        val inform = itemView.findViewById<TextView>(R.id.recycle_search_inform)
-
-    }
-
-}
 
 
 
