@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Food1/app/src/main/res/drawable/base_cook_time_img.xml" value="0.2755" />
+        <entry key="..\:/Food1/app/src/main/res/drawable/base_left_arrow.xml" value="0.2755" />
+        <entry key="..\:/Food1/app/src/main/res/drawable/base_open_book.xml" value="0.2755" />
+        <entry key="..\:/Food1/app/src/main/res/drawable/base_recipe_img.xml" value="0.2755" />
+        <entry key="..\:/Food1/app/src/main/res/drawable/base_theme_img.xml" value="0.2755" />
+        <entry key="..\:/Food1/app/src/main/res/drawable/color_greenbrown_gradient_circle.xml" value="0.2755" />
+        <entry key="..\:/Food1/app/src/main/res/drawable/color_orange_gradient_circle.xml" value="0.2755" />
+        <entry key="..\:/Food1/app/src/main/res/layout/activity_communuity.xml" value="0.2675925925925926" />
+        <entry key="..\:/Food1/app/src/main/res/layout/activity_main.xml" value="0.2675925925925926" />
+        <entry key="..\:/Food1/app/src/main/res/layout/activity_recipe.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food1/app/src/main/res/layout/fragment_home_right.xml" value="0.5208333333333334" />
         <entry key="..\:/Food_PJ/Food_Project/app/src/main/res/drawable/base_button_gradient.xml" value="0.2885" />
         <entry key="..\:/Food_PJ/Food_Project/app/src/main/res/drawable/base_cook_img.xml" value="0.2885" />
         <entry key="..\:/Food_PJ/Food_Project/app/src/main/res/drawable/base_search_img.xml" value="0.2885" />
@@ -61,8 +72,6 @@
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFoodFood/app/src/main/res/layout/activity_search.xml" value="0.1875" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFoodFood/app/src/main/res/layout/base_community_layout.xml" value="0.1875" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFoodFood/app/src/main/res/layout/base_main_layout.xml" value="0.1875" />
-        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFoodFood/app/src/main/res/layout/community_notice_cook.xml" value="0.1890625" />
-        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFoodFood/app/src/main/res/layout/cookbook_community.xml" value="0.1890625" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFoodFood/app/src/main/res/layout/cookbook_get.xml" value="0.1875" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFoodFood/app/src/main/res/layout/dialog_refrigerator_source_add.xml" value="0.1875" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFoodFood/app/src/main/res/layout/fragment_blank.xml" value="0.2105978260869565" />

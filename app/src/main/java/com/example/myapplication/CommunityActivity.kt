@@ -27,7 +27,7 @@ class CommunityActivity : AppCompatActivity() {
 
 
         //메인 화면 버튼으로 이동
-        communitytab_home_recipe.setOnClickListener{
+        community_button_recipe.setOnClickListener{
             var intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
@@ -35,19 +35,16 @@ class CommunityActivity : AppCompatActivity() {
 
         community_button_cook.setOnClickListener {
             var intent = Intent(this,Community_notice_cook_Activity::class.java)
-            intent.flags=Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
         community_button_qna.setOnClickListener {
             var intent = Intent(this,Community_notice_qna_Activity::class.java)
-            intent.flags=Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
         community_button_free.setOnClickListener {
             var intent = Intent(this,Community_notice_free_Activity::class.java)
-            intent.flags=Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
