@@ -5,11 +5,14 @@ import android.app.Dialog
 import android.content.Context
 import android.view.WindowManager
 import android.widget.EditText
+import android.widget.TextView
 import kotlinx.android.synthetic.main.item_dialog_refrigerator_material.*
 
 class Dialog_Refrigerator(context: Context){
     //변수 선언
     private val dialog = Dialog(context)
+
+
     private lateinit var onClickListener: OnDialogClickListener
 
     //클릭 이벤트 설정

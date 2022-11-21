@@ -1,16 +1,13 @@
 package com.example.myapplication.Home
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Dialog_Refrigerator
-import com.example.myapplication.R
 import com.example.myapplication.RecyclerRefrigeratorSourceAdapter
 import com.example.myapplication.databinding.FragmentHomeLeftBinding
 import com.example.myapplication.databinding.ItemRefrigeratorSourceRecycleBinding
@@ -79,46 +76,46 @@ class home_left : Fragment() {
 
         //아래는 다이얼로그에 대한 설정이다.
         //item_regierator_addbutton의 버튼을 클릭시 작동하는 함수이다.
-        item_regierator_addbutton.setOnClickListener {
+        /*item_regierator_addbutton.setOnClickListener {
 
             //Dialog_Refrigerator을 연결
             val dialog = context?.let { Dialog_Refrigerator(it) }
 
             //다이얼로그 작동
             dialog?.showDialog()
-        }
+        }*/
 
-        refigerator_vlist1.setOnClickListener(object : RecyclerRefrigeratorSourceAdapter.OnItemClickListener,
-            View.OnClickListener {
-           /* override fun onItemClick(v: View, data: refrigerator_source_recycle_data, pos: Int) {
+/*refigerator_vlist1.setOnClickListener(object : RecyclerRefrigeratorSourceAdapter,
+    View.OnClickListener {
+    override fun onItemClick(v: View, data: refrigerator_source_recycle_data, pos: Int) {
 
-                val vlist1dialog= AlertDialog.Builder(context)
-                var v1 = layoutInflater.inflate(R.layout.item_dialog_regrigerator_material,null)
-                vlist1dialog.setView(v1)
+        val vlist1dialog= AlertDialog.Builder(context)
+        var v1 = layoutInflater.inflate(R.layout.item_dialog_regrigerator_material,null)
+        vlist1dialog.setView(v1)
 
-                vlist1dialog.show()
-            }*/
+        vlist1dialog.show()
+    }*/
 
 
-            override fun onClick(v: View?) {
-                /*val vlist1dialog= AlertDialog.Builder(context)
-                var v1 = layoutInflater.inflate(R.layout.item_dialog_regrigerator_material,null)
-                vlist1dialog.setView(v1)
+/*override fun onClick(v: View?) {
+    val vlist1dialog= AlertDialog.Builder(context)
+    var v1 = layoutInflater.inflate(R.layout.item_dialog_regrigerator_material,null)
+    vlist1dialog.setView(v1)
 
-                vlist1dialog.show()
-                Toast.makeText(view.context,
-                "출력",
-                Toast.LENGTH_SHORT).show()*/
-            }
+    vlist1dialog.show()
+    Toast.makeText(view.context,
+    "출력",
+    Toast.LENGTH_SHORT).show()
+}*/
 
-            override fun onItemClick(v: View, data: refrigerator_source_recycle_data, pos: Int) {
-                val vlist2dialog= AlertDialog.Builder(context)
-                var v2 = layoutInflater.inflate(R.layout.item_dialog_refrigerator_source_add,null)
-                vlist2dialog.setView(v2)
+/*override fun onItemClick(v: View, data: refrigerator_source_recycle_data, pos: Int) {
+    val vlist2dialog= AlertDialog.Builder(context)
+    var v2 = layoutInflater.inflate(R.layout.item_dialog_refrigerator_source_add,null)
+    vlist2dialog.setView(v2)
 
-                vlist2dialog.show()
-            }
-        })
+    vlist2dialog.show()
+}
+})*/
 
-    }
+}
 }
