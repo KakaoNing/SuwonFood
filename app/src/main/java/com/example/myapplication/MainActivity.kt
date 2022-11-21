@@ -11,6 +11,8 @@ import com.example.myapplication.Home.home_left
 import com.example.myapplication.Home.home_middle
 import com.example.myapplication.Home.home_right
 import com.example.myapplication.Other.home_viewpager
+import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.databinding.FragmentCookbookCommunityViewpager2Binding
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.base_main_layout.*
@@ -21,6 +23,8 @@ import kotlinx.android.synthetic.main.base_main_layout.*
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     //네비게이션뷰 변수 설정
     lateinit var navigationView: NavigationView
+    private var _binding: ActivityMainBinding?=null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +54,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //커뮤니티 버튼 클릭 이동
         home_community.setOnClickListener {
             var intent = Intent(this, CommunityActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
@@ -65,6 +70,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.tool_search->{
                 var intent = Intent(this,SearchActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             }
 

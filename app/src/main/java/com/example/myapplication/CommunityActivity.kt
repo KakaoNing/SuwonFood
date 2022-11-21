@@ -25,25 +25,34 @@ class CommunityActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
 
+
+        //메인 화면 버튼으로 이동
+        communitytab_home_recipe.setOnClickListener{
+            var intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
         community_button_cook.setOnClickListener {
             var intent = Intent(this,Community_notice_cook_Activity::class.java)
+            intent.flags=Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
         community_button_qna.setOnClickListener {
             var intent = Intent(this,Community_notice_qna_Activity::class.java)
+            intent.flags=Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
         community_button_free.setOnClickListener {
             var intent = Intent(this,Community_notice_free_Activity::class.java)
+            intent.flags=Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
+
     }
-
-
-
 
 
 
@@ -51,6 +60,13 @@ class CommunityActivity : AppCompatActivity() {
         when(item.itemId){
             android.R.id.home->{
                 community_main.openDrawer(GravityCompat.START)
+            }
+
+            //검색기능
+            R.id.tool_search->{
+                var intent = Intent(this,SearchActivity::class.java)
+                //intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)
