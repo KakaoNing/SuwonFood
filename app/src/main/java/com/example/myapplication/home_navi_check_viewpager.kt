@@ -48,6 +48,7 @@ class home_viewpager : Fragment() {
 
         //페이저 어뎁터 맨 처음 화면을 중간에 있는 home_middle()로 설정
         home_pager.setCurrentItem(1, false)
+        //
 
     }
 }
