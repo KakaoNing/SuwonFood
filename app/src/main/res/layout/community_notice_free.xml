@@ -1,9 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Community_notice_free_Activity">
+    android:orientation="vertical"
+    tools:context=".Community_notice_cook_Activity"
+    android:background="@drawable/book_img">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/opt_search_free"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="40dp"
+            app:iconifiedByDefault="true"
+            app:searchIcon="@drawable/base_search_img"
+            app:queryHint="검색어를  입력하세요"
+            android:translationZ="1dp"
+            app:queryBackground="@drawable/color_orange_gradient_circle"
+            android:layoutDirection="rtl"
+
+            />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:text="자유 게시판"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:backgroundTintMode="screen"
+            android:fontFamily="@font/diary"
+            android:textColor="#FFB300"/>
+
+
+
+        <Button
+            android:id="@+id/community_notice_free_button_write"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginRight="68dp"
+            android:background="#00FFFFFF"
+            android:text="글쓰기"
+            android:textSize="30dp"
+            android:backgroundTintMode="screen"
+            android:fontFamily="@font/diary"
+            android:textColor="#FFB300"
+            android:textStyle="bold"
+            android:drawableEnd="@drawable/base_write_img"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!---
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="end">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="최신순"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추천순"/>
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/opt_community_notice_free_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_community_free_notice_recycle"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

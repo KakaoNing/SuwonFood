@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_communuity.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.base_community_layout.*
 
+
 class CommunityActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

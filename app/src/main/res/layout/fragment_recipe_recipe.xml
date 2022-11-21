@@ -3,8 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".recipe_recipe"
-    android:background="#FEF6B6">
+    tools:context=".recipe_recipe">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/frag_recipe_recipe_pager"
+        android:layout_width="375dp"
+        android:layout_marginLeft="17dp"
+        android:layout_height="350dp"
+        android:background="#88FFAB40"/>
+    <Button
+        android:id="@+id/opt_recipe_button_left"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="30dp"
+        android:drawableTop="@drawable/base_left_arrow"
+        android:background="#00FFFFFF"/>
+    <Button
+        android:id="@+id/opt_recipe_button_right"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="300dp"
+        android:layout_gravity="bottom"
+        android:drawableTop="@drawable/base_right_arrow"
+        android:background="#00FFFFFF"/>
 
 
 

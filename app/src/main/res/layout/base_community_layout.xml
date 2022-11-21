@@ -6,29 +6,9 @@
 
     <include layout = "@layout/opt_main_toolbar"/>
 
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FF9797"
-        android:drawableBottom="@drawable/ex_comu_recipe"
-        android:text="오늘의 핫 레시피"
-        android:textColor="#7AFF56"
-        android:textSize="30dp"
-        android:id="@+id/comunity_recipe"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#B6E37C"
-        android:drawableBottom="@drawable/ex_comu_recipe"
-        android:text="오늘의 핫 게시글"
-        android:textColor="#E62BFF"
-        android:textSize="30dp" />
-
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
@@ -36,10 +16,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/comunity_cook_notice"
+            android:drawableTop="@drawable/base_cook_img"
             android:text="요리게시판"
             android:textSize="20dp"
-            android:layout_marginBottom="60dp"/>
+            android:background="@drawable/button_notice_color"
+            android:textStyle="bold"
+            android:backgroundTintMode="screen"
+            android:fontFamily="@font/diary"/>
 
         <Button
             android:id="@+id/community_button_qna"
@@ -48,22 +31,91 @@
             android:layout_weight="1"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:layout_marginBottom="60dp"
-            android:drawableTop="@drawable/comunity_qa_notice"
+            android:drawableTop="@drawable/base_question_img"
             android:text="질문게시판"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:background="@drawable/button_notice_color"
+            android:textStyle="bold"
+            android:backgroundTintMode="screen"
+            android:fontFamily="@font/diary"/>
 
         <Button
             android:id="@+id/community_button_free"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginBottom="60dp"
-            android:drawableTop="@drawable/comunity_free_notice"
+            android:drawableTop="@drawable/base_free_notice_img"
             android:text="자유게시판"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:background="@drawable/button_notice_color"
+            android:textStyle="bold"
+            android:backgroundTintMode="screen"
+            android:fontFamily="@font/diary"/>
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Today's Recipe"
+            android:textSize="40dp"
+            android:fontFamily="@font/diary"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#41000000"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="380dp"
+            android:layout_height="100dp"/>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Today's Post"
+            android:textSize="40dp"
+            android:fontFamily="@font/diary"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#41000000"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="380dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"/>
+
+        <!---<Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF9797"
+            android:drawableBottom="@drawable/ex_comu_recipe"
+            android:text="오늘의 핫 레시피"
+            android:textColor="#7AFF56"
+            android:textSize="30dp"
+            android:id="@+id/comunity_recipe"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B6E37C"
+            android:drawableBottom="@drawable/ex_comu_recipe"
+            android:text="오늘의 핫 게시글"
+            android:textColor="#E62BFF"
+            android:textSize="30dp" />-->
+
+
+    </LinearLayout>
+
+
+
+
 
 </LinearLayout >

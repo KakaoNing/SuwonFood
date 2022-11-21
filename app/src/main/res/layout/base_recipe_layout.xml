@@ -4,53 +4,70 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
-    <include layout="@layout/opt_main_toolbar"/>
-
     <LinearLayout
-        android:id="@+id/screen_recipe_check01"
-        android:layout_marginTop="55dp"
+        android:id="@+id/layout_recipe_toolbar_check"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/recipe"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/screen_recipe_check01"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <com.google.android.material.tabs.TabLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            app:tabMode="fixed"
-            android:id="@+id/recipe_tab">
-
-
-
-
-        </com.google.android.material.tabs.TabLayout>
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/recipe_pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="57dp">
-
-
-
-        </androidx.viewpager2.widget.ViewPager2>
-
+        <include layout="@layout/opt_main_toolbar" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/layout_recipe_toolbar_check"
+        >
+
+        <LinearLayout
+            android:id="@+id/screen_recipe_check01"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <ImageView
+                android:layout_width="375dp"
+                android:layout_marginLeft="17dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ex_comu_recipe"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/screen_recipe_check01"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+
+                android:id="@+id/recipe_tab"
+                android:layout_width="375dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginLeft="17dp"
+                android:background="#FFAB40"
+                app:tabMode="fixed">
+
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/recipe_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
 
 
 

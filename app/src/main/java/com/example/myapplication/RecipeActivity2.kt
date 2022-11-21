@@ -1,93 +1,96 @@
 package com.example.myapplication
 
-import android.app.Activity
-import android.widget.EditText
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.LinearLayout
-import org.xmlpull.v1.XmlPullParserFactory
-import org.xmlpull.v1.XmlPullParser
-import java.io.InputStreamReader
-import java.lang.Exception
-import java.net.URL
-import java.net.URLEncoder
 
-class RecipeActivity2 : Activity() {
-    var edit: EditText? = null
-    var text: TextView? = null
-    var key = "a0b0314639de4e13bbbb"
-    var data: String? = null
+import android.widget.AdapterView.OnItemClickListener
+
+import android.content.Intent
+import android.widget.ListView
+import android.widget.SearchView
+
+import java.util.*
+
+class RecipeActivity2 : AppCompatActivity() {
+    var listView: ListView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe2)
-        edit = findViewById<View>(R.id.edit) as EditText
-        text = findViewById<View>(R.id.text) as TextView
+        searchRecipe()
+        setUpData() //CE
+        setUpList() //
+        setUpOnClickListener() //상세페이지 이벤트
     }
 
-    //Button을 클릭했을 때 자동으로 호출되는 callback method
-    fun mOnClick(v: View) {
-        when (v.id) {
-            R.id.button ->
-                Thread {
-                    // TODO Auto-generated method stub
-                    data = xmlData //아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
-                    runOnUiThread {
-                        // TODO Auto-generated method stub
-                        text!!.text = data //TextView에 문자열 data출력
-                    }
-                }.start()
-        }
-    }// TODO Auto-generated catch blocke.printStackTrace();
-
-
-    private val xmlData: String
-        get() {
-            val buffer = StringBuffer()
-            val str = edit!!.text.toString() //EditText에 작성된 Text얻어오기
-            val recipe = URLEncoder.encode(str) //한글의 경우 인식이 안되기에 utf-8 방식으로 encoding= //검색 위한 변수
-            val queryUrl = ("https://openapi.foodsafetykorea.go.kr/api/" + key + "/COOKRCP01/xml/1/1000/"
-                    +"RCP_NM="+recipe) //요청 UR
-
-            try {
-                val url = URL(queryUrl) //문자열로 된 요청 url을 URL 객체로 생성.
-                val `is` = url.openStream() //url위치로 입력스트림 연결
-                val factory = XmlPullParserFactory.newInstance()
-                val xpp = factory.newPullParser()
-                xpp.setInput(InputStreamReader(`is`, "UTF-8")) //inputstream 으로부터 xml 입력받기
-                var tag: String
-                xpp.next()
-                var eventType = xpp.eventType
-                while (eventType != XmlPullParser.END_DOCUMENT) {
-                    when (eventType) {
-                        XmlPullParser.START_DOCUMENT -> buffer.append("파싱 시작...\n\n")
-                        XmlPullParser.START_TAG -> {
-                            tag = xpp.name //태그 이름 얻어오기
-                            if (tag == "item") ; else if (tag == "row id") {
-                                buffer.append()
-                                xpp.next()
-                                buffer.append(xpp.text) //addr 요소의 TEXT 읽어와서 문자열버퍼에 추가
-                                buffer.append("\n") //줄바꿈 문자 추가
-
-
-                                }
-
-                            }
-                        XmlPullParser.TEXT -> {}
-                        XmlPullParser.END_TAG -> {
-                            tag = xpp.name //태그 이름 얻어오기
-                            if (tag == "item") buffer.append("\n") // 첫번째 검색결과종료..줄바꿈
-
-                        }
-
-                    }
-                    eventType = xpp.next()
-                }
-            } catch (e: Exception) {
-                // TODO Auto-generated catch blocke.printStackTrace();
+    private fun searchRecipe() {
+        val searchView = findViewById<SearchView>(R.id.recipe_search_view)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
             }
-            buffer.append("파싱 끝\n")
-            return buffer.toString() //StringBuffer 문자열 객체 반환
-        }
 
+            override fun onQueryTextChange(newText: String): Boolean {
+                val filterRecipe = ArrayList<Recipe?>()
+                for (i in recipeList.indices) {
+                    val recipe = recipeList[i]
+                    //데이터와 비교해서 내가 쓴 레시피 이름이 있다면
+                    if (recipe != null) {
+                        if (recipe.name.lowercase(Locale.getDefault())
+                                .contains(newText.lowercase(Locale.getDefault()))
+                        ) {
+                            filterRecipe.add(recipe)
+                        }
+                    }
+                }
+                val adapter = RecipeAdapter(applicationContext, 0, filterRecipe)
+                listView!!.adapter = adapter
+                return false
+            }
+        })
+    }
+
+    /**
+     * 데이터 셋팅
+     */
+    private fun setUpData() {
+        val a = Recipe("0", "갈비찜", R.drawable.a)
+        recipeList.add(a)
+        val b = Recipe("1", "김치찌개", R.drawable.b)
+        recipeList.add(b)
+        val c = Recipe("2", "단호박소고기롤", R.drawable.c)
+        recipeList.add(c)
+        val d = Recipe("3", "닭강정", R.drawable.d)
+        recipeList.add(d)
+        val e = Recipe("4", "두부김치", R.drawable.e)
+        recipeList.add(e)
+        val f = Recipe("5", "삼계탕", R.drawable.f)
+        recipeList.add(f)
+        val g = Recipe("6", "잔치국수", R.drawable.g)
+        recipeList.add(g)
+        val h = Recipe("7", "짜장면", R.drawable.h)
+        recipeList.add(h)
+        val i = Recipe("8", "오뎅탕", R.drawable.i)
+        recipeList.add(i)
+        val j = Recipe("9", "쭈꾸미볶음", R.drawable.j)
+        recipeList.add(j)
+    }
+
+    private fun setUpList() {
+        listView = findViewById(R.id.recipe_listView)
+        val adapter = RecipeAdapter(applicationContext, 0, recipeList)
+        listView?.setAdapter(adapter)
+    }
+
+    private fun setUpOnClickListener() {
+        listView!!.onItemClickListener = OnItemClickListener { adapterView, view, position, I ->
+            val selectRecipe = listView!!.getItemAtPosition(position) as Recipe
+            val showDetail = Intent(applicationContext, DetailActivity::class.java)
+            showDetail.putExtra("name", selectRecipe.name)
+            startActivity(showDetail)
+        }
+    }
+
+    companion object {
+        var recipeList = ArrayList<Recipe?>()
+    }
 }

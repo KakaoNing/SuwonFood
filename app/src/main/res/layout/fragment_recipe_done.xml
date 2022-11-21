@@ -7,23 +7,51 @@
     tools:context=".recipe_done">
 
     <TableLayout
-        android:layout_width="match_parent"
+        android:layout_width="375dp"
+        android:layout_marginLeft="17dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="#88FFAB40">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:text="요리완성"
-            android:textSize="30dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/opt_recycle_recipe_done_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            tools:listitem="@layout/item_recipe_done_recycle">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:text="레시피"
-            android:textSize="30dp" />
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TableRow>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textSize="25dp"
+                android:text="요리완성"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:backgroundTintMode="screen"
+                android:background="#FFF25A" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textSize="25dp"
+                android:text="나만의 레시피"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:backgroundTintMode="screen"
+                android:background="#FFF25A"/>
+
+        </TableRow>
+
+
+
+
 
 
 
@@ -32,6 +60,16 @@
 
 
     </TableLayout>
+
+
+
+
+
+
+
+
+
+
 
 
 

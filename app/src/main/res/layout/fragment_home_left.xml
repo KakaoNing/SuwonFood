@@ -1,16 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home_left">
+    tools:context=".Home.home_left">
 
-    <!-- TODO: Update blank fragment layout -->
+
+
+    <Button
+        android:id="@+id/item_regierator_addbutton"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="재료 추가"
+        android:background="@color/material_dynamic_neutral90"/>
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="왼쪽화면"
-        android:textSize="50sp"
-        android:gravity="center"/>
+        android:id="@+id/item_refigerator_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="냉장고"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView_freezer"
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="냉동"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/item_refigerator_name"
+        app:layout_constraintTop_toBottomOf="@+id/item_refigerator_name" />
+
+    <TextView
+        android:id="@+id/textView_refrigerator"
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="16dp"
+        android:text="냉장"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_freezer"
+        app:layout_constraintTop_toBottomOf="@+id/item_refigerator_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+    <LinearLayout
+        android:id="@+id/refigerator_linearLayout"
+        android:layout_width="393dp"
+        android:layout_height="695dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/refigerator_vlist1"
+        android:layout_width="170dp"
+        android:layout_height="400dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView_refrigerator"
+        app:layout_constraintStart_toStartOf="@+id/textView_refrigerator"
+        app:layout_constraintTop_toBottomOf="@+id/textView_freezer"
+        tools:listitem="@layout/item_refrigerator_source_recycle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/refigerator_vlist2"
+        android:layout_width="170dp"
+        android:layout_height="400dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView_freezer"
+        app:layout_constraintStart_toStartOf="@+id/textView_freezer"
+        app:layout_constraintTop_toBottomOf="@+id/textView_refrigerator"
+        tools:listitem="@layout/item_refrigerator_source_recycle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
