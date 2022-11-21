@@ -12,6 +12,7 @@ class Community_notice_free_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.community_notice_free)
 
+        //
 
         //배열에 추가 img는 이미지로 수정가능
         val items  = arrayListOf(
