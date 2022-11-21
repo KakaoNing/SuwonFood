@@ -40,11 +40,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         //뒤로가기 버튼
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
         //네비게이션 띄우는 인디케이터 튤바에 생성
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
-
-        /*supportActionBar!!.setDisplayShowTitleEnabled(false)*/
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
 
 
         //커뮤니티 버튼 클릭 이동

@@ -34,12 +34,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Button
+        <ImageView
             android:id="@+id/recycle_cook_img"
             android:layout_width="320dp"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:background="@drawable/color_brown_gradient_square"
-            android:drawableTop="@drawable/comunity_free_notice" />
+            android:src="@drawable/community_qa_notice_qa_img"/>
 
         <TextView
             android:id="@+id/recycle_cook_title"
@@ -51,7 +51,8 @@
             android:textStyle="bold"
             android:text="이미지에 해당하는 제목"
             android:textColor="#FFB300"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:gravity="center"/>
     </LinearLayout>
 
 

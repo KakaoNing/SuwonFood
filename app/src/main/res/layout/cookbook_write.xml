@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
-            android:text="요리게시판 글쓰기"
+            android:text="레시피 작성"
             android:textSize="40dp"
             android:gravity="center"
             android:textStyle="bold"
@@ -97,7 +97,7 @@
 
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/community_notice_cook_write_pager"
+            android:id="@+id/cookbook_recipe_inform_pager"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_width="350dp"

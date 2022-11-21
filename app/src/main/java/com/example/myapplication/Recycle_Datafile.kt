@@ -46,7 +46,7 @@ data class community_cook_recycle_data(
 
     val profile : Int,
     val name : String,
-    val img : String,
+    val img : Int,
     val title : String
 
 

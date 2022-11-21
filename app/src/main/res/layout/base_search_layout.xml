@@ -9,20 +9,22 @@
 
 
     <androidx.appcompat.widget.SearchView
-        android:id="@+id/opt_search_recipe"
+        android:id="@+id/opt_search_cook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:iconifiedByDefault="false"
-        app:queryHint="검색어를  입력하세요"
+        app:queryHint="레시피를 검색해보세요"
         />
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/opt_recycle_search"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/opt_community_notice_cook_recycle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_search_recycle" />
+        tools:listitem="@layout/item_community_cook_notice_recycle" />
 
 
 </LinearLayout>

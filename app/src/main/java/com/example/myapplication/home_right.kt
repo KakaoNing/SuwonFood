@@ -88,7 +88,7 @@ class home_right : Fragment() {
         cookbook_create.setOnClickListener {
 
             //Cookbook_Write_Activity::class.java로 화면전환(intent 사용)
-            var intent = Intent(context, Cookbook_Write_Activity::class.java)
+            var intent = Intent(context, CookBook_Write_Activity::class.java)
             startActivity(intent)
         }
 
