@@ -101,8 +101,6 @@ class Community_notice_free_Activity : AppCompatActivity() {
 //        FreeData.add(community_free_recycle_data(R.drawable.base_user_img,"개발 진행중","요리가 쉬워요"))
 //        FreeData.add(community_free_recycle_data(R.drawable.base_user_img,"today","스파게티 만들기"))
 //        FreeData.add(community_free_recycle_data(R.drawable.base_user_img,"tomorrow","개발 진행중"))
-
-
         return FreeData
     }
 

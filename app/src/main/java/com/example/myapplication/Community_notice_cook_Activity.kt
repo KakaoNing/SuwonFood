@@ -4,9 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.community_notice_cook.*
 
 class Community_notice_cook_Activity : AppCompatActivity() {
@@ -17,6 +22,8 @@ class Community_notice_cook_Activity : AppCompatActivity() {
     lateinit var items_cook: ArrayList<community_cook_recycle_data>
     lateinit var opt_search_cook: SearchView
 
+    val db = Firebase.firestore
+    val getDB = db.getNamedQuery("free")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +81,7 @@ class Community_notice_cook_Activity : AppCompatActivity() {
         opt_community_notice_cook_recycle.layoutManager = LinearLayoutManager(this)
         recyclerCookAdapter = RecyclerCookAdapter(items_cook)
         opt_community_notice_cook_recycle.adapter = recyclerCookAdapter
+        recyclerCookAdapter?.notifyDataSetChanged()
 
     }
 
@@ -81,11 +89,28 @@ class Community_notice_cook_Activity : AppCompatActivity() {
     //recycler에 값을 추가한다
     fun AddCookData(): ArrayList<community_cook_recycle_data> {
         var CookData = ArrayList<community_cook_recycle_data>()
-        CookData.add(community_cook_recycle_data(R.drawable.base_user_img,"name",R.drawable.book_img,"egg"))
-        CookData.add(community_cook_recycle_data(R.drawable.base_user_img,"name",R.drawable.book_img,"kimchi"))
-        CookData.add(community_cook_recycle_data(R.drawable.base_user_img,"name",R.drawable.book_img,"fri"))
-        CookData.add(community_cook_recycle_data(R.drawable.base_user_img,"name",R.drawable.book_img,"oil"))
-        CookData.add(community_cook_recycle_data(R.drawable.base_user_img,"name",R.drawable.book_img,"pasta"))
+        Log.d("초기 FREEdata",CookData.toString())
+        db.collection("free")
+            .get()
+            .addOnSuccessListener{ result ->
+                //val itemList = mutableListOf<community_free_recycle_data>()
+                for(document in result){
+                    val item_cook = document.toObject<community_cook_recycle_data>()
+                    //item.title=document.data.toString()
+                    items_cook.add(item_cook)
+                    Log.d("kimhwan", "${document.id} => ${document.data}")
+                    Log.d("item", item_cook.toString())
+                    Log.d("FreeData", CookData.toString())
+                    Log.d("items_free",items_cook.toString())
+                    //recycler에 값을 추가한다
+                    setAdapter()
+                }
+                Log.d("FreeData","데이터 불러오기 성공");
+            }
+            .addOnFailureListener{ e ->
+                Log.d("kimhwan","데이터 불러오지 못했습니다.", e)
+                Toast.makeText(this,"서버로부터 데이터를 불러오지 못했습니다.", Toast.LENGTH_SHORT).show()
+            }
 
         return CookData
     }

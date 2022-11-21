@@ -2,11 +2,15 @@ package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_cookbook_get_favorite.view.*
 import kotlinx.android.synthetic.main.item_cookbook_get_recommand.view.*
 
@@ -201,9 +205,9 @@ class RecyclerCookAdapter(var items_cook: ArrayList<community_cook_recycle_data>
     //리사이클러 각 item값 지정
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val cook_notice: community_cook_recycle_data = filteredCookCycle[position]
-        holder.recycle_cook_profile.setImageResource(items_cook.get(position).profile)
+        items_cook.get(position).profile?.let { holder.recycle_cook_profile.setImageResource(it) }
         holder.recycle_cook_name.text = cook_notice.name
-        holder.recycle_cook_img.setImageResource(items_cook.get(position).img)
+        items_cook.get(position).img?.let { holder.recycle_cook_img.setImageResource(it) }
         holder.recycle_cook_title.text=cook_notice.title
     }
 
@@ -240,14 +244,14 @@ class RecyclerCookAdapter(var items_cook: ArrayList<community_cook_recycle_data>
                 //공백제외 2글자 이인 경우
             } else if (filterString.trim { it <= ' ' }.length <= 2) {
                 for (cook_notice in items_cook) {
-                    if (cook_notice.title.contains(filterString)) {
+                    if (cook_notice.title?.contains(filterString) == true) {
                         filteredList.add(cook_notice)
                     }
                 }
                 //그 외의 경우(공백제외 2글자 초과)
             } else {
                 for (cook_notice in items_cook) {
-                    if (cook_notice.title.contains(filterString)){
+                    if (cook_notice.title?.contains(filterString) == true){
                         filteredList.add(cook_notice)
                     }
                 }
@@ -268,9 +272,6 @@ class RecyclerCookAdapter(var items_cook: ArrayList<community_cook_recycle_data>
     }
 
 }
-
-
-
 
 // 자유게시판 리사이클러
 //https://greensky0026.tistory.com/226 이쪽 참고함 recycler 를 searchview하기
@@ -396,14 +397,28 @@ class RecyclerQnaAdapter(private val items_qna: ArrayList<community_qna_recycle_
 
         var recycle_qna_profile: ImageView
         var recycle_qna_title: TextView
+        var recycle_qna_script: TextView
 
+        fun bind(item: community_qna_recycle_data){
+            recycle_qna_title.text=item.title
+            recycle_qna_script.text=item.script
+        }
 
         init {
             recycle_qna_profile = itemView.findViewById(R.id.recycle_qna_profile)
             recycle_qna_title = itemView.findViewById(R.id.recycle_qna_title)
+            recycle_qna_script = itemView.findViewById(R.id.recycle_qna_script)
+
+            itemView.setOnClickListener(View.OnClickListener {
+                Log.d("Click",recycle_qna_script.text.toString()+"클릭되었다")
+                val intent = Intent(con, Write_Community_Notice_Qna_Info_Activity::class.java)
+                intent.putExtra("title",recycle_qna_title.text.toString())
+                intent.putExtra("script",recycle_qna_script.text.toString())
+//                intent.putExtra("title",recycle_qna_profile.text.toString())
+                con.startActivity(intent)
+            })
 
         }
-
     }
 
     //배열관리를 위한 filter구현
@@ -423,8 +438,9 @@ class RecyclerQnaAdapter(private val items_qna: ArrayList<community_qna_recycle_
     //리사이클러 각 item값 지정
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val free_notice: community_qna_recycle_data = filteredQnaCycle[position]
-        holder.recycle_qna_profile.setImageResource(items_qna.get(position).profile)
+        items_qna.get(position).profile?.let { holder.recycle_qna_profile.setImageResource(it) }
         holder.recycle_qna_title.text = free_notice.title
+        holder.recycle_qna_script.text = free_notice.script
     }
 
     //필터를 통한 아이템의 카운트를 셈
@@ -461,14 +477,14 @@ class RecyclerQnaAdapter(private val items_qna: ArrayList<community_qna_recycle_
                 //공백제외 2글자 이인 경우
             } else if (filterString.trim { it <= ' ' }.length <= 2) {
                 for (qna_notice in items_qna) {
-                    if (qna_notice.title.contains(filterString)) {
+                    if (qna_notice.title?.contains(filterString) == true) {
                         filteredList.add(qna_notice)
                     }
                 }
                 //그 외의 경우(공백제외 2글자 초과)
             } else {
                 for (qna_notice in items_qna) {
-                    if (qna_notice.title.contains(filterString)) {
+                    if (qna_notice.title?.contains(filterString) == true) {
                         filteredList.add(qna_notice)
                     }
                 }

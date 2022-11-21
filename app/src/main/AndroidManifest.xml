@@ -59,6 +59,9 @@
             android:name=".RecipeActivity"
             android:exported="true" />
         <activity
+            android:name=".Write_Community_Notice_Qna_Info_Activity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -68,5 +71,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

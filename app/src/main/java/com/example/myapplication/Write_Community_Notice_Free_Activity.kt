@@ -52,6 +52,7 @@ class Write_Community_Notice_Free_Activity : AppCompatActivity() {
 
             finish()
 
+
         })
 
     }
