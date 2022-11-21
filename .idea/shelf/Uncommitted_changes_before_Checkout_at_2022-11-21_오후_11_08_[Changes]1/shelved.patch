@@ -1,0 +1,1830 @@
+Index: app/src/main/java/com/example/myapplication/RecipeActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.myapplication\r\n\r\nimport android.os.Bundle\r\nimport android.view.Menu\r\nimport android.view.MenuItem\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.core.view.GravityCompat\r\nimport androidx.viewpager2.widget.ViewPager2\r\nimport com.example.myapplication.databinding.ActivityRecipeBinding\r\nimport com.google.android.material.tabs.TabLayout\r\nimport com.google.android.material.tabs.TabLayoutMediator\r\nimport kotlinx.android.synthetic.main.activity_main.*\r\nimport kotlinx.android.synthetic.main.activity_recipe.*\r\nimport kotlinx.android.synthetic.main.base_recipe_layout.*\r\nimport kotlinx.android.synthetic.main.base_main_layout.*\r\nimport kotlinx.android.synthetic.main.base_recipe_layout.*\r\n\r\nclass RecipeActivity : AppCompatActivity() {\r\n\r\n\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        val binding = ActivityRecipeBinding.inflate(layoutInflater)\r\n        setContentView(binding.root)\r\n\r\n\r\n\r\n        //툴바\r\n        setSupportActionBar(findViewById(R.id.toolbar))\r\n        supportActionBar!!.setDisplayHomeAsUpEnabled(true)\r\n        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)\r\n        supportActionBar!!.setDisplayShowTitleEnabled(false)\r\n\r\n\r\n        //탭 설정\r\n        recipe_tab.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{\r\n            override fun onTabReselected(tab: TabLayout.Tab?) { // 이미 선택된 탭 다시 되었을때\r\n\r\n            }\r\n\r\n            override fun onTabSelected(tab: TabLayout.Tab?) {  // 탭 선택되었을때\r\n                tab?.position?.let{recipe_pager.setCurrentItem(it,false)}\r\n\r\n            }\r\n\r\n            override fun onTabUnselected(tab: TabLayout.Tab?) { // 탭 선택 안된상태로 변경 되었을때\r\n\r\n            }\r\n        })\r\n\r\n\r\n\r\n\r\n\r\n        recipe_pager.adapter = RecipePagerAdapter(this)\r\n\r\n        recipe_pager.run{\r\n            isUserInputEnabled= false\r\n        }\r\n\r\n        TabLayoutMediator(recipe_tab,recipe_pager) {tab,position ->\r\n            when(position){\r\n                0 -> tab.text = \"소개\"\r\n                1 -> tab.text = \"조리도구\"\r\n                2 -> tab.text = \"재료\"\r\n                3 -> tab.text = \"레시피\"\r\n                4 -> tab.text = \"완성\"\r\n            }\r\n\r\n\r\n\r\n\r\n        }.attach()\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n    override fun onOptionsItemSelected(item: MenuItem): Boolean {\r\n        when(item.itemId){\r\n            android.R.id.home->{\r\n                recipe_main.openDrawer(GravityCompat.START)\r\n            }\r\n        }\r\n        return super.onOptionsItemSelected(item)\r\n    }\r\n\r\n    override fun onCreateOptionsMenu(menu: Menu): Boolean {\r\n        menuInflater.inflate(R.menu.toolbar_menu,menu)\r\n        return true\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/RecipeActivity.kt b/app/src/main/java/com/example/myapplication/RecipeActivity.kt
+--- a/app/src/main/java/com/example/myapplication/RecipeActivity.kt	
++++ b/app/src/main/java/com/example/myapplication/RecipeActivity.kt	
+@@ -1,102 +1,11 @@
+ package com.example.myapplication
+ 
+ import android.os.Bundle
+-import android.view.Menu
+-import android.view.MenuItem
+ import androidx.appcompat.app.AppCompatActivity
+-import androidx.core.view.GravityCompat
+-import androidx.viewpager2.widget.ViewPager2
+-import com.example.myapplication.databinding.ActivityRecipeBinding
+-import com.google.android.material.tabs.TabLayout
+-import com.google.android.material.tabs.TabLayoutMediator
+-import kotlinx.android.synthetic.main.activity_main.*
+-import kotlinx.android.synthetic.main.activity_recipe.*
+-import kotlinx.android.synthetic.main.base_recipe_layout.*
+-import kotlinx.android.synthetic.main.base_main_layout.*
+-import kotlinx.android.synthetic.main.base_recipe_layout.*
+ 
+ class RecipeActivity : AppCompatActivity() {
+-
+-
+-
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+-        val binding = ActivityRecipeBinding.inflate(layoutInflater)
+-        setContentView(binding.root)
+-
+-
+-
+-        //툴바
+-        setSupportActionBar(findViewById(R.id.toolbar))
+-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+-        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
+-        supportActionBar!!.setDisplayShowTitleEnabled(false)
+-
+-
+-        //탭 설정
+-        recipe_tab.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
+-            override fun onTabReselected(tab: TabLayout.Tab?) { // 이미 선택된 탭 다시 되었을때
+-
+-            }
+-
+-            override fun onTabSelected(tab: TabLayout.Tab?) {  // 탭 선택되었을때
+-                tab?.position?.let{recipe_pager.setCurrentItem(it,false)}
+-
+-            }
+-
+-            override fun onTabUnselected(tab: TabLayout.Tab?) { // 탭 선택 안된상태로 변경 되었을때
+-
+-            }
+-        })
+-
+-
+-
+-
+-
+-        recipe_pager.adapter = RecipePagerAdapter(this)
+-
+-        recipe_pager.run{
+-            isUserInputEnabled= false
+-        }
+-
+-        TabLayoutMediator(recipe_tab,recipe_pager) {tab,position ->
+-            when(position){
+-                0 -> tab.text = "소개"
+-                1 -> tab.text = "조리도구"
+-                2 -> tab.text = "재료"
+-                3 -> tab.text = "레시피"
+-                4 -> tab.text = "완성"
+-            }
+-
+-
+-
+-
+-        }.attach()
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-    }
+-
+-
+-
+-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+-        when(item.itemId){
+-            android.R.id.home->{
+-                recipe_main.openDrawer(GravityCompat.START)
+-            }
+-        }
+-        return super.onOptionsItemSelected(item)
+-    }
+-
+-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+-        menuInflater.inflate(R.menu.toolbar_menu,menu)
+-        return true
++        setContentView(R.layout.activity_recipe)
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/drawer_header.xml
+===================================================================
+diff --git a/app/src/main/res/layout/drawer_header.xml b/app/src/main/res/layout/drawer_header.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/drawer_header.xml	
+@@ -0,0 +1,42 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:orientation="horizontal"
++    android:layout_width="match_parent"
++    android:layout_height="150dp"
++    android:id="@+id/header"
++    android:padding="10dp"
++    android:background="#006AFF">
++
++    <ImageView
++        android:layout_width="80dp"
++        android:layout_height="150dp"
++        android:contentDescription="@string/todo"
++        android:src="@drawable/ic_launcher_background"
++        tools:ignore="ImageContrastCheck"
++        android:id="@+id/drawer_profile"/>
++
++    <TextView
++
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="@string/text_name"
++        android:textSize="35sp"
++        android:layout_toRightOf="@+id/drawer_profile"
++        android:layout_marginStart="30dp"
++        android:layout_marginTop="20dp"
++        android:id="@+id/drawer_name"/>
++
++    <Button
++        android:id="@+id/drawer_account"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@+id/drawer_name"
++        android:layout_marginLeft="100dp"
++        android:backgroundTint="#FFD400"
++        android:text="@string/text3"
++        android:textSize="25sp" />
++
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/myapplication/Write_Community_Notice_Free_Activity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.myapplication\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\n\r\nclass Write_Community_Notice_Free_Activity : AppCompatActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.write_community_notice_free)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/Write_Community_Notice_Free_Activity.kt b/app/src/main/java/com/example/myapplication/Write_Community_Notice_Free_Activity.kt
+--- a/app/src/main/java/com/example/myapplication/Write_Community_Notice_Free_Activity.kt	
++++ b/app/src/main/java/com/example/myapplication/Write_Community_Notice_Free_Activity.kt	
+@@ -1,11 +1,68 @@
+ package com.example.myapplication
+ 
++import android.content.Intent
++import android.content.SharedPreferences
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
++import android.util.Log
++import android.view.View
++import android.widget.Button
++import android.widget.EditText
++import android.widget.Toast
++import com.example.myapplication.databinding.WriteCommunityNoticeFreeBinding
++import com.google.firebase.firestore.ktx.firestore
++import com.google.firebase.ktx.Firebase
++import kotlin.math.log
+ 
+ class Write_Community_Notice_Free_Activity : AppCompatActivity() {
++
++    private lateinit var sharedPreferences: SharedPreferences
++    private lateinit var editor: SharedPreferences.Editor
++    lateinit var binding: WriteCommunityNoticeFreeBinding
++
++    val db = Firebase.firestore
++    val getDB = db.getNamedQuery("free")
++
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+-        setContentView(R.layout.write_community_notice_free)
++//        setContentView(R.layout.write_community_notice_free)
++        binding = WriteCommunityNoticeFreeBinding.inflate(layoutInflater)
++        setContentView(binding.root)
++
++        var title = binding.writeCommunityNoticeFreeTitle
++        var script = binding.writeCommunityNoticeFreeScript
++        val button = binding.writeCommunityFreeButton
++
++        //val data = community_free_recycle_data(R.drawable.base_user_img,"123","테스트내용")
++
++
++        button.setOnClickListener(View.OnClickListener {
++            val data = community_free_recycle_data(R.drawable.base_user_img,title.text.toString(),script.text.toString())
++            db.collection("free")
++                .add(data)
++                .addOnSuccessListener { documentReference ->
++                    Log.d("kimhwan","add successfully")
++                    Toast.makeText(baseContext,"업로드가 완료되었습니다.",Toast.LENGTH_SHORT).show()
++                }
++                .addOnFailureListener{ e ->
++                    Log.w("kimhwan","업로드 실패")
++                    Toast.makeText(baseContext,"업로드에 실패했습니다.",Toast.LENGTH_SHORT).show()
++                }
++            println(data)
++
++            finish()
++
++        })
++
++    }
++
++    // 글을 작성해서 DB에 글 저장하기
++    // data 양식 community_free_recycle_data
++    fun WriteFreeData(){
++        //var FreeData = ArrayList<community_free_recycle_data>()
++        //FreeData.add(community_free_recycle_data(R.drawable.base_user_img,"안녕하세요","오늘 처음 오게 되었습니다."))
++        //FreeData.add(community_free_recycle_data(R.drawable.base_user_img,"오늘 학교왔는데","테스트"))
++
++
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/myapplication/HomePagerAdapter.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/HomePagerAdapter.kt b/app/src/main/java/com/example/myapplication/HomePagerAdapter.kt
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/myapplication/HomePagerAdapter.kt	
+@@ -0,0 +1,19 @@
++package com.example.myapplication
++
++import androidx.fragment.app.Fragment
++import androidx.viewpager2.adapter.FragmentStateAdapter
++
++class HomePagerAdapter(fragment: MainActivity) : FragmentStateAdapter(fragment) {
++    var fragments = listOf<Fragment>()
++
++    override fun getItemCount(): Int = fragments.size
++
++
++
++    override fun createFragment(position: Int): Fragment {
++        return fragments.get(position)
++    }
++
++
++
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/main_toolbar.xml
+===================================================================
+diff --git a/app/src/main/res/layout/main_toolbar.xml b/app/src/main/res/layout/main_toolbar.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/main_toolbar.xml	
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:id="@+id/toolbar"
++    android:minHeight="?attr/actionBarSize"
++    android:background="#2BFF00">
++
++
++
++</androidx.appcompat.widget.Toolbar>
+\ No newline at end of file
+Index: app/src/main/res/layout/main_layout.xml
+===================================================================
+diff --git a/app/src/main/res/layout/main_layout.xml b/app/src/main/res/layout/main_layout.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/main_layout.xml	
+@@ -0,0 +1,27 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:id="@+id/main_layout"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical">
++
++
++
++    <!--인클루드 툴바-->
++    <include layout="@layout/main_toolbar" />
++
++
++
++    <!--뷰페이저 2 -->
++    <androidx.viewpager2.widget.ViewPager2
++            android:id="@+id/home_pager"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:layout_marginTop="55dp">
++    </androidx.viewpager2.widget.ViewPager2>
++
++
++
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_recipe.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.drawerlayout.widget.DrawerLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/recipe_main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:fitsSystemWindows=\"false\"\r\n    android:visibility=\"visible\"\r\n    tools:context=\".MainActivity\"\r\n    android:background=\"@drawable/letter_back\">\r\n\r\n    <!-- 레시피 화면 -->\r\n\r\n\r\n    <!--인클루드 레시피의 뷰-->\r\n    <include layout=\"@layout/base_recipe_layout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\" />\r\n\r\n\r\n    <!--네이게이션바-->\r\n    <com.google.android.material.navigation.NavigationView\r\n        android:id=\"@+id/navigationView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_gravity=\"start\"\r\n        app:headerLayout=\"@layout/opt_drawer_header\"\r\n        app:menu=\"@menu/navigation_menu\">\r\n\r\n    </com.google.android.material.navigation.NavigationView>\r\n\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"vertical\"\r\n        android:layout_marginLeft=\"17dp\"\r\n        android:gravity=\"bottom\">\r\n        <ImageView\r\n            android:layout_width=\"375dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:src=\"@drawable/bottom_line\"\r\n            android:layout_marginBottom=\"50dp\"\r\n            />\r\n\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:paddingTop=\"55dp\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"horizontal\"\r\n        android:gravity=\"bottom\"\r\n        android:weightSum=\"10\">\r\n\r\n\r\n\r\n        <Button\r\n            android:id=\"@+id/home_them\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"3\"\r\n            android:gravity=\"center\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:background=\"@drawable/color_green_gradient_circle\"\r\n            android:text=\"테마별\"\r\n            android:backgroundTintMode=\"screen\"\r\n            android:textStyle=\"bold\"\r\n            android:fontFamily=\"@font/diary\"/>\r\n        <Button\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:layout_weight=\"3\"\r\n            android:gravity=\"center\"\r\n            android:text=\"레시피\"\r\n            android:background=\"@drawable/color_green_gradient_circle\"\r\n            android:backgroundTintMode=\"screen\"\r\n            android:textStyle=\"bold\"\r\n            android:fontFamily=\"@font/diary\"/>\r\n        <Button\r\n            android:id=\"@+id/home_community\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"3\"\r\n            android:gravity=\"center\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:background=\"@drawable/color_green_gradient_circle\"\r\n            android:backgroundTintMode=\"screen\"\r\n            android:text=\"요리타임\"\r\n            android:textStyle=\"bold\"\r\n            android:fontFamily=\"@font/diary\"/>\r\n\r\n\r\n\r\n    </LinearLayout>   <!--하단의 버튼-->\r\n\r\n\r\n\r\n\r\n</androidx.drawerlayout.widget.DrawerLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_recipe.xml b/app/src/main/res/layout/activity_recipe.xml
+--- a/app/src/main/res/layout/activity_recipe.xml	
++++ b/app/src/main/res/layout/activity_recipe.xml	
+@@ -2,51 +2,42 @@
+ <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+-    android:id="@+id/recipe_main"
++    android:id="@+id/home_main"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:fitsSystemWindows="false"
+     android:visibility="visible"
+-    tools:context=".MainActivity"
+-    android:background="@drawable/letter_back">
++    tools:context=".MainActivity">
+ 
+-    <!-- 레시피 화면 -->
++    <!-- 메인화면에서 레시피를 클릭하면 나올 수 있는 레시피 화면이다
++         이 화면은 두번째 xml이 될것 아직은 복붙 상황-->
+ 
+ 
+-    <!--인클루드 레시피의 뷰-->
+-    <include layout="@layout/base_recipe_layout"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent" />
+ 
+-
+-    <!--네이게이션바-->
+     <com.google.android.material.navigation.NavigationView
+         android:id="@+id/navigationView"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_gravity="start"
+-        app:headerLayout="@layout/opt_drawer_header"
++        app:headerLayout="@layout/drawer_header"
+         app:menu="@menu/navigation_menu">
+ 
++
+     </com.google.android.material.navigation.NavigationView>
+ 
+-
+-
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+-        android:orientation="vertical"
+-        android:layout_marginLeft="17dp"
+-        android:gravity="bottom">
+-        <ImageView
+-            android:layout_width="375dp"
++        >
++        <include
++            layout="@layout/main_toolbar"
++            android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:src="@drawable/bottom_line"
+-            android:layout_marginBottom="50dp"
+-            />
++            android:layout_gravity="top" />
+ 
+     </LinearLayout>
+ 
++
+     <LinearLayout
+         android:paddingTop="55dp"
+         android:layout_width="match_parent"
+@@ -57,19 +48,17 @@
+ 
+ 
+ 
++
++
+         <Button
+-            android:id="@+id/home_them"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="3"
+             android:gravity="center"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="5dp"
+-            android:background="@drawable/color_green_gradient_circle"
+-            android:text="테마별"
+-            android:backgroundTintMode="screen"
+-            android:textStyle="bold"
+-            android:fontFamily="@font/diary"/>
++            android:text="테마별" />
++
+         <Button
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+@@ -77,30 +66,28 @@
+             android:layout_marginBottom="5dp"
+             android:layout_weight="3"
+             android:gravity="center"
+-            android:text="레시피"
+-            android:background="@drawable/color_green_gradient_circle"
+-            android:backgroundTintMode="screen"
+-            android:textStyle="bold"
+-            android:fontFamily="@font/diary"/>
++
++
++            android:text="레시피" />
+         <Button
+-            android:id="@+id/home_community"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="3"
+             android:gravity="center"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="5dp"
+-            android:background="@drawable/color_green_gradient_circle"
+-            android:backgroundTintMode="screen"
+-            android:text="요리타임"
+-            android:textStyle="bold"
+-            android:fontFamily="@font/diary"/>
++            android:text="요리타임" />
+ 
+ 
++    </LinearLayout>
+ 
+-    </LinearLayout>   <!--하단의 버튼-->
+ 
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        >
+ 
++    </LinearLayout>
+ 
+ 
+ </androidx.drawerlayout.widget.DrawerLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/myapplication/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.myapplication\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.Menu\r\nimport android.view.MenuItem\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.core.view.GravityCompat\r\nimport com.example.myapplication.Home.home_middle\r\nimport com.example.myapplication.Other.home_viewpager\r\nimport com.google.android.material.navigation.NavigationView\r\nimport kotlinx.android.synthetic.main.activity_main.*\r\nimport kotlinx.android.synthetic.main.base_main_layout.*\r\nimport kotlinx.android.synthetic.main.fragment_home_middle.*\r\nimport kotlinx.android.synthetic.main.base_main_layout.*\r\n\r\n\r\nclass MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {\r\n    //네비게이션뷰 변수 설정\r\n    lateinit var navigationView: NavigationView\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n\r\n        //네비게이션 설정(28~35)\r\n        //activity_main에 navigationView설정\r\n        navigationView=findViewById(R.id.navigationView)\r\n\r\n        //main_frame의 화면을 home_viewpager로 설정(home_viewpager는 프래그먼트)\r\n        supportFragmentManager.beginTransaction().replace(R.id.main_frame, home_viewpager()).commit()\r\n\r\n        //네비게이션뷰 클릭시 자동 닫히는 함수\r\n        navigationView.setNavigationItemSelectedListener(this)\r\n\r\n        //툴바 설정 38~45\r\n        //toolbar초기화\r\n        setSupportActionBar(findViewById(R.id.toolbar))\r\n\r\n        //뒤로가기 버튼\r\n        supportActionBar!!.setDisplayHomeAsUpEnabled(true)\r\n\r\n        //네비게이션 띄우는 인디케이터 튤바에 생성\r\n        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)\r\n\r\n        /*supportActionBar!!.setDisplayShowTitleEnabled(false)*/\r\n\r\n\r\n        //커뮤니티 버튼 클릭 이동\r\n        home_community.setOnClickListener {\r\n            var intent = Intent(this, CommunityActivity::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n    //드로어블\r\n    override fun onOptionsItemSelected(item: MenuItem): Boolean {\r\n        when(item.itemId){\r\n            android.R.id.home->{\r\n                home_main.openDrawer(GravityCompat.START)\r\n\r\n            }\r\n            R.id.tool_search->{\r\n                var intent = Intent(this,SearchActivity::class.java)\r\n                startActivity(intent)\r\n            }\r\n\r\n        }\r\n        return super.onOptionsItemSelected(item)\r\n    }\r\n\r\n    //네비게이션 클릭 이벤트\r\n    override fun onNavigationItemSelected(item: MenuItem): Boolean {\r\n        val fragmentManager=supportFragmentManager.beginTransaction()\r\n        Log.d(\"Log\",\"목록터치\")\r\n        //클릭시 frame을 해당 프래그먼트로 바꿈\r\n        when(item.itemId) {\r\n            //R.id.navi_refrigerator -> fragmentManager.replace(R.id.main_frame, home_left()).commit()\r\n            //R.id.navi_cookBook -> fragmentManager.replace(R.id.main_frame, home_right()).commit()\r\n            R.id.navi_recipe -> fragmentManager.replace(R.id.main_frame, home_middle()).commit()\r\n        }\r\n        home_main.closeDrawers()\r\n        return false\r\n    }\r\n    //툴바\r\n    override fun onCreateOptionsMenu(menu: Menu): Boolean {\r\n        menuInflater.inflate(R.menu.toolbar_menu,menu)\r\n        return true\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/MainActivity.kt b/app/src/main/java/com/example/myapplication/MainActivity.kt
+--- a/app/src/main/java/com/example/myapplication/MainActivity.kt	
++++ b/app/src/main/java/com/example/myapplication/MainActivity.kt	
+@@ -1,57 +1,60 @@
+ package com.example.myapplication
+ 
+-import android.content.Intent
+ import android.os.Bundle
+-import android.util.Log
+ import android.view.Menu
+ import android.view.MenuItem
+ import androidx.appcompat.app.AppCompatActivity
+ import androidx.core.view.GravityCompat
+-import com.example.myapplication.Home.home_middle
+-import com.example.myapplication.Other.home_viewpager
+-import com.google.android.material.navigation.NavigationView
+ import kotlinx.android.synthetic.main.activity_main.*
+-import kotlinx.android.synthetic.main.base_main_layout.*
+-import kotlinx.android.synthetic.main.fragment_home_middle.*
+-import kotlinx.android.synthetic.main.base_main_layout.*
++import kotlinx.android.synthetic.main.main_layout.*
++
++
++class MainActivity : AppCompatActivity() {
++
+ 
+ 
+-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+-    //네비게이션뷰 변수 설정
+-    lateinit var navigationView: NavigationView
++
++
++
++
+ 
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_main)
+ 
+-        //네비게이션 설정(28~35)
+-        //activity_main에 navigationView설정
+-        navigationView=findViewById(R.id.navigationView)
++
+ 
+-        //main_frame의 화면을 home_viewpager로 설정(home_viewpager는 프래그먼트)
+-        supportFragmentManager.beginTransaction().replace(R.id.main_frame, home_viewpager()).commit()
+ 
+-        //네비게이션뷰 클릭시 자동 닫히는 함수
+-        navigationView.setNavigationItemSelectedListener(this)
+ 
+-        //툴바 설정 38~45
+-        //toolbar초기화
++
++
++        //툴바 설정
+         setSupportActionBar(findViewById(R.id.toolbar))
+-
+-        //뒤로가기 버튼
+         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+-
+-        //네비게이션 띄우는 인디케이터 튤바에 생성
+         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
++        supportActionBar!!.setDisplayShowTitleEnabled(false)
+ 
+-        /*supportActionBar!!.setDisplayShowTitleEnabled(false)*/
++        //뷰페이저
++        val fragmentList = listOf(home_left(), home_frag_middle(), home_right())
++        val adapter = HomePagerAdapter(this)
++        adapter.fragments = fragmentList
++        home_pager.adapter = adapter
++        home_pager.setCurrentItem(1, false)
+ 
+ 
+-        //커뮤니티 버튼 클릭 이동
+-        home_community.setOnClickListener {
+-            var intent = Intent(this, CommunityActivity::class.java)
+-            startActivity(intent)
+-        }
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+ 
+ 
+@@ -61,39 +64,25 @@
+ 
+     }
+ 
+-    //드로어블
++
++
+     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+         when(item.itemId){
+             android.R.id.home->{
+-                home_main.openDrawer(GravityCompat.START)
+-
++            home_main.openDrawer(GravityCompat.START)
+             }
+-            R.id.tool_search->{
+-                var intent = Intent(this,SearchActivity::class.java)
+-                startActivity(intent)
+-            }
+-
+         }
+         return super.onOptionsItemSelected(item)
+     }
+ 
+-    //네비게이션 클릭 이벤트
+-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+-        val fragmentManager=supportFragmentManager.beginTransaction()
+-        Log.d("Log","목록터치")
+-        //클릭시 frame을 해당 프래그먼트로 바꿈
+-        when(item.itemId) {
+-            //R.id.navi_refrigerator -> fragmentManager.replace(R.id.main_frame, home_left()).commit()
+-            //R.id.navi_cookBook -> fragmentManager.replace(R.id.main_frame, home_right()).commit()
+-            R.id.navi_recipe -> fragmentManager.replace(R.id.main_frame, home_middle()).commit()
+-        }
+-        home_main.closeDrawers()
+-        return false
+-    }
+-    //툴바
+     override fun onCreateOptionsMenu(menu: Menu): Boolean {
+         menuInflater.inflate(R.menu.toolbar_menu,menu)
+         return true
+     }
++
++
++
++
++
+ }
+ 
+Index: app/src/main/res/layout/fragment_home_right.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Home.home_right\">\r\n\r\n    <TextView\r\n        android:layout_width=\"400dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"User의 요리책\"\r\n        android:textSize=\"50dp\"\r\n        android:textStyle=\"bold\"\r\n        />\r\n    <androidx.constraintlayout.widget.ConstraintLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"400dp\"\r\n        android:layout_gravity=\"center\">\r\n\r\n        <!--레시피 작성 버튼-->\r\n        <Button\r\n            android:id=\"@+id/cookbook_button_Create\"\r\n            android:layout_width=\"156dp\"\r\n            android:layout_height=\"157dp\"\r\n            android:layout_marginStart=\"36dp\"\r\n            android:text=\"레시피 작성\"\r\n            android:textSize=\"25dp\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toTopOf=\"parent\"\r\n            tools:ignore=\"MissingConstraints\" />\r\n\r\n        <!--레시피 가져오기 버튼-->\r\n        <Button\r\n            android:id=\"@+id/cookbook_button_Import\"\r\n            android:layout_width=\"156dp\"\r\n            android:layout_height=\"157dp\"\r\n            android:layout_marginStart=\"24dp\"\r\n            android:text=\"레시피가져오기\"\r\n            android:textSize=\"25dp\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintHorizontal_bias=\"0.179\"\r\n            app:layout_constraintStart_toEndOf=\"@+id/cookbook_button_Create\"\r\n            app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n        <!--요리타임 레시피관리 버튼-->\r\n        <Button\r\n            android:id=\"@+id/cookbook_button_CookingtimeManagement\"\r\n            android:layout_width=\"156dp\"\r\n            android:layout_height=\"157dp\"\r\n            android:layout_marginTop=\"24dp\"\r\n            android:layout_marginEnd=\"32dp\"\r\n            android:text=\"요리타임    레시피관리\"\r\n            android:textSize=\"25dp\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/cookbook_button_Import\"\r\n            tools:ignore=\"MissingConstraints\" />\r\n\r\n        <!--레시피 관리 버튼-->\r\n        <Button\r\n            android:id=\"@+id/cookbook_button_Management\"\r\n            android:layout_width=\"156dp\"\r\n            android:layout_height=\"157dp\"\r\n            android:layout_marginTop=\"24dp\"\r\n            android:layout_marginEnd=\"32dp\"\r\n            android:text=\"레시피 관리\"\r\n            android:textSize=\"25dp\"\r\n            app:layout_constraintEnd_toStartOf=\"@+id/cookbook_button_CookingtimeManagement\"\r\n            app:layout_constraintHorizontal_bias=\"1.0\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/cookbook_button_Create\" />\r\n\r\n\r\n    </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_home_right.xml b/app/src/main/res/layout/fragment_home_right.xml
+--- a/app/src/main/res/layout/fragment_home_right.xml	
++++ b/app/src/main/res/layout/fragment_home_right.xml	
+@@ -1,77 +1,16 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".Home.home_right">
++    tools:context=".home_right">
+ 
++    <!-- TODO: Update blank fragment layout -->
+     <TextView
+-        android:layout_width="400dp"
+-        android:layout_height="wrap_content"
+-        android:text="User의 요리책"
+-        android:textSize="50dp"
+-        android:textStyle="bold"
+-        />
+-    <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_width="match_parent"
+-        android:layout_height="400dp"
+-        android:layout_gravity="center">
+-
+-        <!--레시피 작성 버튼-->
+-        <Button
+-            android:id="@+id/cookbook_button_Create"
+-            android:layout_width="156dp"
+-            android:layout_height="157dp"
+-            android:layout_marginStart="36dp"
+-            android:text="레시피 작성"
+-            android:textSize="25dp"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toTopOf="parent"
+-            tools:ignore="MissingConstraints" />
+-
+-        <!--레시피 가져오기 버튼-->
+-        <Button
+-            android:id="@+id/cookbook_button_Import"
+-            android:layout_width="156dp"
+-            android:layout_height="157dp"
+-            android:layout_marginStart="24dp"
+-            android:text="레시피가져오기"
+-            android:textSize="25dp"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintHorizontal_bias="0.179"
+-            app:layout_constraintStart_toEndOf="@+id/cookbook_button_Create"
+-            app:layout_constraintTop_toTopOf="parent" />
+-
+-        <!--요리타임 레시피관리 버튼-->
+-        <Button
+-            android:id="@+id/cookbook_button_CookingtimeManagement"
+-            android:layout_width="156dp"
+-            android:layout_height="157dp"
+-            android:layout_marginTop="24dp"
+-            android:layout_marginEnd="32dp"
+-            android:text="요리타임    레시피관리"
+-            android:textSize="25dp"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintTop_toBottomOf="@+id/cookbook_button_Import"
+-            tools:ignore="MissingConstraints" />
+-
+-        <!--레시피 관리 버튼-->
+-        <Button
+-            android:id="@+id/cookbook_button_Management"
+-            android:layout_width="156dp"
+-            android:layout_height="157dp"
+-            android:layout_marginTop="24dp"
+-            android:layout_marginEnd="32dp"
+-            android:text="레시피 관리"
+-            android:textSize="25dp"
+-            app:layout_constraintEnd_toStartOf="@+id/cookbook_button_CookingtimeManagement"
+-            app:layout_constraintHorizontal_bias="1.0"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@+id/cookbook_button_Create" />
+-
+-
+-    </androidx.constraintlayout.widget.ConstraintLayout>
+-
++        android:layout_height="match_parent"
++        android:text="오른쪽화면"
++        android:textSize="50sp"
++        android:gravity="center" />
+ 
+ </FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_home_middle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Home.home_middle\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/middle_recipe_Recommendation_button\"\r\n        android:layout_width=\"200dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"옵션\"\r\n        android:gravity=\"center\"\r\n        android:background=\"#80FF0000\"\r\n        android:textSize=\"40dp\"\r\n        android:layout_marginLeft=\"40dp\"\r\n        android:layout_marginTop=\"10dp\"\r\n        />\r\n    <TextView\r\n        android:id=\"@+id/middle_recipe_goodphrase_button\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"좋은 글귀\"\r\n        android:textSize=\"40dp\"\r\n        android:background=\"#FF9797\"\r\n        android:layout_marginTop=\"100dp\"\r\n        android:layout_marginLeft=\"40dp\"/>\r\n    <Button\r\n        android:id=\"@+id/middle_recipe_change_button\"\r\n        android:layout_width=\"100dp\"\r\n        android:layout_height=\"100dp\"\r\n        android:layout_marginLeft=\"300dp\"\r\n        android:layout_marginTop=\"50dp\"\r\n        android:text=\"버튼2\"\r\n        android:textSize=\"30dp\"/>\r\n\r\n    <androidx.viewpager2.widget.ViewPager2\r\n        android:id=\"@+id/home_recipe_viewpager2\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"300dp\"\r\n        android:layout_gravity=\"center\"/>\r\n\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_home_middle.xml b/app/src/main/res/layout/fragment_home_middle.xml
+--- a/app/src/main/res/layout/fragment_home_middle.xml	
++++ b/app/src/main/res/layout/fragment_home_middle.xml	
+@@ -3,41 +3,15 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".Home.home_middle">
++    tools:context=".home_frag_middle">
+ 
+-    <TextView
+-        android:id="@+id/middle_recipe_Recommendation_button"
+-        android:layout_width="200dp"
+-        android:layout_height="wrap_content"
+-        android:text="옵션"
+-        android:gravity="center"
+-        android:background="#80FF0000"
+-        android:textSize="40dp"
+-        android:layout_marginLeft="40dp"
+-        android:layout_marginTop="10dp"
+-        />
+-    <TextView
+-        android:id="@+id/middle_recipe_goodphrase_button"
++    <!-- TODO: Update blank fragment layout -->
++    <Button
++        android:id="@+id/home_recipe"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="좋은 글귀"
+-        android:textSize="40dp"
+-        android:background="#FF9797"
+-        android:layout_marginTop="100dp"
+-        android:layout_marginLeft="40dp"/>
+-    <Button
+-        android:id="@+id/middle_recipe_change_button"
+-        android:layout_width="100dp"
+-        android:layout_height="100dp"
+-        android:layout_marginLeft="300dp"
+-        android:layout_marginTop="50dp"
+-        android:text="버튼2"
+-        android:textSize="30dp"/>
+-
+-    <androidx.viewpager2.widget.ViewPager2
+-        android:id="@+id/home_recipe_viewpager2"
+-        android:layout_width="match_parent"
+-        android:layout_height="300dp"
++        android:text="레시피"
++        android:textSize="100dp"
+         android:layout_gravity="center"/>
+ 
+ </FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_home_left.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Home.home_left\">\r\n\r\n\r\n\r\n    <Button\r\n        android:id=\"@+id/item_regierator_addbutton\"\r\n        android:layout_width=\"100dp\"\r\n        android:layout_height=\"45dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        android:text=\"재료 추가\"\r\n        android:background=\"@color/material_dynamic_neutral90\"/>\r\n\r\n    <TextView\r\n        android:id=\"@+id/item_refigerator_name\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"냉장고\"\r\n        android:textSize=\"20sp\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView_freezer\"\r\n        android:layout_width=\"40dp\"\r\n        android:layout_height=\"24dp\"\r\n        android:layout_marginStart=\"24dp\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:text=\"냉동\"\r\n        android:textSize=\"20sp\"\r\n        app:layout_constraintStart_toEndOf=\"@+id/item_refigerator_name\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/item_refigerator_name\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView_refrigerator\"\r\n        android:layout_width=\"40dp\"\r\n        android:layout_height=\"24dp\"\r\n        android:layout_marginStart=\"152dp\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:text=\"냉장\"\r\n        android:textSize=\"20sp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toEndOf=\"@+id/textView_freezer\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/item_refigerator_name\"\r\n        app:layout_constraintVertical_bias=\"0.0\" />\r\n\r\n\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/refigerator_linearLayout\"\r\n        android:layout_width=\"393dp\"\r\n        android:layout_height=\"695dp\"\r\n        android:orientation=\"horizontal\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n    </LinearLayout>\r\n\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:id=\"@+id/refigerator_vlist1\"\r\n        android:layout_width=\"170dp\"\r\n        android:layout_height=\"400dp\"\r\n        app:layoutManager=\"androidx.recyclerview.widget.GridLayoutManager\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/textView_refrigerator\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/textView_refrigerator\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/textView_freezer\"\r\n        tools:listitem=\"@layout/item_refrigerator_source_recycle\" />\r\n\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:id=\"@+id/refigerator_vlist2\"\r\n        android:layout_width=\"170dp\"\r\n        android:layout_height=\"400dp\"\r\n        app:layoutManager=\"androidx.recyclerview.widget.GridLayoutManager\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/textView_freezer\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/textView_freezer\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/textView_refrigerator\"\r\n        tools:listitem=\"@layout/item_refrigerator_source_recycle\" />\r\n\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_home_left.xml b/app/src/main/res/layout/fragment_home_left.xml
+--- a/app/src/main/res/layout/fragment_home_left.xml	
++++ b/app/src/main/res/layout/fragment_home_left.xml	
+@@ -1,91 +1,16 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".Home.home_left">
+-
++    tools:context=".home_left">
+ 
+-
+-    <Button
+-        android:id="@+id/item_regierator_addbutton"
+-        android:layout_width="100dp"
+-        android:layout_height="45dp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintTop_toTopOf="parent"
+-        android:text="재료 추가"
+-        android:background="@color/material_dynamic_neutral90"/>
+-
+-    <TextView
+-        android:id="@+id/item_refigerator_name"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="냉장고"
+-        android:textSize="20sp"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <TextView
+-        android:id="@+id/textView_freezer"
+-        android:layout_width="40dp"
+-        android:layout_height="24dp"
+-        android:layout_marginStart="24dp"
+-        android:layout_marginTop="16dp"
+-        android:text="냉동"
+-        android:textSize="20sp"
+-        app:layout_constraintStart_toEndOf="@+id/item_refigerator_name"
+-        app:layout_constraintTop_toBottomOf="@+id/item_refigerator_name" />
+-
++    <!-- TODO: Update blank fragment layout -->
+     <TextView
+-        android:id="@+id/textView_refrigerator"
+-        android:layout_width="40dp"
+-        android:layout_height="24dp"
+-        android:layout_marginStart="152dp"
+-        android:layout_marginTop="16dp"
+-        android:text="냉장"
+-        android:textSize="20sp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.0"
+-        app:layout_constraintStart_toEndOf="@+id/textView_freezer"
+-        app:layout_constraintTop_toBottomOf="@+id/item_refigerator_name"
+-        app:layout_constraintVertical_bias="0.0" />
+-
+-
+-
+-    <LinearLayout
+-        android:id="@+id/refigerator_linearLayout"
+-        android:layout_width="393dp"
+-        android:layout_height="695dp"
+-        android:orientation="horizontal"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent">
+-
+-    </LinearLayout>
+-
+-    <androidx.recyclerview.widget.RecyclerView
+-        android:id="@+id/refigerator_vlist1"
+-        android:layout_width="170dp"
+-        android:layout_height="400dp"
+-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="@+id/textView_refrigerator"
+-        app:layout_constraintStart_toStartOf="@+id/textView_refrigerator"
+-        app:layout_constraintTop_toBottomOf="@+id/textView_freezer"
+-        tools:listitem="@layout/item_refrigerator_source_recycle" />
+-
+-    <androidx.recyclerview.widget.RecyclerView
+-        android:id="@+id/refigerator_vlist2"
+-        android:layout_width="170dp"
+-        android:layout_height="400dp"
+-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="@+id/textView_freezer"
+-        app:layout_constraintStart_toStartOf="@+id/textView_freezer"
+-        app:layout_constraintTop_toBottomOf="@+id/textView_refrigerator"
+-        tools:listitem="@layout/item_refrigerator_source_recycle" />
+-
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="왼쪽화면"
++        android:textSize="50sp"
++        android:gravity="center"/>
+ 
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++</FrameLayout>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n    id 'org.jetbrains.kotlin.android'\r\n    id 'kotlin-android'\r\n    id 'kotlin-android-extensions'\r\n\r\n}\r\n\r\nandroid {\r\n    compileSdk 32\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.myapplication\"\r\n        minSdk 21\r\n        targetSdk 32\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n    kotlinOptions {\r\n        jvmTarget = '1.8'\r\n    }\r\n    buildFeatures{\r\n        viewBinding = true\r\n    }\r\n\r\n\r\n\r\n\r\n}\r\n\r\ndependencies {\r\n\r\n\r\n    implementation \"androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1\"\r\n    implementation \"com.google.android.material:material:1.7.0\"\r\n    implementation \"androidx.viewpager2:viewpager2:1.0.0\"\r\n    implementation \"androidx.legacy:legacy-support-v4:1.0.0\"\r\n    implementation \"com.google.android.material:material:1.6.1\"\r\n    implementation \"androidx.drawerlayout:drawerlayout:1.1.1\"\r\n    implementation 'androidx.appcompat:appcompat:1.5.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\r\n    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'\r\n    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	
++++ b/app/build.gradle	
+@@ -32,8 +32,8 @@
+     kotlinOptions {
+         jvmTarget = '1.8'
+     }
+-    buildFeatures{
+-        viewBinding = true
++    viewBinding{
++        enabled = true
+     }
+ 
+ 
+@@ -44,16 +44,12 @@
+ dependencies {
+ 
+ 
+-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+-    implementation "com.google.android.material:material:1.7.0"
+     implementation "androidx.viewpager2:viewpager2:1.0.0"
+     implementation "androidx.legacy:legacy-support-v4:1.0.0"
+     implementation "com.google.android.material:material:1.6.1"
+     implementation "androidx.drawerlayout:drawerlayout:1.1.1"
+     implementation 'androidx.appcompat:appcompat:1.5.0'
+     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+     testImplementation 'junit:junit:4.13.2'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    package=\"com.example.myapplication\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".CookBook_Write_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Cookbook_Write_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Cookbook_CookingtimeManagement_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Cookbook_Community_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Cookbook_Management_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Cookbook.Cookbook_get_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Write_Community_Notice_Qna_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Write_Community_Notice_Free_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Write_Community_Notice_Cook_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".SearchActivity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Community_notice_free_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Community_notice_qna_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Community_notice_cook_Activity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".CommunityActivity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".RecipeActivity\"\r\n            android:exported=\"true\" />\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	
++++ b/app/src/main/AndroidManifest.xml	
+@@ -14,48 +14,6 @@
+         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+         tools:targetApi="31">
+         <activity
+-            android:name=".CookBook_Write_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Cookbook_Write_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Cookbook_CookingtimeManagement_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Cookbook_Community_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Cookbook_Management_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Cookbook.Cookbook_get_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Write_Community_Notice_Qna_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Write_Community_Notice_Free_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Write_Community_Notice_Cook_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".SearchActivity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Community_notice_free_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Community_notice_qna_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Community_notice_cook_Activity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".CommunityActivity"
+-            android:exported="false" />
+-        <activity
+             android:name=".RecipeActivity"
+             android:exported="true" />
+         <activity
+Index: app/src/main/res/layout/indicator_activity.xml
+===================================================================
+diff --git a/app/src/main/res/layout/indicator_activity.xml b/app/src/main/res/layout/indicator_activity.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/indicator_activity.xml	
+@@ -0,0 +1,32 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:app="http://schemas.android.com/apk/res-auto">
++
++
++    <ImageView
++        android:id="@+id/indicator1"
++        android:layout_width="20dp"
++        android:layout_height="20dp"
++        android:layout_marginBottom="70dp"
++        android:layout_marginRight="30dp"
++        android:layout_gravity="center_horizontal|bottom"
++        app:srcCompat="@drawable/circle_indicator2" />
++    <ImageView
++        android:id="@+id/indicator2"
++        android:layout_width="20dp"
++        android:layout_height="20dp"
++        android:layout_marginBottom="70dp"
++        android:layout_gravity="center_horizontal|bottom"
++        app:srcCompat="@drawable/circle_indicator" />
++    <ImageView
++        android:id="@+id/indicator3"
++        android:layout_width="20dp"
++        android:layout_height="20dp"
++        android:layout_marginBottom="70dp"
++        android:layout_marginLeft="30dp"
++        android:layout_gravity="center_horizontal|bottom"
++        app:srcCompat="@drawable/circle_indicator2" />
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.drawerlayout.widget.DrawerLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/home_main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:fitsSystemWindows=\"false\"\r\n    android:visibility=\"visible\"\r\n    tools:context=\".MainActivity\"\r\n    android:background=\"@drawable/food_back2\">\r\n\r\n    <!--  가장 최우선 되는 메인 메뉴이다\r\n          drawerlayout 사용해야하기 때문이다    -->\r\n\r\n\r\n    <!--메인화면 인클루드-->\r\n    <include\r\n        layout=\"@layout/base_main_layout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\" />\r\n\r\n\r\n\r\n\r\n    <androidx.constraintlayout.widget.ConstraintLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        tools:context=\".Other.MainActivity\">\r\n\r\n\r\n        <androidx.fragment.app.FragmentContainerView\r\n            android:id=\"@+id/main_frame\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/toolbar\"/>\r\n\r\n        <include layout=\"@layout/opt_main_toolbar\" />\r\n\r\n\r\n\r\n    </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n\r\n    <LinearLayout\r\n        android:paddingTop=\"55dp\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"horizontal\"\r\n        android:gravity=\"bottom\"\r\n        android:weightSum=\"10\">\r\n\r\n        <Button\r\n            android:id=\"@+id/home_them\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"3\"\r\n            android:gravity=\"center\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:background=\"@drawable/color_green_gradient_circle\"\r\n            android:text=\"테마별\"\r\n            android:backgroundTintMode=\"screen\"\r\n            android:textStyle=\"bold\"\r\n            android:fontFamily=\"@font/diary\"/>\r\n        <Button\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:layout_weight=\"3\"\r\n            android:gravity=\"center\"\r\n            android:text=\"레시피\"\r\n            android:background=\"@drawable/color_green_gradient_circle\"\r\n            android:backgroundTintMode=\"screen\"\r\n            android:textStyle=\"bold\"\r\n            android:fontFamily=\"@font/diary\"/>\r\n        <Button\r\n            android:id=\"@+id/home_community\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"3\"\r\n            android:gravity=\"center\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:background=\"@drawable/color_green_gradient_circle\"\r\n            android:text=\"요리타임\"\r\n            android:textStyle=\"bold\"\r\n            android:fontFamily=\"@font/diary\"\r\n            android:backgroundTintMode=\"screen\"/>\r\n\r\n\r\n\r\n    </LinearLayout>   <!--하단의 버튼-->\r\n\r\n    <!--네비 바 -->\r\n    <com.google.android.material.navigation.NavigationView\r\n        android:id=\"@+id/navigationView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_gravity=\"start\"\r\n        app:headerLayout=\"@layout/opt_drawer_header\"\r\n        app:menu=\"@menu/navigation_menu\">\r\n        <!--옆의 네비게이션 바 -->\r\n\r\n\r\n    </com.google.android.material.navigation.NavigationView>\r\n\r\n\r\n\r\n\r\n</androidx.drawerlayout.widget.DrawerLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	
++++ b/app/src/main/res/layout/activity_main.xml	
+@@ -7,8 +7,7 @@
+     android:layout_height="match_parent"
+     android:fitsSystemWindows="false"
+     android:visibility="visible"
+-    tools:context=".MainActivity"
+-    android:background="@drawable/food_back2">
++    tools:context=".MainActivity">
+ 
+     <!--  가장 최우선 되는 메인 메뉴이다
+           drawerlayout 사용해야하기 때문이다    -->
+@@ -16,33 +15,29 @@
+ 
+     <!--메인화면 인클루드-->
+     <include
+-        layout="@layout/base_main_layout"
++        layout="@layout/main_layout"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" />
+ 
+ 
+-
+-
+-    <androidx.constraintlayout.widget.ConstraintLayout
++    <!--인디케이터 / 메인메뉴의 이동점 3개-->
++    <include
++        layout="@layout/indicator_activity"
+         android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        tools:context=".Other.MainActivity">
++        android:layout_height="match_parent"/>
+ 
+-
+-        <androidx.fragment.app.FragmentContainerView
+-            android:id="@+id/main_frame"
+-            android:layout_width="match_parent"
+-            android:layout_height="match_parent"
+-            app:layout_constraintBottom_toBottomOf="parent"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
++    <com.google.android.material.navigation.NavigationView
++        android:id="@+id/navigationView"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_gravity="start"
++        app:headerLayout="@layout/drawer_header"
++        app:menu="@menu/navigation_menu">
++        <!--옆의 네비게이션 바 -->
+ 
+-        <include layout="@layout/opt_main_toolbar" />
+ 
++    </com.google.android.material.navigation.NavigationView>
+ 
+-
+-    </androidx.constraintlayout.widget.ConstraintLayout>
+ 
+ 
+     <LinearLayout
+@@ -52,7 +47,6 @@
+         android:orientation="horizontal"
+         android:gravity="bottom"
+         android:weightSum="10">
+-
+         <Button
+             android:id="@+id/home_them"
+             android:layout_width="wrap_content"
+@@ -61,11 +55,7 @@
+             android:gravity="center"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="5dp"
+-            android:background="@drawable/color_green_gradient_circle"
+-            android:text="테마별"
+-            android:backgroundTintMode="screen"
+-            android:textStyle="bold"
+-            android:fontFamily="@font/diary"/>
++            android:text="테마별" />
+         <Button
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+@@ -73,41 +63,25 @@
+             android:layout_marginBottom="5dp"
+             android:layout_weight="3"
+             android:gravity="center"
+-            android:text="레시피"
+-            android:background="@drawable/color_green_gradient_circle"
+-            android:backgroundTintMode="screen"
+-            android:textStyle="bold"
+-            android:fontFamily="@font/diary"/>
++
++
++            android:text="레시피" />
+         <Button
+-            android:id="@+id/home_community"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="3"
+             android:gravity="center"
+             android:layout_marginLeft="10dp"
+             android:layout_marginBottom="5dp"
+-            android:background="@drawable/color_green_gradient_circle"
+-            android:text="요리타임"
+-            android:textStyle="bold"
+-            android:fontFamily="@font/diary"
+-            android:backgroundTintMode="screen"/>
++
++
++            android:text="요리타임" />
+ 
+ 
+ 
+     </LinearLayout>   <!--하단의 버튼-->
+ 
+-    <!--네비 바 -->
+-    <com.google.android.material.navigation.NavigationView
+-        android:id="@+id/navigationView"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:layout_gravity="start"
+-        app:headerLayout="@layout/opt_drawer_header"
+-        app:menu="@menu/navigation_menu">
+-        <!--옆의 네비게이션 바 -->
+ 
+-
+-    </com.google.android.material.navigation.NavigationView>
+ 
+ 
+ 
+Index: .idea/codeStyles/codeStyleConfig.xml
+===================================================================
+diff --git a/.idea/codeStyles/codeStyleConfig.xml b/.idea/codeStyles/codeStyleConfig.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/codeStyles/codeStyleConfig.xml	
+@@ -0,0 +1,5 @@
++<component name="ProjectCodeStyleConfiguration">
++  <state>
++    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
++  </state>
++</component>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">My Application</string>\r\n    <string name=\"search\">Tool</string>\r\n    <string name=\"mic\">Tool</string>\r\n    <string name=\"list\">Tool</string>\r\n    <string name=\"recipe\">레시피</string>\r\n    <string name=\"re\">냉장고</string>\r\n    <string name=\"book\">요리책</string>\r\n    <string name=\"text\">메인레이아웃</string>\r\n    <string name=\"text_name\">조경준 님</string>\r\n    <string name=\"text3\">My Account</string>\r\n    <string name=\"todo\">TODO</string>\r\n    <!-- TODO: Remove or change this placeholder text -->\r\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\r\n    <string name=\"title_activity_cookbook_community_management\">\r\n        Cookbook_Community_Management_Activity\r\n    </string>\r\n    <!-- Strings used for fragments for navigation -->\r\n    <string name=\"first_fragment_label\">First Fragment</string>\r\n    <string name=\"second_fragment_label\">Second Fragment</string>\r\n    <string name=\"next\">Next</string>\r\n    <string name=\"previous\">Previous</string>\r\n\r\n    <string name=\"hello_first_fragment\">Hello first fragment</string>\r\n    <string name=\"hello_second_fragment\">Hello second fragment. Arg: %1$s</string>\r\n\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	
++++ b/app/src/main/res/values/strings.xml	
+@@ -12,17 +12,6 @@
+     <string name="todo">TODO</string>
+     <!-- TODO: Remove or change this placeholder text -->
+     <string name="hello_blank_fragment">Hello blank fragment</string>
+-    <string name="title_activity_cookbook_community_management">
+-        Cookbook_Community_Management_Activity
+-    </string>
+-    <!-- Strings used for fragments for navigation -->
+-    <string name="first_fragment_label">First Fragment</string>
+-    <string name="second_fragment_label">Second Fragment</string>
+-    <string name="next">Next</string>
+-    <string name="previous">Previous</string>
+-
+-    <string name="hello_first_fragment">Hello first fragment</string>
+-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+ 
+ 
+ </resources>
+\ No newline at end of file
+Index: .idea/codeStyles/Project.xml
+===================================================================
+diff --git a/.idea/codeStyles/Project.xml b/.idea/codeStyles/Project.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/codeStyles/Project.xml	
+@@ -0,0 +1,123 @@
++<component name="ProjectCodeStyleConfiguration">
++  <code_scheme name="Project" version="173">
++    <JetCodeStyleSettings>
++      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
++    </JetCodeStyleSettings>
++    <codeStyleSettings language="XML">
++      <option name="FORCE_REARRANGE_MODE" value="1" />
++      <indentOptions>
++        <option name="CONTINUATION_INDENT_SIZE" value="4" />
++      </indentOptions>
++      <arrangement>
++        <rules>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>xmlns:android</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>xmlns:.*</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++              <order>BY_NAME</order>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*:id</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*:name</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>name</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>style</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++              <order>BY_NAME</order>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
++                </AND>
++              </match>
++              <order>ANDROID_ATTRIBUTE_ORDER</order>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>.*</XML_NAMESPACE>
++                </AND>
++              </match>
++              <order>BY_NAME</order>
++            </rule>
++          </section>
++        </rules>
++      </arrangement>
++    </codeStyleSettings>
++    <codeStyleSettings language="kotlin">
++      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
++    </codeStyleSettings>
++  </code_scheme>
++</component>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Theme.MyApplication\" parent=\"Theme.AppCompat.Light.NoActionBar\">\r\n        <!-- Primary brand color. -->\r\n        <item name=\"colorPrimary\">@color/purple_500</item>\r\n        <item name=\"colorPrimaryDark\">@color/purple_700</item>\r\n        <item name=\"colorAccent\">@color/teal_200</item>\r\n        <!-- Customize your theme here. -->\r\n    </style>\r\n    <style name=\"NoActionBar\">\r\n        <item name=\"windowActionBar\">false</item>\r\n        <item name=\"windowNoTitle\">true</item>\r\n    </style>\r\n    <style name=\"AppBarOverlay\" parent=\"ThemeOverlay.AppCompat.Dark.ActionBar\" />\r\n    <style name=\"PopupOverlay\" parent=\"ThemeOverlay.AppCompat.Light\" />\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	
++++ b/app/src/main/res/values/themes.xml	
+@@ -7,10 +7,4 @@
+         <item name="colorAccent">@color/teal_200</item>
+         <!-- Customize your theme here. -->
+     </style>
+-    <style name="NoActionBar">
+-        <item name="windowActionBar">false</item>
+-        <item name="windowNoTitle">true</item>
+-    </style>
+-    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+-    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+ </resources>
+\ No newline at end of file
+Index: .idea/render.experimental.xml
+===================================================================
+diff --git a/.idea/render.experimental.xml b/.idea/render.experimental.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/render.experimental.xml	
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RenderSettings">
++    <option name="useLiveRendering" value="false" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/menu/toolbar_menu.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<menu xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\">\r\n\r\n    <item android:id=\"@+id/tool_search\"\r\n        android:title=\"@string/search\"\r\n        android:icon=\"@drawable/search\"\r\n        app:showAsAction=\"always\"/>\r\n\r\n\r\n\r\n\r\n</menu>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/menu/toolbar_menu.xml b/app/src/main/res/menu/toolbar_menu.xml
+--- a/app/src/main/res/menu/toolbar_menu.xml	
++++ b/app/src/main/res/menu/toolbar_menu.xml	
+@@ -5,8 +5,11 @@
+     <item android:id="@+id/tool_search"
+         android:title="@string/search"
+         android:icon="@drawable/search"
+-        app:showAsAction="always"/>
+-
++        app:showAsAction="ifRoom"/>
++    <item android:id="@+id/tool_mic"
++        android:title="@string/mic"
++        android:icon="@drawable/mic"
++        app:showAsAction="ifRoom"/>
+ 
+ 
+ 
+Index: app/src/main/java/com/example/myapplication/home_middle.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.myapplication.Home\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.Button\r\nimport androidx.fragment.app.Fragment\r\nimport androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance\r\nimport androidx.viewpager2.widget.ViewPager2\r\n//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Cooking_Utensils\r\n//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Material\r\nimport com.example.myapplication.Home_Middle_ViewPager2adapter\r\n//import com.example.myapplication.Other.Home_Middle_ViewPager2adapter\r\nimport com.example.myapplication.R\r\n//import com.example.myapplication.Recipe.RecipeActivity\r\nimport kotlinx.android.synthetic.main.base_main_layout.*\r\nimport kotlinx.android.synthetic.main.fragment_home_middle.*\r\nimport kotlinx.android.synthetic.main.fragment_home_middle_recipe.*\r\n// 홈 화면중 가운데에 해당하는 추천화면에 대한 Fragment이다.\r\nclass home_middle : Fragment() {\r\n\r\n\r\n    /*\r\n    //인스턴스 초기화\r\n    init{\r\n        instance = this\r\n    }*/\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n    }\r\n    /*companion object {\r\n        private var instance: home_middle? = null\r\n        fun getInstance(): home_middle?{\r\n            //인스턴스 리턴\r\n            return instance\r\n        }\r\n    }*/\r\n\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater, container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n\r\n        return inflater.inflate(R.layout.fragment_home_middle,container,false)\r\n\r\n    }\r\n\r\n\r\n    override fun onActivityCreated(savedInstanceState: Bundle?) {\r\n        super.onActivityCreated(savedInstanceState)\r\n\r\n\r\n        //pagerAdapter어뎁터 선언(Home_Middle_ViewPager2adapter)\r\n        val pagerAdapter= Home_Middle_ViewPager2adapter(requireActivity())\r\n\r\n        //pagerAdapter어뎁터에 레시피 프래그먼트를 추가\r\n        pagerAdapter.addFragment(Home_Middle_Recipe())\r\n        pagerAdapter.addFragment(Home_Middle_Recipe())\r\n        pagerAdapter.addFragment(Home_Middle_Recipe())\r\n\r\n\r\n        //어뎁터를 홈페이저의 어뎁터에 복사\r\n        home_recipe_viewpager2.adapter=pagerAdapter\r\n\r\n        //처음 뷰페이저2 화면 설정(0= 맨위)\r\n        home_recipe_viewpager2.setCurrentItem(0, false)\r\n\r\n        //뷰페이저2 방향 설정 ORIENTATION_VERTICAL=세로방향\r\n        home_recipe_viewpager2.orientation=ViewPager2.ORIENTATION_VERTICAL\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/home_middle.kt b/app/src/main/java/com/example/myapplication/home_middle.kt
+--- a/app/src/main/java/com/example/myapplication/home_middle.kt	
++++ b/app/src/main/java/com/example/myapplication/home_middle.kt	
+@@ -1,77 +1,86 @@
+-package com.example.myapplication.Home
++package com.example.myapplication
+ 
+-import android.content.Intent
+ import android.os.Bundle
+-import android.util.Log
+ import android.view.LayoutInflater
+ import android.view.View
+ import android.view.ViewGroup
+-import android.widget.Button
++import android.widget.Toast
+ import androidx.fragment.app.Fragment
+-import androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance
+-import androidx.viewpager2.widget.ViewPager2
+-//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Cooking_Utensils
+-//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Material
+-import com.example.myapplication.Home_Middle_ViewPager2adapter
+-//import com.example.myapplication.Other.Home_Middle_ViewPager2adapter
+-import com.example.myapplication.R
+-//import com.example.myapplication.Recipe.RecipeActivity
+-import kotlinx.android.synthetic.main.base_main_layout.*
+-import kotlinx.android.synthetic.main.fragment_home_middle.*
+-import kotlinx.android.synthetic.main.fragment_home_middle_recipe.*
+-// 홈 화면중 가운데에 해당하는 추천화면에 대한 Fragment이다.
+-class home_middle : Fragment() {
++
++// TODO: Rename parameter arguments, choose names that match
++// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++private const val ARG_PARAM1 = "param1"
++private const val ARG_PARAM2 = "param2"
+ 
++/**
++ * A simple [Fragment] subclass.
++ * Use the [home_frag_middle.newInstance] factory method to
++ * create an instance of this fragment.
++ */
++class home_frag_middle : Fragment() {
++    // TODO: Rename and change types of parameters
++    private var param1: String? = null
++    private var param2: String? = null
+ 
+-    /*
+-    //인스턴스 초기화
++
++
+     init{
+         instance = this
+-    }*/
++    }
+ 
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
++        arguments?.let {
++            param1 = it.getString(ARG_PARAM1)
++            param2 = it.getString(ARG_PARAM2)
++
++
++
++        }
+     }
+-    /*companion object {
+-        private var instance: home_middle? = null
+-        fun getInstance(): home_middle?{
+-            //인스턴스 리턴
++
++
++    companion object {
++
++        private var instance: home_frag_middle? = null
++        fun getInstance():home_frag_middle?{
+             return instance
+         }
+-    }*/
+ 
+ 
++        @JvmStatic
++        fun newInstance(param1: String, param2: String) =
++            home_frag_middle().apply {
++                arguments = Bundle().apply {
++                    putString(ARG_PARAM1, param1)
++                    putString(ARG_PARAM2, param2)
++                }
++            }
++    }
+     override fun onCreateView(
+         inflater: LayoutInflater, container: ViewGroup?,
+         savedInstanceState: Bundle?
+     ): View? {
++        // Inflate the layout for this fragment
++
++
++
+ 
+         return inflater.inflate(R.layout.fragment_home_middle,container,false)
+ 
+-    }
+ 
+ 
+-    override fun onActivityCreated(savedInstanceState: Bundle?) {
+-        super.onActivityCreated(savedInstanceState)
+ 
++    }
+ 
+-        //pagerAdapter어뎁터 선언(Home_Middle_ViewPager2adapter)
+-        val pagerAdapter= Home_Middle_ViewPager2adapter(requireActivity())
+ 
+-        //pagerAdapter어뎁터에 레시피 프래그먼트를 추가
+-        pagerAdapter.addFragment(Home_Middle_Recipe())
+-        pagerAdapter.addFragment(Home_Middle_Recipe())
+-        pagerAdapter.addFragment(Home_Middle_Recipe())
++    fun hello()
++    {
++        Toast.makeText(context,"hello",Toast.LENGTH_SHORT).show()
++    }
+ 
+ 
+-        //어뎁터를 홈페이저의 어뎁터에 복사
+-        home_recipe_viewpager2.adapter=pagerAdapter
+ 
+-        //처음 뷰페이저2 화면 설정(0= 맨위)
+-        home_recipe_viewpager2.setCurrentItem(0, false)
+ 
+-        //뷰페이저2 방향 설정 ORIENTATION_VERTICAL=세로방향
+-        home_recipe_viewpager2.orientation=ViewPager2.ORIENTATION_VERTICAL
+ 
+-    }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/myapplication/ButtonClass.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/ButtonClass.kt b/app/src/main/java/com/example/myapplication/ButtonClass.kt
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/myapplication/ButtonClass.kt	
+@@ -0,0 +1,7 @@
++package com.example.myapplication
++
++class ButtonClass {
++    fun toastHello(){
++        home_frag_middle.getInstance()?.hello()
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/myapplication/home_left.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.myapplication.Home\r\n\r\nimport android.app.AlertDialog\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport androidx.fragment.app.DialogFragment\r\nimport androidx.recyclerview.widget.LinearLayoutManager\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.example.myapplication.R\r\nimport com.example.myapplication.RecyclerRecipeSourceAdapter\r\nimport com.example.myapplication.RecyclerRefrigeratorSourceAdapter\r\nimport com.example.myapplication.databinding.DialogRefrigeratorSourceAddBinding\r\nimport com.example.myapplication.refrigerator_source_recycle_data\r\nimport kotlinx.android.synthetic.main.fragment_home_left.*\r\n//홈 화면중 왼쪽에 해당하는 냉장고에 대한 DialogFragment이다.\r\nclass home_left : DialogFragment() {\r\n    //초기 변수 선언 refrigerator_Data_Array는 데이터를 담는 그릇이고\r\n    //refrigerator_recyclerViewGroup1은 냉동, refrigerator_recyclerViewGroup2는 냉장이다.\r\n    val refrigerator_Data_Array:ArrayList<refrigerator_source_recycle_data> = java.util.ArrayList()\r\n    lateinit var refrigerator_recyclerViewGroup1:RecyclerView\r\n    lateinit var refrigerator_recyclerViewGroup2:RecyclerView\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater,\r\n        container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n        var rootView=inflater.inflate(R.layout.fragment_home_left,container,false)\r\n        return rootView\r\n    }\r\n\r\n    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {\r\n        super.onViewCreated(view, savedInstanceState)\r\n\r\n        //아이템에 데이터들을 저장시킨다.(냉장고 재료 데이터)\r\n        //refrigerator_source_recycle_data은 Recycle_Datafile에 있는 data class이다.\r\n        val items  = arrayListOf(\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\"),\r\n            refrigerator_source_recycle_data(\"제목이들어감\",\"내용이들어감\")\r\n        )\r\n        //54~61줄은 refigerator_vlist1(냉동 리사이클러뷰)에 대한 설정이다.\r\n        //refigerator_vlist1의 형태를 정의한다. VERTICAL은 세로방향의 리사이클러를 설정한다.\r\n        refigerator_vlist1.layoutManager=\r\n            LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)\r\n\r\n        /*refigerator_vlist1.setHasFixedSize(true)*/\r\n\r\n        //refigerator_vlist1의 어뎁터에 RecyclerRefrigeratorSourceAdapter의 어뎁터를 연결하고 items에 저장되어 있는 정보도 연결한다.\r\n        refigerator_vlist1.adapter = RecyclerRefrigeratorSourceAdapter(items)\r\n\r\n        //63~71줄은 refigerator_vlist2(냉장 리사이클러뷰)에 대한 설정이다.\r\n        //refigerator_vlist2의 형태를 정의한다. VERTICAL은 세로방향의 리사이클러를 설정한다.\r\n        refigerator_vlist2.layoutManager=\r\n            LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)\r\n\r\n        /*refigerator_vlist2.setHasFixedSize(true)*/\r\n\r\n        //refigerator_vlist2의 어뎁터에 RecyclerRefrigeratorSourceAdapter의 어뎁터를 연결하고 items에 저장되어 있는 정보도 연결한다.\r\n        refigerator_vlist2.adapter= RecyclerRefrigeratorSourceAdapter(items)\r\n\r\n        //아래는 다이얼로그에 대한 설정이다.\r\n        //바인딩에 dialog_refrigerator_source_add의 바인딩을 연결시킨다.\r\n        val dialogBinding=DialogRefrigeratorSourceAddBinding.inflate(layoutInflater)\r\n        //item_regierator_addbutton의 버튼을 클릭시 작동하는 함수이다.\r\n        item_regierator_addbutton.setOnClickListener {\r\n            val builder=AlertDialog.Builder(context)\r\n            builder.setTitle(\"재료 추가\")\r\n            builder.setView(dialogBinding.root)\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/home_left.kt b/app/src/main/java/com/example/myapplication/home_left.kt
+--- a/app/src/main/java/com/example/myapplication/home_left.kt	
++++ b/app/src/main/java/com/example/myapplication/home_left.kt	
+@@ -1,83 +1,59 @@
+-package com.example.myapplication.Home
++package com.example.myapplication
+ 
+-import android.app.AlertDialog
+ import android.os.Bundle
+-import android.util.Log
+ import android.view.LayoutInflater
+ import android.view.View
+ import android.view.ViewGroup
+-import androidx.fragment.app.DialogFragment
+-import androidx.recyclerview.widget.LinearLayoutManager
+-import androidx.recyclerview.widget.RecyclerView
+-import com.example.myapplication.R
+-import com.example.myapplication.RecyclerRecipeSourceAdapter
+-import com.example.myapplication.RecyclerRefrigeratorSourceAdapter
+-import com.example.myapplication.databinding.DialogRefrigeratorSourceAddBinding
+-import com.example.myapplication.refrigerator_source_recycle_data
+-import kotlinx.android.synthetic.main.fragment_home_left.*
+-//홈 화면중 왼쪽에 해당하는 냉장고에 대한 DialogFragment이다.
+-class home_left : DialogFragment() {
+-    //초기 변수 선언 refrigerator_Data_Array는 데이터를 담는 그릇이고
+-    //refrigerator_recyclerViewGroup1은 냉동, refrigerator_recyclerViewGroup2는 냉장이다.
+-    val refrigerator_Data_Array:ArrayList<refrigerator_source_recycle_data> = java.util.ArrayList()
+-    lateinit var refrigerator_recyclerViewGroup1:RecyclerView
+-    lateinit var refrigerator_recyclerViewGroup2:RecyclerView
++import androidx.fragment.app.Fragment
++
++// TODO: Rename parameter arguments, choose names that match
++// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++private const val ARG_PARAM1 = "param1"
++private const val ARG_PARAM2 = "param2"
++
++/**
++ * A simple [Fragment] subclass.
++ * Use the [home_left.newInstance] factory method to
++ * create an instance of this fragment.
++ */
++class home_left : Fragment() {
++    // TODO: Rename and change types of parameters
++    private var param1: String? = null
++    private var param2: String? = null
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        arguments?.let {
++            param1 = it.getString(ARG_PARAM1)
++            param2 = it.getString(ARG_PARAM2)
++        }
++    }
+ 
+     override fun onCreateView(
+-        inflater: LayoutInflater,
+-        container: ViewGroup?,
++        inflater: LayoutInflater, container: ViewGroup?,
+         savedInstanceState: Bundle?
+     ): View? {
+-        var rootView=inflater.inflate(R.layout.fragment_home_left,container,false)
+-        return rootView
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_home_left, container, false)
+     }
+ 
+-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+-        super.onViewCreated(view, savedInstanceState)
+-
+-        //아이템에 데이터들을 저장시킨다.(냉장고 재료 데이터)
+-        //refrigerator_source_recycle_data은 Recycle_Datafile에 있는 data class이다.
+-        val items  = arrayListOf(
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
+-            refrigerator_source_recycle_data("제목이들어감","내용이들어감")
+-        )
+-        //54~61줄은 refigerator_vlist1(냉동 리사이클러뷰)에 대한 설정이다.
+-        //refigerator_vlist1의 형태를 정의한다. VERTICAL은 세로방향의 리사이클러를 설정한다.
+-        refigerator_vlist1.layoutManager=
+-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
+-
+-        /*refigerator_vlist1.setHasFixedSize(true)*/
+-
+-        //refigerator_vlist1의 어뎁터에 RecyclerRefrigeratorSourceAdapter의 어뎁터를 연결하고 items에 저장되어 있는 정보도 연결한다.
+-        refigerator_vlist1.adapter = RecyclerRefrigeratorSourceAdapter(items)
+-
+-        //63~71줄은 refigerator_vlist2(냉장 리사이클러뷰)에 대한 설정이다.
+-        //refigerator_vlist2의 형태를 정의한다. VERTICAL은 세로방향의 리사이클러를 설정한다.
+-        refigerator_vlist2.layoutManager=
+-            LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
+-
+-        /*refigerator_vlist2.setHasFixedSize(true)*/
+-
+-        //refigerator_vlist2의 어뎁터에 RecyclerRefrigeratorSourceAdapter의 어뎁터를 연결하고 items에 저장되어 있는 정보도 연결한다.
+-        refigerator_vlist2.adapter= RecyclerRefrigeratorSourceAdapter(items)
+-
+-        //아래는 다이얼로그에 대한 설정이다.
+-        //바인딩에 dialog_refrigerator_source_add의 바인딩을 연결시킨다.
+-        val dialogBinding=DialogRefrigeratorSourceAddBinding.inflate(layoutInflater)
+-        //item_regierator_addbutton의 버튼을 클릭시 작동하는 함수이다.
+-        item_regierator_addbutton.setOnClickListener {
+-            val builder=AlertDialog.Builder(context)
+-            builder.setTitle("재료 추가")
+-            builder.setView(dialogBinding.root)
+-        }
++    companion object {
++        /**
++         * Use this factory method to create a new instance of
++         * this fragment using the provided parameters.
++         *
++         * @param param1 Parameter 1.
++         * @param param2 Parameter 2.
++         * @return A new instance of fragment home_left.
++         */
++        // TODO: Rename and change types and number of parameters
++        @JvmStatic
++        fun newInstance(param1: String, param2: String) =
++            home_left().apply {
++                arguments = Bundle().apply {
++                    putString(ARG_PARAM1, param1)
++                    putString(ARG_PARAM2, param2)
++                }
++            }
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/myapplication/home_right.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.myapplication.Home\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.Button\r\nimport androidx.fragment.app.Fragment\r\nimport com.example.myapplication.*\r\nimport com.example.myapplication.Cookbook.Cookbook_get_Activity\r\n//import com.example.myapplication.Cookbook.CookingManager.Cookbook_CookingtimeManagement_Activity\r\n//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Activity\r\n//import com.example.myapplication.Cookbook.Manager.Cookbook_Management_Activity\r\nimport kotlinx.android.synthetic.main.fragment_home_right.*\r\n\r\n// 홈 화면중 오른쪽에 해당하는 요리타임 Fragment.\r\nclass home_right : Fragment() {\r\n\r\n    //버튼 변수 선언\r\n    private lateinit var cookbook_create: Button\r\n    private lateinit var cookbook_management: Button\r\n    private lateinit var cookbook_cookingtimemanagement: Button\r\n    private lateinit var cookbook_import: Button\r\n\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n    }\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater, container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n\r\n        return inflater.inflate(R.layout.fragment_home_right, container, false)\r\n\r\n    }\r\n    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {\r\n        super.onViewCreated(view, savedInstanceState)\r\n\r\n\r\n\r\n\r\n\r\n        //레시피 가져오기버튼작동 50~59\r\n        //cookbook_button_Import버튼 불러오기\r\n        cookbook_import = view.findViewById(R.id.cookbook_button_Import)\r\n\r\n        //cookbook_import 클릭이벤트 작동\r\n        cookbook_import.setOnClickListener {\r\n\r\n            //Cookbook_get_Activity::class.java로 화면전환(intent 사용)\r\n            var intent = Intent(context, Cookbook_get_Activity::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n        //레시피관리 버튼작동 62~71\r\n        //cookbook_button_Management버튼 불러오기\r\n        cookbook_management = view.findViewById(R.id.cookbook_button_Management)\r\n\r\n        //cookbook_management 클릭이벤트 작동\r\n        cookbook_management.setOnClickListener {\r\n\r\n            //Cookbook_Management_Activity::class.java로 화면전환(intent 사용)\r\n            var intent = Intent(context, Cookbook_Management_Activity::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n        //요리타임관리 버튼71~80\r\n        //cookbook_button_CookingtimeManagement버튼 불러오기\r\n        cookbook_cookingtimemanagement = view.findViewById(R.id.cookbook_button_CookingtimeManagement)\r\n\r\n        //cookbook_management 클릭이벤트 작동\r\n        cookbook_cookingtimemanagement.setOnClickListener {\r\n\r\n            //Cookbook_Community_Activity::class.java로 화면전환(intent 사용)\r\n            var intent = Intent(context, Cookbook_Community_Activity::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n\r\n        //레시피 작성 버튼84~93\r\n        //cookbook_button_Create버튼 불러오기\r\n        cookbook_create = view.findViewById(R.id.cookbook_button_Create)\r\n\r\n        //cookbook_create 클릭이벤트 작동\r\n        cookbook_create.setOnClickListener {\r\n\r\n            //Cookbook_Write_Activity::class.java로 화면전환(intent 사용)\r\n            var intent = Intent(context, CookBook_Write_Activity::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/home_right.kt b/app/src/main/java/com/example/myapplication/home_right.kt
+--- a/app/src/main/java/com/example/myapplication/home_right.kt	
++++ b/app/src/main/java/com/example/myapplication/home_right.kt	
+@@ -1,96 +1,59 @@
+-package com.example.myapplication.Home
++package com.example.myapplication
+ 
+-import android.content.Intent
+ import android.os.Bundle
+ import android.view.LayoutInflater
+ import android.view.View
+ import android.view.ViewGroup
+-import android.widget.Button
+ import androidx.fragment.app.Fragment
+-import com.example.myapplication.*
+-import com.example.myapplication.Cookbook.Cookbook_get_Activity
+-//import com.example.myapplication.Cookbook.CookingManager.Cookbook_CookingtimeManagement_Activity
+-//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Activity
+-//import com.example.myapplication.Cookbook.Manager.Cookbook_Management_Activity
+-import kotlinx.android.synthetic.main.fragment_home_right.*
+ 
+-// 홈 화면중 오른쪽에 해당하는 요리타임 Fragment.
++// TODO: Rename parameter arguments, choose names that match
++// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++private const val ARG_PARAM1 = "param1"
++private const val ARG_PARAM2 = "param2"
++
++/**
++ * A simple [Fragment] subclass.
++ * Use the [home_right.newInstance] factory method to
++ * create an instance of this fragment.
++ */
+ class home_right : Fragment() {
+-
+-    //버튼 변수 선언
+-    private lateinit var cookbook_create: Button
+-    private lateinit var cookbook_management: Button
+-    private lateinit var cookbook_cookingtimemanagement: Button
+-    private lateinit var cookbook_import: Button
+-
++    // TODO: Rename and change types of parameters
++    private var param1: String? = null
++    private var param2: String? = null
+ 
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
++        arguments?.let {
++            param1 = it.getString(ARG_PARAM1)
++            param2 = it.getString(ARG_PARAM2)
++        }
+     }
+ 
+     override fun onCreateView(
+         inflater: LayoutInflater, container: ViewGroup?,
+         savedInstanceState: Bundle?
+     ): View? {
+-
++        // Inflate the layout for this fragment
+         return inflater.inflate(R.layout.fragment_home_right, container, false)
+-
+     }
+-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+-        super.onViewCreated(view, savedInstanceState)
+-
+-
+-
+-
+-
+-        //레시피 가져오기버튼작동 50~59
+-        //cookbook_button_Import버튼 불러오기
+-        cookbook_import = view.findViewById(R.id.cookbook_button_Import)
+-
+-        //cookbook_import 클릭이벤트 작동
+-        cookbook_import.setOnClickListener {
+-
+-            //Cookbook_get_Activity::class.java로 화면전환(intent 사용)
+-            var intent = Intent(context, Cookbook_get_Activity::class.java)
+-            startActivity(intent)
+-        }
+-
+-        //레시피관리 버튼작동 62~71
+-        //cookbook_button_Management버튼 불러오기
+-        cookbook_management = view.findViewById(R.id.cookbook_button_Management)
+-
+-        //cookbook_management 클릭이벤트 작동
+-        cookbook_management.setOnClickListener {
+-
+-            //Cookbook_Management_Activity::class.java로 화면전환(intent 사용)
+-            var intent = Intent(context, Cookbook_Management_Activity::class.java)
+-            startActivity(intent)
+-        }
+ 
+-        //요리타임관리 버튼71~80
+-        //cookbook_button_CookingtimeManagement버튼 불러오기
+-        cookbook_cookingtimemanagement = view.findViewById(R.id.cookbook_button_CookingtimeManagement)
+-
+-        //cookbook_management 클릭이벤트 작동
+-        cookbook_cookingtimemanagement.setOnClickListener {
+-
+-            //Cookbook_Community_Activity::class.java로 화면전환(intent 사용)
+-            var intent = Intent(context, Cookbook_Community_Activity::class.java)
+-            startActivity(intent)
+-        }
+-
+-
+-        //레시피 작성 버튼84~93
+-        //cookbook_button_Create버튼 불러오기
+-        cookbook_create = view.findViewById(R.id.cookbook_button_Create)
+-
+-        //cookbook_create 클릭이벤트 작동
+-        cookbook_create.setOnClickListener {
+-
+-            //Cookbook_Write_Activity::class.java로 화면전환(intent 사용)
+-            var intent = Intent(context, CookBook_Write_Activity::class.java)
+-            startActivity(intent)
+-        }
+-
++    companion object {
++        /**
++         * Use this factory method to create a new instance of
++         * this fragment using the provided parameters.
++         *
++         * @param param1 Parameter 1.
++         * @param param2 Parameter 2.
++         * @return A new instance of fragment home_right.
++         */
++        // TODO: Rename and change types and number of parameters
++        @JvmStatic
++        fun newInstance(param1: String, param2: String) =
++            home_right().apply {
++                arguments = Bundle().apply {
++                    putString(ARG_PARAM1, param1)
++                    putString(ARG_PARAM2, param2)
++                }
++            }
+     }
+ }
+\ No newline at end of file
