@@ -55,9 +55,9 @@ data class community_cook_recycle_data(
 
 //자유게시판 리사이클러 데이터
 data class community_free_recycle_data(
-    val profile  : Int,
-    val title : String
-
+    var profile  : Int? = 0,
+    var title : String? = "",
+    var script : String? = ""
 )
 
 
@@ -65,7 +65,9 @@ data class community_free_recycle_data(
 data class community_qna_recycle_data(
 
     val profile : Int,
-    val title : String
+    val title : String,
+    val question : String,
+    val answer : String
 )
 
 

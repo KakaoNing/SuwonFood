@@ -42,7 +42,7 @@
         app:layout_constraintLeft_toLeftOf="parent">
 
         <EditText
-            android:id="@+id/write_community_notice_free_content"
+            android:id="@+id/write_community_notice_free_script"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="내용을 입력하세요"/>
@@ -50,18 +50,19 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/write_community_free_button"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:text="완료"
-        android:textStyle="bold"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/color_orange_gradient_circle"
         android:backgroundTintMode="screen"
         android:fontFamily="@font/diary"
+        android:text="완료"
         android:textSize="20dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginRight="30dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:background="@drawable/color_orange_gradient_circle"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
 
 

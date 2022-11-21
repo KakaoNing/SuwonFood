@@ -285,11 +285,13 @@ class RecyclerFreeAdapter(private val items_free: ArrayList<community_free_recyc
 
         var recycle_free_profile: ImageView
         var recycle_free_title: TextView
+        var recycle_free_script: TextView
 
 
         init {
             recycle_free_profile = itemView.findViewById(R.id.recycle_free_profile)
             recycle_free_title = itemView.findViewById(R.id.recycle_free_title)
+            recycle_free_script=itemView.findViewById(R.id.recycle_free_script)
 
         }
 
@@ -312,8 +314,9 @@ class RecyclerFreeAdapter(private val items_free: ArrayList<community_free_recyc
     //리사이클러 각 item값 지정
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val free_notice: community_free_recycle_data = filteredFreeCycle[position]
-        holder.recycle_free_profile.setImageResource(items_free.get(position).profile)
+        items_free.get(position).profile?.let { holder.recycle_free_profile.setImageResource(it) }
         holder.recycle_free_title.text = free_notice.title
+        holder.recycle_free_script.text = free_notice.script
     }
 
     //필터를 통한 아이템의 카운트를 셈
@@ -351,14 +354,14 @@ class RecyclerFreeAdapter(private val items_free: ArrayList<community_free_recyc
                 //공백제외 2글자 이인 경우
             } else if (filterString.trim { it <= ' ' }.length <= 2) {
                 for (free_notice in items_free) {
-                    if (free_notice.title.contains(filterString)) {
+                    if (free_notice.title?.contains(filterString) == true) {
                         filteredList.add(free_notice)
                     }
                 }
                 //그 외의 경우(공백제외 2글자 초과)
             } else {
                 for (free_notice in items_free) {
-                    if (free_notice.title.contains(filterString)) {
+                    if (free_notice.title?.contains(filterString) == true) {
                         filteredList.add(free_notice)
                     }
                 }

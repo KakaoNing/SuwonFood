@@ -80,11 +80,11 @@ class Community_notice_qna_Activity : AppCompatActivity() {
     //recycler에 값을 추가한다
     fun AddQnaData(): ArrayList<community_qna_recycle_data> {
         var QnaData = ArrayList<community_qna_recycle_data>()
-        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"egg"))
-        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"fri"))
-        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"question"))
-        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"hello"))
-        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"akakak"))
+//        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"egg"))
+//        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"fri"))
+//        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"question"))
+//        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"hello"))
+//        QnaData.add(community_qna_recycle_data(R.drawable.base_user_img,"akakak"))
 
         return QnaData
     }
