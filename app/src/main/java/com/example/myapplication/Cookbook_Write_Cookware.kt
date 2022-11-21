@@ -23,7 +23,7 @@ class Cookbook_Write_Cookware : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var cookware_recycler_list= arrayListOf("Test 1","Test 2","Test 3","Test 4")
+        /*var cookware_recycler_list= arrayListOf("Test 1","Test 2","Test 3","Test 4")
 
         var cookware_recycler_manager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
@@ -32,5 +32,5 @@ class Cookbook_Write_Cookware : Fragment() {
         var cookware_recycler_RecyclerView = cookbook_import_recent_recyclerview.apply {
             adapter = cookware_recycler_adapter
             layoutManager = cookware_recycler_manager
-        }}
+        }*/}
 }

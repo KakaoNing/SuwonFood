@@ -17,9 +17,6 @@
             android:name=".Cookbook_Write_Activity"
             android:exported="false" />
         <activity
-            android:name=".Cookbook_CookingtimeManagement_Activity"
-            android:exported="false" />
-        <activity
             android:name=".Cookbook_Community_Activity"
             android:exported="false" />
         <activity

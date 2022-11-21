@@ -15,15 +15,13 @@
         android:orientation="horizontal"
         android:padding="0dp">
 
-        <TextView
-            android:id="@+id/item_regierator_image"
+        <Button
+            android:id="@+id/item_regierator_button"
             android:layout_width="51dp"
             android:layout_height="39dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:background="@color/purple_200"
             android:gravity="center"
-            android:text="사진"
+            android:text="버튼"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +33,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="이름"
-            app:layout_constraintStart_toEndOf="@+id/item_regierator_image"
+            app:layout_constraintStart_toEndOf="@+id/item_regierator_button"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView

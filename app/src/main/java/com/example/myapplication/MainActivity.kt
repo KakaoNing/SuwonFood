@@ -54,11 +54,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-
-
-
-
-
     }
 
     //드로어블

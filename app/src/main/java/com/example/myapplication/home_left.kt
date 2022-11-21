@@ -2,34 +2,41 @@ package com.example.myapplication.Home
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Dialog_Refrigerator
 import com.example.myapplication.R
-import com.example.myapplication.RecyclerRecipeSourceAdapter
 import com.example.myapplication.RecyclerRefrigeratorSourceAdapter
-import com.example.myapplication.databinding.DialogRefrigeratorSourceAddBinding
+import com.example.myapplication.databinding.FragmentHomeLeftBinding
+import com.example.myapplication.databinding.ItemRefrigeratorSourceRecycleBinding
 import com.example.myapplication.refrigerator_source_recycle_data
 import kotlinx.android.synthetic.main.fragment_home_left.*
+
 //홈 화면중 왼쪽에 해당하는 냉장고에 대한 DialogFragment이다.
-class home_left : DialogFragment() {
+class home_left : Fragment() {
     //초기 변수 선언 refrigerator_Data_Array는 데이터를 담는 그릇이고
     //refrigerator_recyclerViewGroup1은 냉동, refrigerator_recyclerViewGroup2는 냉장이다.
     val refrigerator_Data_Array:ArrayList<refrigerator_source_recycle_data> = java.util.ArrayList()
     lateinit var refrigerator_recyclerViewGroup1:RecyclerView
     lateinit var refrigerator_recyclerViewGroup2:RecyclerView
+    private lateinit var binding : FragmentHomeLeftBinding
+    private lateinit var buttonbinding:ItemRefrigeratorSourceRecycleBinding
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var rootView=inflater.inflate(R.layout.fragment_home_left,container,false)
-        return rootView
+        binding= FragmentHomeLeftBinding.inflate(inflater,container,false)
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -71,13 +78,47 @@ class home_left : DialogFragment() {
         refigerator_vlist2.adapter= RecyclerRefrigeratorSourceAdapter(items)
 
         //아래는 다이얼로그에 대한 설정이다.
-        //바인딩에 dialog_refrigerator_source_add의 바인딩을 연결시킨다.
-        val dialogBinding=DialogRefrigeratorSourceAddBinding.inflate(layoutInflater)
         //item_regierator_addbutton의 버튼을 클릭시 작동하는 함수이다.
         item_regierator_addbutton.setOnClickListener {
-            val builder=AlertDialog.Builder(context)
-            builder.setTitle("재료 추가")
-            builder.setView(dialogBinding.root)
+
+            //Dialog_Refrigerator을 연결
+            val dialog = context?.let { Dialog_Refrigerator(it) }
+
+            //다이얼로그 작동
+            dialog?.showDialog()
         }
+
+        refigerator_vlist1.setOnClickListener(object : RecyclerRefrigeratorSourceAdapter.OnItemClickListener,
+            View.OnClickListener {
+           /* override fun onItemClick(v: View, data: refrigerator_source_recycle_data, pos: Int) {
+
+                val vlist1dialog= AlertDialog.Builder(context)
+                var v1 = layoutInflater.inflate(R.layout.item_dialog_regrigerator_material,null)
+                vlist1dialog.setView(v1)
+
+                vlist1dialog.show()
+            }*/
+
+
+            override fun onClick(v: View?) {
+                /*val vlist1dialog= AlertDialog.Builder(context)
+                var v1 = layoutInflater.inflate(R.layout.item_dialog_regrigerator_material,null)
+                vlist1dialog.setView(v1)
+
+                vlist1dialog.show()
+                Toast.makeText(view.context,
+                "출력",
+                Toast.LENGTH_SHORT).show()*/
+            }
+
+            override fun onItemClick(v: View, data: refrigerator_source_recycle_data, pos: Int) {
+                val vlist2dialog= AlertDialog.Builder(context)
+                var v2 = layoutInflater.inflate(R.layout.item_dialog_refrigerator_source_add,null)
+                vlist2dialog.setView(v2)
+
+                vlist2dialog.show()
+            }
+        })
+
     }
 }
