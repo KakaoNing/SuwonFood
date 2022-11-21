@@ -7,7 +7,9 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import com.example.myapplication.Home.home_left
 import com.example.myapplication.Home.home_middle
+import com.example.myapplication.Home.home_right
 import com.example.myapplication.Other.home_viewpager
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -76,8 +78,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         Log.d("Log","목록터치")
         //클릭시 frame을 해당 프래그먼트로 바꿈
         when(item.itemId) {
-            //R.id.navi_refrigerator -> fragmentManager.replace(R.id.main_frame, home_left()).commit()
-            //R.id.navi_cookBook -> fragmentManager.replace(R.id.main_frame, home_right()).commit()
+            R.id.navi_refrigerator -> fragmentManager.replace(R.id.main_frame, home_left()).commit()
+            R.id.navi_cookBook -> fragmentManager.replace(R.id.main_frame, home_right()).commit()
             R.id.navi_recipe -> fragmentManager.replace(R.id.main_frame, home_middle()).commit()
         }
         home_main.closeDrawers()

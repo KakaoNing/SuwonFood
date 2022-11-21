@@ -6,10 +6,10 @@
         android:icon="@drawable/recipe"/>
     <item
         android:title="@string/re"
-        android:id="@+id/navi_re"
+        android:id="@+id/navi_refrigerator"
         android:icon="@drawable/re"/>
     <item
-        android:id="@+id/navi_Book"
+        android:id="@+id/navi_cookBook"
         android:icon="@drawable/book"
         android:title="@string/book" />
 
