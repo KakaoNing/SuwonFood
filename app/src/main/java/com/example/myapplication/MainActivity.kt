@@ -44,12 +44,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //네비게이션 띄우는 인디케이터 튤바에 생성
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
 
-        /*supportActionBar!!.setDisplayShowTitleEnabled(false)*/
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
 
 
         //커뮤니티 버튼 클릭 이동
         home_community.setOnClickListener {
             var intent = Intent(this, CommunityActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 

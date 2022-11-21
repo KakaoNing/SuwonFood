@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -24,6 +25,18 @@ class RecipeActivity : AppCompatActivity() {
         val binding = ActivityRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        recipe_button_recipe.setOnClickListener{
+            var intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+        recipe_button_community.setOnClickListener{
+            var intent = Intent(this, CommunityActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
 
 
         //툴바

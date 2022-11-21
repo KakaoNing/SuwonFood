@@ -10,6 +10,7 @@
 
 
 
+    <include layout="@layout/opt_main_toolbar" />
 
 
     <!--뷰페이저 2 -->

@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.item_cookbook_get_recommand.view.*
 //냉장고 재료 리사이클러
 class RecyclerRefrigeratorSourceAdapter(private val items_source: ArrayList<refrigerator_source_recycle_data>) : RecyclerView.Adapter<RecyclerRefrigeratorSourceAdapter.CustomViewHolder>() {
 
+    private val mData: ArrayList<String>? = null
     override fun getItemCount(): Int = items_source.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -33,16 +34,48 @@ class RecyclerRefrigeratorSourceAdapter(private val items_source: ArrayList<refr
     }
 
 
-    override fun onBindViewHolder(
-        holder: CustomViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.title.text = items_source.get(position).name
         holder.context.text=items_source.get(position).context
+
+        holder.itemView.setOnClickListener{
+            //Dialog_Refrigerator을 연결
+            val dialog = holder.context?.let { Dialog_Refrigerator(it.context) }
+
+            //다이얼로그 작동
+            dialog?.showDialog()
+        }
     }
 
-    inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title = itemView.findViewById<TextView>(R.id.item_regierator_material_name)
         val context=itemView.findViewById<TextView>(R.id.item_regierator_material_content)
     }
+
+    /*
+    interface OnItemClickListener{
+        fun onItemClick(v:View, data: refrigerator_source_recycle_data, pos : Int)
+    }
+    private var listener : RecyclerRefrigeratorSourceAdapter.OnItemClickListener? = null
+    fun setOnItemClickListener(listener : RecyclerRefrigeratorSourceAdapter.OnItemClickListener) {
+        this.listener = listener
+    }*/
+    /*inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+        private val txtName: TextView = itemView.findViewById(R.id.item_refigerator_name)
+        private val txtcontent: TextView = itemView.findViewById(R.id.item_regierator_material_content)
+
+        fun bind(item: refrigerator_source_recycle_data) {
+            txtName.text = item.name
+            val pos = adapterPosition
+            if(pos!= RecyclerView.NO_POSITION)
+            {
+                itemView.setOnClickListener {
+                    listener?.onItemClick(itemView,item,pos)
+                }
+            }
+        }
+    }*/
 }
 
 

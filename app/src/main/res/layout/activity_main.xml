@@ -23,6 +23,7 @@
 
 
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,10 +36,12 @@
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <include layout="@layout/opt_main_toolbar" />
+
+
+
+
 
 
 
@@ -53,44 +56,52 @@
         android:gravity="bottom"
         android:weightSum="10">
 
-        <Button
-            android:id="@+id/home_them"
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/color_green_gradient_circle"
-            android:text="테마별"
-            android:backgroundTintMode="screen"
-            android:textStyle="bold"
-            android:fontFamily="@font/diary"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:text="레시피"
-            android:background="@drawable/color_green_gradient_circle"
-            android:backgroundTintMode="screen"
-            android:textStyle="bold"
-            android:fontFamily="@font/diary"/>
-        <Button
-            android:id="@+id/home_community"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/color_green_gradient_circle"
-            android:text="요리타임"
-            android:textStyle="bold"
-            android:fontFamily="@font/diary"
-            android:backgroundTintMode="screen"/>
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/home_them"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Theme"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:drawableTop="@drawable/base_theme_img"
+                android:background="#C0FFFFFF"/>
+            <Button
+                android:id="@+id/home_recipe"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="RECIPE"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:drawableTop="@drawable/base_recipe_img"
+                android:background="#C0FFFFFF"/>
+            <Button
+                android:id="@+id/home_community"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="COMMUNITY"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:backgroundTintMode="screen"
+                android:drawableTop="@drawable/base_cook_time_img"
+                android:background="#C0FFFFFF"/>
+
+
+
+        </LinearLayout>
+
 
 
 

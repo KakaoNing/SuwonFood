@@ -1,35 +1,39 @@
 package com.example.myapplication.Home
 
-import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.R
-import com.example.myapplication.RecyclerRecipeSourceAdapter
+import com.example.myapplication.Dialog_Refrigerator
 import com.example.myapplication.RecyclerRefrigeratorSourceAdapter
-import com.example.myapplication.databinding.DialogRefrigeratorSourceAddBinding
+import com.example.myapplication.databinding.FragmentHomeLeftBinding
+import com.example.myapplication.databinding.ItemRefrigeratorSourceRecycleBinding
 import com.example.myapplication.refrigerator_source_recycle_data
 import kotlinx.android.synthetic.main.fragment_home_left.*
+
 //홈 화면중 왼쪽에 해당하는 냉장고에 대한 DialogFragment이다.
-class home_left : DialogFragment() {
+class home_left : Fragment() {
     //초기 변수 선언 refrigerator_Data_Array는 데이터를 담는 그릇이고
     //refrigerator_recyclerViewGroup1은 냉동, refrigerator_recyclerViewGroup2는 냉장이다.
     val refrigerator_Data_Array:ArrayList<refrigerator_source_recycle_data> = java.util.ArrayList()
     lateinit var refrigerator_recyclerViewGroup1:RecyclerView
     lateinit var refrigerator_recyclerViewGroup2:RecyclerView
+    private lateinit var binding : FragmentHomeLeftBinding
+    private lateinit var buttonbinding:ItemRefrigeratorSourceRecycleBinding
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var rootView=inflater.inflate(R.layout.fragment_home_left,container,false)
-        return rootView
+        binding= FragmentHomeLeftBinding.inflate(inflater,container,false)
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,18 +41,27 @@ class home_left : DialogFragment() {
 
         //아이템에 데이터들을 저장시킨다.(냉장고 재료 데이터)
         //refrigerator_source_recycle_data은 Recycle_Datafile에 있는 data class이다.
-        val items  = arrayListOf(
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감"),
-            refrigerator_source_recycle_data("제목이들어감","내용이들어감")
+        val items1  = arrayListOf(
+            refrigerator_source_recycle_data("계란","50개"),
+            refrigerator_source_recycle_data("사과","5개"),
+            refrigerator_source_recycle_data("참치","6캔"),
+            refrigerator_source_recycle_data("김치","2통"),
+            refrigerator_source_recycle_data("햄","6캔"),
+            refrigerator_source_recycle_data("오징어","4마리"),
+            refrigerator_source_recycle_data("생선","2마리"),
+            refrigerator_source_recycle_data("고등어","3마리"),
+            refrigerator_source_recycle_data("연어","1마리")
+        )
+        val items2  = arrayListOf(
+            refrigerator_source_recycle_data("배","50개"),
+            refrigerator_source_recycle_data("복숭아","5개"),
+            refrigerator_source_recycle_data("치즈","6캔"),
+            refrigerator_source_recycle_data("파인애플","2통"),
+            refrigerator_source_recycle_data("멸치","6캔"),
+            refrigerator_source_recycle_data("밥","4그릇"),
+            refrigerator_source_recycle_data("된장국","2마리"),
+            refrigerator_source_recycle_data("고등어","3마리"),
+            refrigerator_source_recycle_data("연어","1마리")
         )
         //54~61줄은 refigerator_vlist1(냉동 리사이클러뷰)에 대한 설정이다.
         //refigerator_vlist1의 형태를 정의한다. VERTICAL은 세로방향의 리사이클러를 설정한다.
@@ -58,7 +71,7 @@ class home_left : DialogFragment() {
         /*refigerator_vlist1.setHasFixedSize(true)*/
 
         //refigerator_vlist1의 어뎁터에 RecyclerRefrigeratorSourceAdapter의 어뎁터를 연결하고 items에 저장되어 있는 정보도 연결한다.
-        refigerator_vlist1.adapter = RecyclerRefrigeratorSourceAdapter(items)
+        refigerator_vlist1.adapter = RecyclerRefrigeratorSourceAdapter(items1)
 
         //63~71줄은 refigerator_vlist2(냉장 리사이클러뷰)에 대한 설정이다.
         //refigerator_vlist2의 형태를 정의한다. VERTICAL은 세로방향의 리사이클러를 설정한다.
@@ -68,16 +81,7 @@ class home_left : DialogFragment() {
         /*refigerator_vlist2.setHasFixedSize(true)*/
 
         //refigerator_vlist2의 어뎁터에 RecyclerRefrigeratorSourceAdapter의 어뎁터를 연결하고 items에 저장되어 있는 정보도 연결한다.
-        refigerator_vlist2.adapter= RecyclerRefrigeratorSourceAdapter(items)
+        refigerator_vlist2.adapter= RecyclerRefrigeratorSourceAdapter(items2)
 
-        //아래는 다이얼로그에 대한 설정이다.
-        //바인딩에 dialog_refrigerator_source_add의 바인딩을 연결시킨다.
-        val dialogBinding=DialogRefrigeratorSourceAddBinding.inflate(layoutInflater)
-        //item_regierator_addbutton의 버튼을 클릭시 작동하는 함수이다.
-        item_regierator_addbutton.setOnClickListener {
-            val builder=AlertDialog.Builder(context)
-            builder.setTitle("재료 추가")
-            builder.setView(dialogBinding.root)
-        }
     }
 }

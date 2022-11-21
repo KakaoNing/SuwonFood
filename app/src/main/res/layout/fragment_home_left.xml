@@ -8,14 +8,6 @@
 
 
 
-    <Button
-        android:id="@+id/item_regierator_addbutton"
-        android:layout_width="100dp"
-        android:layout_height="45dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="재료 추가"
-        android:background="@color/material_dynamic_neutral90"/>
 
     <TextView
         android:id="@+id/item_refigerator_name"
