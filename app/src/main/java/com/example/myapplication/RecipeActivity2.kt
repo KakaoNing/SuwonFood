@@ -16,7 +16,7 @@ class RecipeActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe2)
-        searchRecipe()
+        //searchRecipe()
         setUpData() //CE
         setUpList() //
         setUpOnClickListener() //상세페이지 이벤트

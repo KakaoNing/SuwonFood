@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         home_recipe.setOnClickListener {
-            var intent = Intent(this, RecipeActivity2::class.java)
+            var intent = Intent(this, RecipeActivity3::class.java)
             startActivity(intent)
         }
 

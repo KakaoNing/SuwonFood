@@ -59,6 +59,9 @@
             android:name=".RecipeActivity2"
             android:exported="false" />
         <activity
+            android:name=".RecipeActivity3"
+            android:exported="false" />
+        <activity
             android:name=".RecipeActivity"
             android:exported="true" />
         <activity

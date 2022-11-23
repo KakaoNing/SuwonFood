@@ -21,6 +21,45 @@
         <entry key="..\:/Users/USER/SuwonFood-kimhwan_final/app/src/main/res/layout/fragment_recipe_introduce.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/USER/SuwonFood-kimhwan_final/app/src/main/res/layout/fragment_recipe_recipe.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/USER/SuwonFood-kimhwan_final/app/src/main/res/layout/recipe_item.xml" value="0.3651041666666667" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/activity_ddetail.xml" value="0.3651041666666667" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/activity_detail.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/activity_recipe3.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/activity_search.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/base_search_layout.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/cookbook_get.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/cookbook_management.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/cookbook_write.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/dialog_refrigerator_source_add.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_cookbook__community_viewpager1.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_cookbook__community_viewpager2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_cookbook__management_viewpager2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_home_left.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_home_middle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_home_middle_recipe.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_home_navi_check_viewpager.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_home_right.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_recipe_cookware.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_recipe_done.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_recipe_introduce.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_recipe_recipe.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_recipe_recipe_viewpager1.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_recipe_recipe_viewpager2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/fragment_recipe_source.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_community_cook_notice_recycle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_community_free_notice_recycle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_community_qna_notice_recycle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_cookbook_get_favorite.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_cookbook_get_recommand.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_cookbook_write_source_recycle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_recipe_cookware_recycle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_recipe_done_recycle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_recipe_source_recycle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_refrigerator_source_recycle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/item_search_recycle.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/opt_drawer_header.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/opt_main_toolbar.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/recipe_item.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/USER/SuwonFood/app/src/main/res/layout/write_community_notice_cook.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>
