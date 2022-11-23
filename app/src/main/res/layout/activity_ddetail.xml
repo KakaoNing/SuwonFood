@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DdetailActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/detailMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/a" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/recipe_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_weight="1"
+                    android:text="갈비찜"
+                   android:textSize="19sp" />
+
+                <ImageButton
+                    android:id="@+id/pick_recipe"
+                    android:layout_width="22dp"
+                    android:layout_height="25dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/detailCategory"
+                android:layout_width="53dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="국/찌개"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginTop="48dp"
+                />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="390dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="6dp"
+                />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:gravity="center"
+                android:text="재료"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/detailIngredient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="43dp"
+                android:layout_marginBottom="47dp"
+                android:gravity="center"
+                android:text="소고기(100g), 돼지고기(100g), 대추(3알), 양파(30g), 마늘(20g), 배(1/4개), 애호박(1/2개), 단호박(1/4개), 파프리카(50g), 인삼(1뿌리), 양송이(5개), 배추잎(5장), 저염간장(20g), 설탕(20g), 소금(0.2g), 후춧가루(0.01g) 두부(50g)"/>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="390dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/gray_1" />
+
+            <TextView
+                android:id="@+id/textViewW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="43dp"
+                android:gravity="center"
+                android:text="조리방법"
+                android:textSize="19sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "531767662692",
+    "project_id": "suwonfood-final",
+    "storage_bucket": "suwonfood-final.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531767662692:android:43174be0cbea54d5b2a771",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531767662692-63sfipfqre94rrqf0efqpt0rr75qu0r3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "96ca03af3865096191d4681ada0731fffac615b2"
+          }
+        },
+        {
+          "client_id": "531767662692-ctutv5smsn51ntmb4ecd9pkg1ddg769t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfCqR7uD1d2svMFs3ncatn425GxQcD0wE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531767662692-ctutv5smsn51ntmb4ecd9pkg1ddg769t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
