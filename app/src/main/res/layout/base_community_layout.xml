@@ -60,7 +60,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -70,11 +69,62 @@
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             android:background="#41000000"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="15dp"
-            android:layout_width="380dp"
-            android:layout_height="100dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#B1FFFFFF">
+
+            <ImageView
+                android:layout_marginLeft="50dp"
+                android:id="@+id/recycle_cook_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:src="@drawable/base_user_img" />
+
+            <TextView
+                android:id="@+id/recycle_cook_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:backgroundTintMode="screen"
+                android:fontFamily="@font/diary"
+                android:text="User"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#B1FFFFFF">
+
+            <ImageView
+                android:id="@+id/recycle_cook_img"
+                android:layout_width="320dp"
+                android:layout_height="150dp"
+                android:background="@drawable/color_brown_gradient_square"
+                android:src="@drawable/cook_ex5_base_img"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/recycle_cook_title"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTintMode="screen"
+                android:fontFamily="@font/diary"
+                android:textStyle="bold"
+                android:text="고오급 토마토 스튜"
+                android:textSize="25dp"
+                android:gravity="center"
+
+                />
+        </LinearLayout>
+
 
         <TextView
             android:layout_marginLeft="10dp"
@@ -87,11 +137,7 @@
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             android:background="#41000000"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="380dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="15dp"/>
+
 
         <!---<Button
             android:layout_width="match_parent"
@@ -113,6 +159,47 @@
 
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#B1FFFFFF">
+
+        <ImageView
+            android:id="@+id/recycle_free_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/base_user_img"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/recycle_free_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTintMode="screen"
+            android:fontFamily="@font/diary"
+            android:text="개발 너무 힘들어요"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+    <TextView
+
+
+        android:id="@+id/recycle_free_script"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTintMode="screen"
+        android:fontFamily="@font/diary"
+        android:text="이거 왜 안돼?? 제발 살려줘..."
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:background="#B1FFFFFF"/>
 
 
 

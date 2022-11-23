@@ -9,14 +9,14 @@
 
 
 
-    <TextView
+
+    <ImageView
         android:id="@+id/item_refigerator_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="냉장고"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/refrigerator"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <TextView
         android:id="@+id/textView_freezer"

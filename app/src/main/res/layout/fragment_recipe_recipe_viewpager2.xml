@@ -9,8 +9,28 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="두번째"
-        android:textSize="50dp"
+        android:text="3.팬에 식용유를 충분히 두루고 계란을 부어준다"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/diary"
+        android:backgroundTintMode="screen"/>
+
+    <TextView
+    android:layout_marginTop="100dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="4.잘 익도록 뒤집개로  뒤집어가면서 익혀준다"
+    android:textSize="25dp"
+    android:textStyle="bold"
+    android:fontFamily="@font/diary"
+    android:backgroundTintMode="screen"/>
+
+    <TextView
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="5.돌돌말아 이쁘게 썰어주면 완성"
+        android:textSize="25dp"
         android:textStyle="bold"
         android:fontFamily="@font/diary"
         android:backgroundTintMode="screen"/>

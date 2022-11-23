@@ -15,6 +15,8 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.Home_Middle_ViewPager2adapter
 //import com.example.myapplication.Other.Home_Middle_ViewPager2adapter
 import com.example.myapplication.R
+import com.example.myapplication.home_middle_recipe2
+import com.example.myapplication.home_middle_recipe3
 //import com.example.myapplication.Recipe.RecipeActivity
 import kotlinx.android.synthetic.main.base_main_layout.*
 import kotlinx.android.synthetic.main.fragment_home_middle.*
@@ -60,8 +62,8 @@ class home_middle : Fragment() {
 
         //pagerAdapter어뎁터에 레시피 프래그먼트를 추가
         pagerAdapter.addFragment(Home_Middle_Recipe())
-        pagerAdapter.addFragment(Home_Middle_Recipe())
-        pagerAdapter.addFragment(Home_Middle_Recipe())
+        pagerAdapter.addFragment(home_middle_recipe2())
+        pagerAdapter.addFragment(home_middle_recipe3())
 
 
         //어뎁터를 홈페이저의 어뎁터에 복사

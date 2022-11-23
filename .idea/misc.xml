@@ -8,19 +8,37 @@
         <entry key="..\:/Food3/app/src/main/res/drawable/base_recipe_img.xml" value="0.2475" />
         <entry key="..\:/Food3/app/src/main/res/drawable/base_theme_img.xml" value="0.2475" />
         <entry key="..\:/Food3/app/src/main/res/drawable/color_greenbrown_gradient_circle.xml" value="0.2475" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/cook_ex1_base_img.xml" value="0.3895" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/cook_ex2_base_img.xml" value="0.3895" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/cook_ex3_base_img.xml" value="0.3895" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/cook_ex4_base_img.xml" value="0.3895" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/cook_ex5_base_img.xml" value="0.3895" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_communuity.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_main.xml" value="0.5107252298263534" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_recipe.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/base_community_layout.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/base_main_layout.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/base_recipe_layout.xml" value="0.5208333333333334" />
-        <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_left.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__community_viewpager1.xml" value="0.4046875" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_left.xml" value="0.5" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_middle.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_middle2.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_middle_recipe.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_middle_recipe3.xml" value="0.4083333333333333" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_right.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_cookware.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_introduce.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_recipe_viewpager1.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_recipe_viewpager2.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/item_community_cook_notice_recycle.xml" value="0.4046875" />
+        <entry key="..\:/Food3/app/src/main/res/layout/item_community_free_notice_recycle.xml" value="0.4046875" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_dialog_refrigerator_add_material.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food3/app/src/main/res/layout/item_recipe_done_recycle.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/write_community_notice_qna_info.xml" value="0.4083333333333333" />
         <entry key="..\:/Food3/app/src/main/res/menu/navigation_menu.xml" value="0.5208333333333334" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

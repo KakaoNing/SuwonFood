@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="한줄특징 작성란"
+            android:text="파가 송송 계란말이"
             android:textSize="30dp"
             android:gravity="center"
             android:textStyle="bold"
@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="제목작성"
+            android:text="계란말이"
             android:textSize="30dp"
             android:gravity="center"
             android:textStyle="bold"
@@ -32,21 +32,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:text="설명란"
+            android:text="반찬으로도 OK 간식으로도 OK 케찹 뿌려먹으면        더 맛있다!!"
             android:textSize="30dp"
             android:gravity="center"
             android:textStyle="bold"
             android:fontFamily="@font/diary"
             android:backgroundTintMode="screen" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:text=" 요리타임 평가"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:fontFamily="@font/diary"
-            android:backgroundTintMode="screen" />
+
 
 
 

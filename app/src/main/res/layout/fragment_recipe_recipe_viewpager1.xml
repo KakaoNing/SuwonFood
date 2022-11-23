@@ -5,12 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".recipe_recipe_viewpager1">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="첫번째"
-        android:textSize="50dp"
+        android:text="1.날계란을 믹싱볼에 풀고 잘 섞어준다"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/diary"
+        android:backgroundTintMode="screen"/>
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="2.대파와 당근을 잘게 썰어주고 믹싱볼에 넣어준다"
+        android:textSize="25dp"
         android:textStyle="bold"
         android:fontFamily="@font/diary"
         android:backgroundTintMode="screen"/>
