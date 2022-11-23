@@ -13,14 +13,14 @@
     <include layout="@layout/opt_main_toolbar" />
 
 
-    <!--뷰페이저 2 -->
+    <!--뷰페이저 2
     <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/home_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="55dp">
     </androidx.viewpager2.widget.ViewPager2>
-
+    -->
 
 
 

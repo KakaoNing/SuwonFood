@@ -17,6 +17,7 @@ import com.example.myapplication.PagerFragmentStateAdapter
 import com.example.myapplication.R
 
 import kotlinx.android.synthetic.main.base_main_layout.*
+import kotlinx.android.synthetic.main.fragment_home_navi_check_viewpager.*
 
 
 //홈 뷰페이저 Fragment이다.
