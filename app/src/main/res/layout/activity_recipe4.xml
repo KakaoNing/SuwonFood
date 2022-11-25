@@ -9,11 +9,12 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="레시피 불러오기"
+        android:text="load data from network"
         android:textAllCaps="false"
-        android:onClick="clickBtn"/>
+        android:onClick="mOnClick"/>
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"

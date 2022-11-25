@@ -13,7 +13,6 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.net.MalformedURLException
 import java.net.URL
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -22,108 +21,96 @@ class RecipeActivity4 : AppCompatActivity() {
     var listView: ListView? = null
     var adapter: ArrayAdapter<*>? = null
     var items = ArrayList<String?>()
+    var data: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe4)
         listView = findViewById(R.id.listview)
         adapter = ArrayAdapter<Any?>(this, android.R.layout.simple_list_item_1, items as List<Any?>)
-
         listView!!.setAdapter(adapter)
     }
 
-    fun clickBtn(v: View?) {
+    fun mOnClick(v: View) {
+        when (v.id) {
+            R.id.button ->
+                Thread {
+
+                    data = xmlData //아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
+
+                }.start()
+        }
+    }
+
+    private val xmlData: String
+
+        get() {
+            var buffer = StringBuffer()
+            val adress =
+                ("https://openapi.foodsafetykorea.go.kr/api/" + apiKey + "/COOKRCP01/xml/1/10/")
+
+            try {
+                //URL객체생성
+                val url = URL(adress)
+
+                //Stream 열기
+                val `is` = url.openStream() //바이트스트림
+                //문자스트림으로 변환
+                val isr = InputStreamReader(`is`)
+
+                //읽어들인 XML문서를 분석(parse)해주는 객체 생성
+                val factory = XmlPullParserFactory.newInstance()
+                val xpp = factory.newPullParser()
+                xpp.setInput(isr)
+
+                //xpp를 이용해서 xml문서를 분석
 
 
-        object : Thread() {
-            override fun run() {
+                var eventType = xpp.eventType
+                var tagName: String
+                while (eventType != XmlPullParser.END_DOCUMENT) {
+                    when (eventType) {
+                        XmlPullParser.START_DOCUMENT -> buffer.append("\n")
+                        XmlPullParser.START_TAG -> {
+                            tagName = xpp.name
+                            if (tagName == "RCP_NM"); else if (tagName == "RCP_PAT2") {
+                                buffer.append("category:")
+                                xpp.next()
+                                buffer.append(
+                                    xpp.text)
+                                buffer.append("\n")
 
-                items.clear()
-                val adress =
-                    ("https://openapi.foodsafetykorea.go.kr/api/" + apiKey + "/COOKRCP01/xml/1/10/")
+//
+                            } else if (tagName == "RCP_PARTS_DTLS") {
+                                buffer.append("이름:")
+                                xpp.next()
+                                buffer.append(
+                                    xpp.text)
 
-
-
-                try {
-                    //URL객체생성
-                    val url = URL(adress)
-
-                    //Stream 열기                                     //is는 바이트 스트림이라 문자열로 받기위해 isr이 필요하고 isr을 pullparser에게 줘야하는데
-                    val `is` = url.openStream() //바이트스트림
-                    //문자스트림으로 변환
-                    val isr = InputStreamReader(`is`)
-
-                    //읽어들인 XML문서를 분석(parse)해주는 객체 생성    //pullparser를 만들려면 Factory가 필요해서 팩토리 만들고 pullparser를 만들었다. 결론, 그리고 pullparser에게 isr연결
-                    val factory = XmlPullParserFactory.newInstance()
-                    val xpp = factory.newPullParser()
-                    xpp.setInput(isr)
-
-                    //xpp를 이용해서 xml문서를 분석
-
-                    //xpp.next();   //XmlPullParser는 시작부터 문서의 시작점에 있으므로 next해주면 START_DOCUMENT를 못만난다.
-                    var eventType = xpp.eventType
-                    var tagName: String
-                    var buffer: StringBuffer? = null
-                    while (eventType != XmlPullParser.END_DOCUMENT) {
-                        when (eventType) {
-                            XmlPullParser.START_DOCUMENT -> runOnUiThread {
-                                Toast.makeText(
-                                    this@RecipeActivity4,
-                                    "파싱을 시작했다.",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                            XmlPullParser.START_TAG -> {
-                                tagName = xpp.name
-                                if (tagName == "item") {
-                                    buffer = StringBuffer()
-                                } else if (tagName == "RCP_NM") {
-                                    buffer!!.append("순위:")
-                                    xpp.next()
-                                    buffer.append(
-                                        """
-                                            ${xpp.text}
-                                            
-                                            """.trimIndent()
-                                    ) //아래 두줄을 한줄로 줄일 수 있다.
-                                    //                                    String text = xpp.getText();
-//                                    buffer.append(text+"\n");
-                                } else if (tagName == "RCP_PARTS_DTLS") {
-                                    buffer!!.append("제목:")
-                                    xpp.next()
-                                    buffer.append(
-                                        """
-                                            ${xpp.text}
-                                            
-                                            """.trimIndent()
-                                    )
-                                }
-                            }
-                            XmlPullParser.TEXT -> {}
-                            XmlPullParser.END_TAG -> {
-                                tagName = xpp.name
-                                if (tagName == "item") {
-                                    items.add(buffer.toString())
-
-                                    //리스트뷰 갱신
-                                    runOnUiThread { adapter!!.notifyDataSetChanged() }
-                                }
                             }
                         }
-                        eventType = xpp.next()
-                        //                        xpp.next();   //두줄을 한줄로 쓸 수 있다.
-                        //                        eventType=xpp.getEventType();
-                    } //while ..
-                    runOnUiThread {
-                        Toast.makeText(this@RecipeActivity4, "파싱종료!!", Toast.LENGTH_SHORT).show()
+                        XmlPullParser.TEXT -> {}
+                        XmlPullParser.END_TAG -> {
+                            tagName = xpp.name
+                            if (tagName == "RCP_NM") {
+                                items.add(buffer.toString())
+
+                                //리스트뷰 갱신
+                                runOnUiThread { adapter!!.notifyDataSetChanged() }
+                            }
+                        }
                     }
-                } catch (e: MalformedURLException) {
-                    e.printStackTrace()
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                } catch (e: XmlPullParserException) {
-                    e.printStackTrace()
-                }
-            } // run() ..
-        }.start()
-    }
+                    eventType = xpp.next()
+                   ;
+                } //while ..
+
+            } catch (e: MalformedURLException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: XmlPullParserException) {
+                e.printStackTrace()
+            }
+            return buffer.toString()
+        }
 }
+
