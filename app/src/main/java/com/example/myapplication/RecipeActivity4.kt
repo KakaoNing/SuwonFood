@@ -46,7 +46,7 @@ class RecipeActivity4 : AppCompatActivity() {
         get() {
             var buffer = StringBuffer()
             val adress =
-                ("https://openapi.foodsafetykorea.go.kr/api/" + apiKey + "/COOKRCP01/xml/1/10/")
+                ("https://openapi.foodsafetykorea.go.kr/api/" + apiKey + "/COOKRCP01/xml/1/50/")
 
             try {
                 //URL객체생성

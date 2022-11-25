@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -59,7 +60,7 @@
             android:name=".RecipeActivity2"
             android:exported="false" />
         <activity
-            android:name=".RecipeActivity3"
+            android:name=".RecipeActivity4"
             android:exported="false" />
         <activity
             android:name=".RecipeActivity"
