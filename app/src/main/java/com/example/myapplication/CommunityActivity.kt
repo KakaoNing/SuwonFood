@@ -6,9 +6,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_communuity.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.base_community_layout.*
+import kotlinx.android.synthetic.main.fragment_recipe_cookware.*
+import kotlinx.android.synthetic.main.fragment_recipe_done.*
 
 
 class CommunityActivity : AppCompatActivity() {
@@ -31,6 +34,11 @@ class CommunityActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        community_button_community.setOnClickListener {
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
         community_button_cook.setOnClickListener {
             var intent = Intent(this,Community_notice_cook_Activity::class.java)
             startActivity(intent)
@@ -46,10 +54,31 @@ class CommunityActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+        //오늘의 레시피
+
+        val items_recipe = arrayListOf(
+            community_today_recipe(R.drawable.icon_community_user_ex_50dp,"name",R.drawable.cook_ex1_base_img,"요리이름")
+        )
+
+        opt_community_today_recipe_recycle.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        opt_community_today_recipe_recycle.setHasFixedSize(true)
+        opt_community_today_recipe_recycle.adapter = RecyclerCommunityTodayRecipeAdapter(items_recipe)
+
+        //오늘의 게시글
+
+        val items_notice = arrayListOf(
+            community_today_notice(R.drawable.icon_community_user_ex_50dp,"제목")
+        )
+
+        opt_community_today_notice_recycle.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        opt_community_today_notice_recycle.setHasTransientState(true)
+        opt_community_today_notice_recycle.adapter = RecyclerCommunityTodayNoticeAdapter(items_notice)
+
+
     }
-
-
-
 
 
 
@@ -66,4 +95,7 @@ class CommunityActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.toolbar_menu,menu)
         return true
     }
+
+
+
 }

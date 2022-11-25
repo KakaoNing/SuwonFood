@@ -10,13 +10,13 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/recycle_cook_profile"
+            android:id="@+id/recycle_today_recipe_profile"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:src="@drawable/icon_community_user_ex_50dp" />
 
         <TextView
-            android:id="@+id/recycle_cook_name"
+            android:id="@+id/recycle_today_recipe_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -25,7 +25,8 @@
             android:fontFamily="@font/diary"
             android:text="이름"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#FFB300"/>
     </LinearLayout>
 
     <LinearLayout
@@ -34,14 +35,14 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/recycle_cook_img"
+            android:id="@+id/recycle_today_recipe_img"
             android:layout_width="350dp"
             android:layout_height="150dp"
             android:background="@drawable/color_brown_gradient_square"
             android:src="@drawable/icon_community_mostqa"/>
 
         <TextView
-            android:id="@+id/recycle_cook_title"
+            android:id="@+id/recycle_today_recipe_title"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -72,3 +72,17 @@ data class search_recycle_data(
     val inform : String
 
 )
+
+// 오늘의 레시피 데이터
+data class community_today_recipe(
+    val profile : Int,
+    val name : String,
+    val img : Int,
+    val title : String
+)
+// 오늘의 게시글 데이터
+
+data class community_today_notice(
+    val profile : Int,
+    val title : String
+)

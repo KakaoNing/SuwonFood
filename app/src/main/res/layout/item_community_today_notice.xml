@@ -5,7 +5,7 @@
     android:layout_height="60dp">
 
     <ImageView
-        android:id="@+id/recycle_free_profile"
+        android:id="@+id/recycle_today_notice_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_community_user_ex_50dp"
@@ -13,7 +13,7 @@
         />
 
     <TextView
-        android:id="@+id/recycle_free_title"
+        android:id="@+id/recycle_today_notice_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -22,7 +22,8 @@
         android:text="제목이 들어가는곳"
         android:textColor="#FFB300"
         android:textSize="25dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"/>
 
 
 

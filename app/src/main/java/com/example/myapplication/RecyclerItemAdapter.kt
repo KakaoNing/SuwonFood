@@ -577,6 +577,76 @@ class RecyclerRecipeDoneImageAdapter(private val items_done_image: ArrayList<rec
 }
 
 
+// 커뮤니티 오늘의 레시피 리사이클러
+class RecyclerCommunityTodayRecipeAdapter(private val items_today_recipe: ArrayList<community_today_recipe>) : RecyclerView.Adapter<RecyclerCommunityTodayRecipeAdapter.CustomViewHolder>() {
 
+    override fun getItemCount(): Int = items_today_recipe.size
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerCommunityTodayRecipeAdapter.CustomViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_community_today_recipe, parent, false)
+        return CustomViewHolder(view).apply {
+            itemView.setOnClickListener {
+                val curPos: Int = adapterPosition
+                val profile: community_today_recipe = items_today_recipe.get(curPos)
+            }
+
+        }
+    }
+
+
+    override fun onBindViewHolder(holder: RecyclerCommunityTodayRecipeAdapter.CustomViewHolder, position: Int) {
+        holder.name.text = items_today_recipe.get(position).name
+        holder.title.text = items_today_recipe.get(position).title
+        holder.profile.setImageResource(items_today_recipe.get(position).profile)
+        holder.img.setImageResource(items_today_recipe.get(position).img)
+    }
+
+
+    inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val profile = itemView.findViewById<ImageView>(R.id.recycle_today_recipe_profile)
+        val name = itemView.findViewById<TextView>(R.id.recycle_today_recipe_name)
+        val img = itemView.findViewById<ImageView>(R.id.recycle_today_recipe_img)
+        val title = itemView.findViewById<TextView>(R.id.recycle_today_recipe_title)
+
+    }
+
+
+}
+
+
+
+// 커뮤니티 오늘의 게시글 리사이클러
+class RecyclerCommunityTodayNoticeAdapter(private val items_today_notice: ArrayList<community_today_notice>) : RecyclerView.Adapter<RecyclerCommunityTodayNoticeAdapter.CustomViewHolder>() {
+
+    override fun getItemCount(): Int = items_today_notice.size
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerCommunityTodayNoticeAdapter.CustomViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_community_today_notice, parent, false)
+        return CustomViewHolder(view).apply {
+            itemView.setOnClickListener {
+                val curPos: Int = adapterPosition
+                val profile: community_today_notice = items_today_notice.get(curPos)
+            }
+
+        }
+    }
+
+
+    override fun onBindViewHolder(holder: RecyclerCommunityTodayNoticeAdapter.CustomViewHolder, position: Int) {
+        holder.title.text = items_today_notice.get(position).title
+        holder.profile.setImageResource(items_today_notice.get(position).profile)
+    }
+
+
+    inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val profile = itemView.findViewById<ImageView>(R.id.recycle_today_notice_profile)
+        val title = itemView.findViewById<TextView>(R.id.recycle_today_notice_title)
+
+    }
+
+
+}
 
 

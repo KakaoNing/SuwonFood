@@ -1,35 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cookbook_Management_Activity">
+    tools:context=".Cookbook_Management_Activity"
+    android:orientation="vertical"
+    android:background="@drawable/color_background_brown">
 
-    <Button
-        android:id="@+id/cookbook_recipe_management_button_list"
+    <include
+        layout="@layout/opt_main_toolbar"/>
+
+    <TextView
+        android:id="@+id/cookbook_get_check_position"
         android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="#80FF0000"
+        android:layout_height="wrap_content"
         android:text="레시피 관리"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/cookbook_management_viewpager_main"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:backgroundTintMode="screen"
+        android:textStyle="bold"
+        android:fontFamily="@font/diary"
+        android:textColor="#FFAB40"/>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/cookbook_management_viewpager_main"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="400dp"
+        />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:paddingTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:weightSum="10">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/cookbook_get_button_theme"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Theme"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:drawableTop="@drawable/icon_underbar_theme_40dp"
+                android:background="#80FFFFFF"/>
+            <Button
+                android:id="@+id/cookbook_get_button_recipe"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="RECIPE"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:drawableTop="@drawable/icon_underbar_recipe_40dp"
+                android:background="#80FFFFFF"/>
+            <Button
+                android:id="@+id/cookbook_get_button_community"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="COMMUNITY"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:backgroundTintMode="screen"
+                android:drawableTop="@drawable/icon_underbar_community_40dp"
+                android:background="#80FFFFFF"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>   <!--하단의 버튼-->
+
+
+</LinearLayout>
