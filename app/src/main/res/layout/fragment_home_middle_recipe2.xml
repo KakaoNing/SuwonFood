@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".home_middle_recipe2">
 
     <Button
         android:id="@+id/home_middle_button"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
         android:text="김치찌개"
-        android:textSize="50dp"
+        android:textSize="30dp"
+        android:paddingTop="15dp"
         android:drawableTop="@drawable/cook_ex2_base_img"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="30dp"
         android:backgroundTintMode="screen"
         android:textStyle="bold"
         android:fontFamily="@font/diary"
-        android:textColor="#FF8A65"/>
+        android:textColor="#FFAB40"
+        android:background="@drawable/color_origin_gradient_littlecircle"/>
 
 
 </FrameLayout>
