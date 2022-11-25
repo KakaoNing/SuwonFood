@@ -20,14 +20,14 @@ class RecipeActivity4 : AppCompatActivity() {
     var apiKey = "a0b0314639de4e13bbbb"
     var listView: ListView? = null
     var adapter: ArrayAdapter<*>? = null
-    var items = ArrayList<String?>()
+    var items = ArrayList<String>()
     var data: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe4)
         listView = findViewById(R.id.listview)
-        adapter = ArrayAdapter<Any?>(this, android.R.layout.simple_list_item_1, items as List<Any?>)
-        listView!!.setAdapter(adapter)
+        adapter = ArrayAdapter<Any>(this, android.R.layout.simple_list_item_1, items as List<Any?>)
+        listView?.setAdapter(adapter)
     }
 
     fun mOnClick(v: View) {
@@ -72,7 +72,7 @@ class RecipeActivity4 : AppCompatActivity() {
                         XmlPullParser.START_DOCUMENT -> buffer.append("\n")
                         XmlPullParser.START_TAG -> {
                             tagName = xpp.name
-                            if (tagName == "RCP_NM"); else if (tagName == "RCP_PAT2") {
+                            if (tagName == "row"); else if (tagName == "RCP_PAT2") {
                                 buffer.append("category:")
                                 xpp.next()
                                 buffer.append(
@@ -91,9 +91,9 @@ class RecipeActivity4 : AppCompatActivity() {
                         XmlPullParser.TEXT -> {}
                         XmlPullParser.END_TAG -> {
                             tagName = xpp.name
-                            if (tagName == "RCP_NM") {
+                            if (tagName == "row") {
                                 items.add(buffer.toString())
-
+                                items.clear()
                                 //리스트뷰 갱신
                                 runOnUiThread { adapter!!.notifyDataSetChanged() }
                             }
