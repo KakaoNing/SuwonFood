@@ -25,7 +25,7 @@ class home_middle_recipe2 : Fragment() {
 
 
         //레시피 추천화면을 frag_home_middle_recipe 로 설정
-        return inflater.inflate(R.layout.fragment_home_middle2, container, false)
+        return inflater.inflate(R.layout.fragment_home_middle_recipe2, container, false)
 
 
 

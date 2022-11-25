@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThemeActivity"
+    android:background="@drawable/color_background_brown"
+    android:orientation="vertical">
+
+
+    <include
+        layout="@layout/opt_main_toolbar"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="테마"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:backgroundTintMode="screen"
+        android:textStyle="bold"
+        android:fontFamily="@font/diary"
+        android:textColor="#FFAB40"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="종류별"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/color_whiteyellow_gradient_circle"
+        android:textSize="20dp"
+        android:backgroundTintMode="screen"
+        android:textStyle="bold"
+        android:fontFamily="@font/diary"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+
+
+
+        <TableRow>
+            <Button
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/theme_icon_rice_50dp"
+                android:text="밥"
+                android:background="@drawable/border_white"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"/>
+            <Button
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/theme_icon_soup_50dp"
+                android:text="국&amp;찌개"
+                android:background="@drawable/border_white"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"/>
+            <Button
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/theme_icon_onefood_50dp"
+                android:text="일품"
+                android:background="@drawable/border_white"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"/>
+            <Button
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/theme_icon_side_dish_50dp"
+                android:text="반찬"
+                android:background="@drawable/border_white"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"/>
+
+
+
+        </TableRow>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </TableLayout>
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:paddingTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:weightSum="10">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/cookbook_get_button_theme"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Theme"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:drawableTop="@drawable/icon_underbar_theme_40dp"
+                android:background="#80FFFFFF"/>
+            <Button
+                android:id="@+id/cookbook_get_button_recipe"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="RECIPE"
+                android:backgroundTintMode="screen"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:drawableTop="@drawable/icon_underbar_recipe_40dp"
+                android:background="#80FFFFFF"/>
+            <Button
+                android:id="@+id/cookbook_get_button_community"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="COMMUNITY"
+                android:textStyle="bold"
+                android:fontFamily="@font/diary"
+                android:backgroundTintMode="screen"
+                android:drawableTop="@drawable/icon_underbar_community_40dp"
+                android:background="#80FFFFFF"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>   <!--하단의 버튼-->
+
+
+
+
+
+
+
+
+</LinearLayout>

@@ -17,6 +17,7 @@
         <entry key="..\:/Food3/app/src/main/res/drawable/base_theme_img.xml" value="0.2475" />
         <entry key="..\:/Food3/app/src/main/res/drawable/base_user_img.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/base_write_img.xml" value="0.2745" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/border_white.xml" value="0.3615" />
         <entry key="..\:/Food3/app/src/main/res/drawable/button_notice_color.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/circle_indicator.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/circle_indicator2.xml" value="0.2745" />
@@ -47,14 +48,22 @@
         <entry key="..\:/Food3/app/src/main/res/drawable/icon_underbar_community_40dp.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/icon_underbar_recipe_40dp.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/icon_underbar_themes_40dp.xml" value="0.2745" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/icon_write_write_50dp.xml" value="0.3615" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_onefood_50dp.xml" value="0.3615" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_rice_30dp.xml" value="0.3615" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_sidedish_50dp.xml" value="0.3615" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_soup_30dp.xml" value="0.3615" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_communuity.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_recipe.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food3/app/src/main/res/layout/activity_search.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food3/app/src/main/res/layout/activity_theme.xml" value="0.5" />
         <entry key="..\:/Food3/app/src/main/res/layout/base_community_layout.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/base_main_layout.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/base_recipe_layout.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food3/app/src/main/res/layout/base_theme_layout.xml" value="0.5197916666666667" />
         <entry key="..\:/Food3/app/src/main/res/layout/cookbook_get.xml" value="0.36666666666666664" />
-        <entry key="..\:/Food3/app/src/main/res/layout/cookbook_management.xml" value="0.33" />
+        <entry key="..\:/Food3/app/src/main/res/layout/cookbook_management.xml" value="0.5" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__community_viewpager1.xml" value="0.4046875" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__management_viewpager1.xml" value="0.3640625" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__management_viewpager2.xml" value="0.4046875" />
@@ -81,6 +90,7 @@
         <entry key="..\:/Food3/app/src/main/res/layout/opt_drawer_header.xml" value="0.28020833333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/opt_indicator_activity.xml" value="0.28020833333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/opt_main_toolbar.xml" value="0.4046875" />
+        <entry key="..\:/Food3/app/src/main/res/layout/write_community_notice_cook.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/write_community_notice_qna_info.xml" value="0.4083333333333333" />
         <entry key="..\:/Food3/app/src/main/res/menu/navigation_menu.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2745" />
