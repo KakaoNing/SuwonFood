@@ -42,26 +42,21 @@ class home_left : Fragment() {
         //아이템에 데이터들을 저장시킨다.(냉장고 재료 데이터)
         //refrigerator_source_recycle_data은 Recycle_Datafile에 있는 data class이다.
         val items1  = arrayListOf(
-            refrigerator_source_recycle_data("계란","50개"),
-            refrigerator_source_recycle_data("사과","5개"),
-            refrigerator_source_recycle_data("참치","6캔"),
-            refrigerator_source_recycle_data("김치","2통"),
-            refrigerator_source_recycle_data("햄","6캔"),
-            refrigerator_source_recycle_data("오징어","4마리"),
-            refrigerator_source_recycle_data("생선","2마리"),
-            refrigerator_source_recycle_data("고등어","3마리"),
-            refrigerator_source_recycle_data("연어","1마리")
+            refrigerator_source_recycle_data("고기류"),
+            refrigerator_source_recycle_data("소스류"),
+            refrigerator_source_recycle_data("아이스크림"),
+            refrigerator_source_recycle_data("김치"),
+            refrigerator_source_recycle_data("해산물"),
+            refrigerator_source_recycle_data("카테고리")
         )
         val items2  = arrayListOf(
-            refrigerator_source_recycle_data("배","50개"),
-            refrigerator_source_recycle_data("복숭아","5개"),
-            refrigerator_source_recycle_data("치즈","6캔"),
-            refrigerator_source_recycle_data("파인애플","2통"),
-            refrigerator_source_recycle_data("멸치","6캔"),
-            refrigerator_source_recycle_data("밥","4그릇"),
-            refrigerator_source_recycle_data("된장국","2마리"),
-            refrigerator_source_recycle_data("고등어","3마리"),
-            refrigerator_source_recycle_data("연어","1마리")
+            refrigerator_source_recycle_data("고기류"),
+            refrigerator_source_recycle_data("유제품"),
+            refrigerator_source_recycle_data("마시는거"),
+            refrigerator_source_recycle_data("소스"),
+            refrigerator_source_recycle_data("기본재료"),
+            refrigerator_source_recycle_data("카테고리")
+
         )
         //54~61줄은 refigerator_vlist1(냉동 리사이클러뷰)에 대한 설정이다.
         //refigerator_vlist1의 형태를 정의한다. VERTICAL은 세로방향의 리사이클러를 설정한다.

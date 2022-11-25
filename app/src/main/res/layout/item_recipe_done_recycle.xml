@@ -8,6 +8,6 @@
         android:id="@+id/recycle_recipe_done_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/food_back2"/>
+        android:src="@drawable/background_food_02"/>
 
 </LinearLayout>

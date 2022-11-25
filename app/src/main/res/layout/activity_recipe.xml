@@ -8,7 +8,7 @@
     android:fitsSystemWindows="false"
     android:visibility="visible"
     tools:context=".MainActivity"
-    android:background="@drawable/letter_back">
+    android:background="@drawable/background_letter_01">
 
     <!-- 레시피 화면 -->
 
@@ -38,12 +38,6 @@
         android:orientation="vertical"
         android:layout_marginLeft="17dp"
         android:gravity="bottom">
-        <ImageView
-            android:layout_width="375dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/bottom_line"
-            android:layout_marginBottom="50dp"
-            />
 
     </LinearLayout>
 
@@ -70,7 +64,7 @@
                 android:backgroundTintMode="screen"
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
-                android:drawableTop="@drawable/base_theme_img"
+                android:drawableTop="@drawable/icon_underbar_theme_40dp"
                 android:background="#C0FFFFFF"/>
             <Button
                 android:id="@+id/recipe_button_recipe"
@@ -82,7 +76,7 @@
                 android:backgroundTintMode="screen"
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
-                android:drawableTop="@drawable/base_recipe_img"
+                android:drawableTop="@drawable/icon_underbar_recipe_40dp"
                 android:background="#C0FFFFFF"/>
             <Button
                 android:id="@+id/recipe_button_community"
@@ -94,7 +88,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
                 android:backgroundTintMode="screen"
-                android:drawableTop="@drawable/base_cook_time_img"
+                android:drawableTop="@drawable/icon_underbar_community_40dp"
                 android:background="#C0FFFFFF"/>
 
 

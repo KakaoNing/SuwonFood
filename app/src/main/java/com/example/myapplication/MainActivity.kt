@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         //네비게이션 띄우는 인디케이터 튤바에 생성
-        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.icon_toolbar_list_50dp)
 
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when(item.itemId) {
             //R.id.navi_refrigerator -> fragmentManager.replace(R.id.main_frame, home_left()).commit()
             //R.id.navi_cookBook -> fragmentManager.replace(R.id.main_frame, home_right()).commit()
-            R.id.navi_recipe -> fragmentManager.replace(R.id.main_frame, home_middle()).commit()
+            //R.id.navi_recipe -> fragmentManager.replace(R.id.main_frame, home_middle()).commit()
         }
         home_main.closeDrawers()
         return false

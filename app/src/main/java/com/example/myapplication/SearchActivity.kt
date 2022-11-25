@@ -1,15 +1,10 @@
 package com.example.myapplication
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.base_search_layout.*
-import kotlinx.android.synthetic.main.community_notice_cook.*
-import kotlinx.android.synthetic.main.community_notice_free.*
 
 
 //임시로 커뮤니티 요리게시판 검색과 동일하게 만들어놓음
@@ -80,10 +75,10 @@ class SearchActivity : AppCompatActivity() {
     //recycler에 값을 추가한다
     fun AddCookData(): ArrayList<community_cook_recycle_data> {
         var CookData = ArrayList<community_cook_recycle_data>()
-        CookData.add(community_cook_recycle_data(R.drawable.base_user_img,"User",R.drawable.cook_ex2_base_img,"김치찌개"))
-        CookData.add(community_cook_recycle_data(R.drawable.base_user_img,"User",R.drawable.cook_ex3_base_img,"파스타"))
-        CookData.add(community_cook_recycle_data(R.drawable.base_user_img,"User",R.drawable.cook_ex4_base_img,"우동"))
-        CookData.add(community_cook_recycle_data(R.drawable.base_user_img,"User",R.drawable.cook_ex1_base_img,"계란말이"))
+        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex2_base_img,"김치찌개"))
+        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex3_base_img,"파스타"))
+        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex4_base_img,"우동"))
+        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex1_base_img,"계란말이"))
 
         return CookData
 

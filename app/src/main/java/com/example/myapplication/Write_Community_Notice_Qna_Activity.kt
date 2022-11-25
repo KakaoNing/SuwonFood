@@ -3,25 +3,17 @@ package com.example.myapplication
 import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
-import com.example.myapplication.databinding.WriteCommunityNoticeCookBinding
 import com.example.myapplication.databinding.WriteCommunityNoticeQnaBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.ktx.storage
-import java.net.URI
-import java.text.SimpleDateFormat
-import java.util.*
 
 class Write_Community_Notice_Qna_Activity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
@@ -64,7 +56,7 @@ class Write_Community_Notice_Qna_Activity : AppCompatActivity() {
 
         //저장
         button_qna.setOnClickListener(View.OnClickListener {
-            val data = community_qna_recycle_data(R.drawable.base_user_img,title.text.toString(),script.text.toString())
+            val data = community_qna_recycle_data(R.drawable.icon_community_user_ex_50dp,title.text.toString(),script.text.toString())
             db.collection("qna")
                 .add(data)
                 .addOnSuccessListener { documentReference ->

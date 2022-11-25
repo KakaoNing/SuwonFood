@@ -21,7 +21,7 @@ class CommunityActivity : AppCompatActivity() {
         //툴바 설정
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.icon_toolbar_list_50dp)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
 

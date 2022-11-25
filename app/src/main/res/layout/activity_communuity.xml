@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".CommunityActivity"
     android:id="@+id/community_main"
-    android:background="@drawable/food_back2">
+    android:background="@drawable/color_background_brown">
 
 
 
@@ -52,7 +52,7 @@
                 android:backgroundTintMode="screen"
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
-                android:drawableTop="@drawable/base_theme_img"
+                android:drawableTop="@drawable/icon_underbar_theme_40dp"
                 android:background="#C0FFFFFF"/>
             <Button
                 android:id="@+id/community_button_recipe"
@@ -64,7 +64,7 @@
                 android:backgroundTintMode="screen"
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
-                android:drawableTop="@drawable/base_recipe_img"
+                android:drawableTop="@drawable/icon_underbar_recipe_40dp"
                 android:background="#C0FFFFFF"/>
             <Button
                 android:id="@+id/community_button_community"
@@ -76,7 +76,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
                 android:backgroundTintMode="screen"
-                android:drawableTop="@drawable/base_cook_time_img"
+                android:drawableTop="@drawable/icon_underbar_community_40dp"
                 android:background="#C0FFFFFF"/>
 
 

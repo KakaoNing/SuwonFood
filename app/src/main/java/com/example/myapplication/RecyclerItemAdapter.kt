@@ -36,11 +36,10 @@ class RecyclerRefrigeratorSourceAdapter(private val items_source: ArrayList<refr
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.title.text = items_source.get(position).name
-        holder.context.text=items_source.get(position).context
 
         holder.itemView.setOnClickListener{
             //Dialog_Refrigerator을 연결
-            val dialog = holder.context?.let { Dialog_Refrigerator(it.context) }
+            val dialog = holder.title?.let { Dialog_Refrigerator(it.context) }
 
             //다이얼로그 작동
             dialog?.showDialog()
@@ -49,7 +48,6 @@ class RecyclerRefrigeratorSourceAdapter(private val items_source: ArrayList<refr
 
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title = itemView.findViewById<TextView>(R.id.item_regierator_material_name)
-        val context=itemView.findViewById<TextView>(R.id.item_regierator_material_content)
     }
 
     /*
