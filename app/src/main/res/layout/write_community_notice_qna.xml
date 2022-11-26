@@ -5,7 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Write_Community_Notice_Free_Activity"
-    android:background="@drawable/write_img3">
+    android:background="@drawable/background_write">
+
+    <ImageView
+        android:id="@+id/imageView_qna"
+        android:layout_width="225dp"
+        android:layout_height="176dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
         android:layout_width="350dp"
@@ -32,35 +41,51 @@
         android:hint="제목"/>
 
     <ScrollView
-        android:layout_width="350dp"
-        android:layout_height="470dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="349dp"
+        android:layout_height="276dp"
         android:layout_marginLeft="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/write_community_notice_qna_title"
-        app:layout_constraintLeft_toLeftOf="parent">
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/write_community_notice_qna_title">
 
         <EditText
-            android:id="@+id/write_community_notice_qna_content"
+            android:id="@+id/write_community_notice_qna_script"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="내용을 입력하세요"/>
+            android:hint="내용을 입력하세요" />
 
     </ScrollView>
 
     <Button
+        android:id="@+id/button_qna"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:text="완료"
-        android:textStyle="bold"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/color_orangered_gradient_circle"
         android:backgroundTintMode="screen"
         android:fontFamily="@font/diary"
+        android:text="완료"
         android:textSize="20dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginRight="30dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:background="@drawable/color_orange_gradient_circle"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
+    <Button
+        android:id="@+id/button_qna2"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="280dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/color_orangered_gradient_circle"
+        android:backgroundTintMode="screen"
+        android:fontFamily="@font/diary"
+        android:text="사진"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,7 +29,7 @@
                 android:layout_width="375dp"
                 android:layout_marginLeft="17dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ex_comu_recipe"/>
+                android:src="@drawable/cook_ex1"/>
         </LinearLayout>
 
         <LinearLayout

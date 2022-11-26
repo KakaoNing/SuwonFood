@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".Home.Home_Middle_Recipe">
 
     <Button
         android:id="@+id/home_middle_button"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="버튼"
-        android:textSize="60dp"/>
+        android:text="계란말이"
+        android:textSize="30dp"
+        android:drawableTop="@drawable/cook_ex1_270dp"
+        android:paddingTop="15dp"
+        android:backgroundTintMode="screen"
+        android:textStyle="bold"
+        android:fontFamily="@font/diary"
+        android:textColor="#FFAB40"
+        android:background="@drawable/color_origin_main_recipe_littlecircle"/>
 
 </FrameLayout>

@@ -39,8 +39,10 @@ class recipe_source : Fragment() {
 
 
         val items = arrayListOf(
-            recipe_source_recycle_data("재료시작","20g"),
-            recipe_source_recycle_data("재료시작2","40g")
+            recipe_source_recycle_data("날계란","5개"),
+            recipe_source_recycle_data("대파","조금"),
+            recipe_source_recycle_data("당근","조금"),
+            recipe_source_recycle_data("식용유","조금")
 
         )
 

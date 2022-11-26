@@ -27,7 +27,12 @@ class recipe_cookware : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val items = arrayListOf(
-            recipe_cookware_recycle_data("조리도구")
+            recipe_cookware_recycle_data("후라이팬"),
+            recipe_cookware_recycle_data("뒤집개"),
+            recipe_cookware_recycle_data("믹싱볼")
+
+
+
         )
 
         opt_recycle_recipe_cookware.layoutManager =

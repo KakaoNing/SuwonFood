@@ -46,10 +46,10 @@ class recipe_done : Fragment() {
 
         //이미지 추가 하는곳
         val items = arrayListOf(
-            recipe_done_image_recycle_data(R.drawable.food_back),
-            recipe_done_image_recycle_data(R.drawable.food_back2),
-            recipe_done_image_recycle_data(R.drawable.food_back),
-            recipe_done_image_recycle_data(R.drawable.food_back2)
+            recipe_done_image_recycle_data(R.drawable.cook_ex1_base_img),
+            recipe_done_image_recycle_data(R.drawable.cook_ex1_base_img),
+            recipe_done_image_recycle_data(R.drawable.cook_ex1_base_img),
+            recipe_done_image_recycle_data(R.drawable.cook_ex1_base_img)
         )
 
         opt_recycle_recipe_done_image.layoutManager =

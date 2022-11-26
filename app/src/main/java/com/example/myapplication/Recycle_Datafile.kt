@@ -1,13 +1,13 @@
 package com.example.myapplication
 
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import java.util.jar.Attributes
 
 
 //냉장고 재료 데이터
 data class refrigerator_source_recycle_data(
     var name:String,
-    val context:String
 )
 
 //레시피 작성 중 요리재료 리사이클러 데이터
@@ -42,14 +42,10 @@ data class recipe_source_recycle_data(
 
 //요리게시판 리사이클러 데이터
 data class community_cook_recycle_data(
-
-
-    val profile : Int,
-    val name : String,
-    val img : Int,
-    val title : String
-
-
+    val profile : Int? = 0,
+    val name : String? = "",
+    val img : Int? = 0,
+    val title : String? = ""
 )
 
 
@@ -63,11 +59,9 @@ data class community_free_recycle_data(
 
 // 질문 게시판 리사이클러 데이터
 data class community_qna_recycle_data(
-
-    val profile : Int,
-    val title : String,
-    val question : String,
-    val answer : String
+    val profile: Int? = 0,
+    val title : String? = "",
+    val script : String? = ""
 )
 
 
@@ -77,4 +71,18 @@ data class search_recycle_data(
     val name : String,
     val inform : String
 
+)
+
+// 오늘의 레시피 데이터
+data class community_today_recipe(
+    val profile : Int,
+    val name : String,
+    val img : Int,
+    val title : String
+)
+// 오늘의 게시글 데이터
+
+data class community_today_notice(
+    val profile : Int,
+    val title : String
 )

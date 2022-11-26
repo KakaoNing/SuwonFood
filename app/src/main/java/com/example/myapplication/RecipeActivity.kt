@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -25,11 +26,23 @@ class RecipeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        recipe_button_recipe.setOnClickListener{
+            var intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+        recipe_button_community.setOnClickListener{
+            var intent = Intent(this, CommunityActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
 
         //툴바
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.icon_toolbar_list_50dp)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
 

@@ -7,8 +7,9 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import com.example.myapplication.Home.home_left
 import com.example.myapplication.Home.home_middle
-import com.example.myapplication.Other.home_viewpager
+import com.example.myapplication.Home.home_right
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.base_main_layout.*
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView=findViewById(R.id.navigationView)
 
         //main_frame의 화면을 home_viewpager로 설정(home_viewpager는 프래그먼트)
-        supportFragmentManager.beginTransaction().replace(R.id.main_frame, home_viewpager()).commit()
+        //supportFragmentManager.beginTransaction().replace(R.id.main_frame, home_viewpager()).commit()
 
         //네비게이션뷰 클릭시 자동 닫히는 함수
         navigationView.setNavigationItemSelectedListener(this)
@@ -42,26 +43,57 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         //네비게이션 띄우는 인디케이터 튤바에 생성
-        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_format_list_bulleted_24)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.icon_toolbar_list_50dp)
 
-        /*supportActionBar!!.setDisplayShowTitleEnabled(false)*/
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
 
 
         //커뮤니티 버튼 클릭 이동
         home_community.setOnClickListener {
             var intent = Intent(this, CommunityActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
         home_recipe.setOnClickListener {
-            var intent = Intent(this, RecipeActivity4::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
+        home_theme.setOnClickListener {
+            var intent = Intent(this, ThemeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+        initpager()
 
 
 
 
+
+
+
+
+
+
+    }
+
+
+    fun initpager(){
+        //pagerAdapter의 초기화 설정(PagerFragmentStateAdapter사용)
+        val pagerAdapter= PagerFragmentStateAdapter(this)
+
+        //pagerAdapter어뎁터에 홈화면 프래그먼트 3개를 추가
+        pagerAdapter.Fragmentadd(home_left())
+        pagerAdapter.Fragmentadd(home_middle())
+        pagerAdapter.Fragmentadd(home_right())
+
+        //어뎁터를 홈페이저의 어뎁터에 복사
+        home_pager.adapter=pagerAdapter
+
+        //페이저 어뎁터 맨 처음 화면을 중간에 있는 home_middle()로 설정
+        home_pager.setCurrentItem(1, false)
     }
 
     //드로어블
@@ -88,7 +120,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when(item.itemId) {
             //R.id.navi_refrigerator -> fragmentManager.replace(R.id.main_frame, home_left()).commit()
             //R.id.navi_cookBook -> fragmentManager.replace(R.id.main_frame, home_right()).commit()
-            R.id.navi_recipe -> fragmentManager.replace(R.id.main_frame, home_middle()).commit()
+            //R.id.navi_recipe -> fragmentManager.replace(R.id.main_frame, home_middle()).commit()
         }
         home_main.closeDrawers()
         return false

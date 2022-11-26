@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CookBook_Write_Activity"
-    android:background="@drawable/write_img3">
+    android:background="@drawable/background_write">
 
 
     <LinearLayout
@@ -33,7 +33,7 @@
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             android:background="#90FFFFFF"
-            android:src="@drawable/base_plus_img" />
+            android:src="@drawable/icon_write_plus_60dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -220,28 +220,28 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/base_plus_img"
+                android:src="@drawable/icon_write_plus_60dp"
                 android:background="#90FFFFFF"/>
             <ImageView
                 android:layout_margin="10dp"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/base_plus_img"
+                android:src="@drawable/icon_write_plus_60dp"
                 android:background="#90FFFFFF"/>
             <ImageView
                 android:layout_margin="10dp"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/base_plus_img"
+                android:src="@drawable/icon_write_plus_60dp"
                 android:background="#90FFFFFF"/>
             <ImageView
                 android:layout_margin="10dp"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/base_plus_img"
+                android:src="@drawable/icon_write_plus_60dp"
                 android:background="#90FFFFFF"/>
 
         </LinearLayout>
@@ -257,7 +257,7 @@
             android:textStyle="bold"
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"
-            android:background="@drawable/color_orange_gradient_circle"/>
+            android:background="@drawable/color_orangered_gradient_circle"/>
 
 
 
