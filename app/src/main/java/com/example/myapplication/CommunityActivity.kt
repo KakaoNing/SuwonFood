@@ -39,6 +39,18 @@ class CommunityActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        community_button_theme.setOnClickListener{
+            var intent = Intent(this, ThemeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+
+
+
+
+
+
         community_button_cook.setOnClickListener {
             var intent = Intent(this,Community_notice_cook_Activity::class.java)
             startActivity(intent)

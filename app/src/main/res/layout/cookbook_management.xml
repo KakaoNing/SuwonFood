@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/cookbook_get_button_theme"
+                android:id="@+id/cookbook_management_button_theme"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
@@ -57,7 +57,7 @@
                 android:drawableTop="@drawable/icon_underbar_theme_40dp"
                 android:background="#80FFFFFF"/>
             <Button
-                android:id="@+id/cookbook_get_button_recipe"
+                android:id="@+id/cookbook_management_button_recipe"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
@@ -69,7 +69,7 @@
                 android:drawableTop="@drawable/icon_underbar_recipe_40dp"
                 android:background="#80FFFFFF"/>
             <Button
-                android:id="@+id/cookbook_get_button_community"
+                android:id="@+id/cookbook_management_button_community"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"

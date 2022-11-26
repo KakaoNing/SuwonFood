@@ -1,12 +1,14 @@
 package com.example.myapplication
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.CookBookManagementAdapter
 
 import com.example.myapplication.databinding.CookbookManagementBinding
+import kotlinx.android.synthetic.main.cookbook_management.*
 
 //레시피 관리에 대한 Activity이다.
 
@@ -24,6 +26,25 @@ class Cookbook_Management_Activity : AppCompatActivity() {
 
         //뷰페이저2를 연결시키는 함수를 실행
         initViewPager()
+
+
+        cookbook_management_button_recipe.setOnClickListener {
+            var intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+        cookbook_management_button_community.setOnClickListener {
+            var intent = Intent(this, CommunityActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+        cookbook_management_button_theme.setOnClickListener {
+            var intent = Intent(this, ThemeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+
     }
 
     //뷰페이저2를 연결시키는 함수이다.

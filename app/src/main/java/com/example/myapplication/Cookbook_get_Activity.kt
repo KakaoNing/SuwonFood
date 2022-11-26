@@ -48,6 +48,12 @@ class Cookbook_get_Activity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        cookbook_get_button_theme.setOnClickListener {
+            var intent = Intent(this,ThemeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
 
 
         //20~33줄은 좋아하는 레시피를 가져오는 리사이클러뷰에 대한 설정이다.

@@ -52,10 +52,23 @@
         <entry key="..\:/Food3/app/src/main/res/drawable/icon_underbar_recipe_40dp.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/icon_underbar_themes_40dp.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/icon_write_write_50dp.xml" value="0.3615" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_how_boil_50dp.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_how_fri.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_how_fri_50dp.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_how_fry_50dp.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_how_oven_50dp.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_how_roast_50dp.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_how_sofrboil_50dp.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_how_steam_50dp.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_chinese.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_chinese_50dp.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_dessert_50dp.xml" value="0.3375" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_meat_50dp.xml" value="0.3375" />
         <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_onefood_50dp.xml" value="0.3615" />
         <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_rice_30dp.xml" value="0.3615" />
         <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_sidedish_50dp.xml" value="0.3615" />
         <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_soup_30dp.xml" value="0.3615" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_western_dish_50dp.xml" value="0.3375" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_communuity.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_recipe.xml" value="0.5208333333333334" />

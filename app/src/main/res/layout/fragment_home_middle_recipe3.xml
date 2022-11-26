@@ -19,6 +19,6 @@
         android:textStyle="bold"
         android:fontFamily="@font/diary"
         android:textColor="#FFAB40"
-        android:background="@drawable/color_origin_gradient_littlecircle"/>
+        android:background="@drawable/color_origin_main_recipe_littlecircle"/>
 
 </FrameLayout>
