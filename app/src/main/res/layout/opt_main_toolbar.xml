@@ -6,13 +6,15 @@
     android:minHeight="?attr/actionBarSize"
     android:background="#002BFF00">
 
+
+
     <TextView
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:text="오늘의 요리"
+        android:layout_width="wrap_content"
         android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="나레너레"
         android:gravity="center"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         android:textColor="#FFAB40"
         android:fontFamily="@font/diary"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Community_notice_cook_Activity"
-    android:background="@drawable/book_img">
+    android:background="@drawable/background_community_01">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,10 +23,10 @@
             android:layout_marginTop="32dp"
             android:layout_marginLeft="40dp"
             app:iconifiedByDefault="true"
-            app:searchIcon="@drawable/base_search_img"
+            app:searchIcon="@drawable/icon_toolbar_search_40dp"
             app:queryHint="검색어를  입력하세요"
             android:translationZ="1dp"
-            app:queryBackground="@drawable/color_orange_gradient_circle"
+            app:queryBackground="@drawable/color_orangered_gradient_circle"
             android:layoutDirection="rtl"
 
             />
@@ -61,7 +61,7 @@
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"
             android:textColor="#FFB300"
-            android:drawableEnd="@drawable/base_write_img"
+            android:drawableEnd="@drawable/icon_write_write_50dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

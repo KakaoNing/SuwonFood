@@ -9,7 +9,7 @@
         android:id="@+id/recycle_free_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/base_user_img"
+        android:src="@drawable/icon_community_user_ex_50dp"
         android:layout_gravity="center"
         />
 

@@ -2,9 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <include layout = "@layout/opt_main_toolbar"/>
+
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="커뮤니티"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_gravity="top|center"
+        android:backgroundTintMode="screen"
+        android:textStyle="bold"
+        android:fontFamily="@font/diary"
+        android:textColor="#FFAB40"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,42 +27,45 @@
         android:orientation="horizontal">
 
         <Button
+            android:layout_margin="10dp"
             android:id="@+id/community_button_cook"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/base_cook_img"
+            android:drawableTop="@drawable/icon_community_cook_60dp"
             android:text="요리게시판"
             android:textSize="20dp"
-            android:background="@drawable/button_notice_color"
+            android:background="@drawable/color_orange_gradient_circle"
             android:textStyle="bold"
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"/>
 
         <Button
+            android:layout_margin="10dp"
             android:id="@+id/community_button_qna"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:drawableTop="@drawable/base_question_img"
+            android:drawableTop="@drawable/icon_community_qa_60dp"
             android:text="질문게시판"
             android:textSize="20dp"
-            android:background="@drawable/button_notice_color"
+            android:background="@drawable/color_orange_gradient_circle"
             android:textStyle="bold"
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"/>
 
         <Button
+            android:layout_margin="10dp"
             android:id="@+id/community_button_free"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/base_free_notice_img"
+            android:drawableTop="@drawable/icon_community_free_60dp"
             android:text="자유게시판"
             android:textSize="20dp"
-            android:background="@drawable/button_notice_color"
+            android:background="@drawable/color_orange_gradient_circle"
             android:textStyle="bold"
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"/>
@@ -55,152 +73,44 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="Today's Recipe"
-            android:textSize="40dp"
-            android:fontFamily="@font/diary"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:background="#41000000"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="#B1FFFFFF">
-
-            <ImageView
-                android:layout_marginLeft="50dp"
-                android:id="@+id/recycle_cook_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:src="@drawable/base_user_img" />
-
-            <TextView
-                android:id="@+id/recycle_cook_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:backgroundTintMode="screen"
-                android:fontFamily="@font/diary"
-                android:text="User"
-                android:textSize="30dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#B1FFFFFF">
-
-            <ImageView
-                android:id="@+id/recycle_cook_img"
-                android:layout_width="320dp"
-                android:layout_height="150dp"
-                android:background="@drawable/color_brown_gradient_square"
-                android:src="@drawable/cook_ex5_base_img"
-                android:layout_gravity="center"/>
-
-            <TextView
-                android:id="@+id/recycle_cook_title"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTintMode="screen"
-                android:fontFamily="@font/diary"
-                android:textStyle="bold"
-                android:text="고오급 토마토 스튜"
-                android:textSize="25dp"
-                android:gravity="center"
-
-                />
-        </LinearLayout>
-
-
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="Today's Post"
-            android:textSize="40dp"
-            android:fontFamily="@font/diary"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:background="#41000000"/>
-
-
-        <!---<Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FF9797"
-            android:drawableBottom="@drawable/ex_comu_recipe"
-            android:text="오늘의 핫 레시피"
-            android:textColor="#7AFF56"
-            android:textSize="30dp"
-            android:id="@+id/comunity_recipe"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#B6E37C"
-            android:drawableBottom="@drawable/ex_comu_recipe"
-            android:text="오늘의 핫 게시글"
-            android:textColor="#E62BFF"
-            android:textSize="30dp" />-->
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#B1FFFFFF">
-
-        <ImageView
-            android:id="@+id/recycle_free_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/base_user_img"
-            android:layout_gravity="center"
-            />
-
-        <TextView
-            android:id="@+id/recycle_free_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTintMode="screen"
-            android:fontFamily="@font/diary"
-            android:text="개발 너무 힘들어요"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
     <TextView
-
-
-        android:id="@+id/recycle_free_script"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:text="Today's Recipe"
+        android:gravity="center"
+        android:background="@drawable/color_orangered_gradient_circle"
+        android:textSize="20dp"
         android:backgroundTintMode="screen"
-        android:fontFamily="@font/diary"
-        android:text="이거 왜 안돼?? 제발 살려줘..."
-        android:textSize="25dp"
         android:textStyle="bold"
-        android:background="#B1FFFFFF"/>
+        android:fontFamily="@font/diary"
+        android:layout_marginLeft="10dp"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/opt_community_today_recipe_recycle"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_community_today_recipe"/>
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Today's notice"
+        android:gravity="center"
+        android:background="@drawable/color_orangered_gradient_circle"
+        android:textSize="20dp"
+        android:backgroundTintMode="screen"
+        android:textStyle="bold"
+        android:fontFamily="@font/diary"
+        android:layout_marginLeft="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/opt_community_today_notice_recycle"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_community_today_notice"/>
 
 
 

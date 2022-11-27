@@ -8,8 +8,7 @@
     <ImageView
         android:id="@+id/recycle_search_profile"
         android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/comunity_free_notice"/>
+        android:layout_height="150dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

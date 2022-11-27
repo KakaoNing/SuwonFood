@@ -1,18 +1,14 @@
 package com.example.myapplication
 
-import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import com.example.myapplication.databinding.WriteCommunityNoticeFreeBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlin.math.log
 
 class Write_Community_Notice_Free_Activity : AppCompatActivity() {
 
@@ -37,7 +33,7 @@ class Write_Community_Notice_Free_Activity : AppCompatActivity() {
 
 
         button.setOnClickListener(View.OnClickListener {
-            val data = community_free_recycle_data(R.drawable.base_user_img,title.text.toString(),script.text.toString())
+            val data = community_free_recycle_data(R.drawable.icon_community_user_ex_50dp,title.text.toString(),script.text.toString())
             db.collection("free")
                 .add(data)
                 .addOnSuccessListener { documentReference ->

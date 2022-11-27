@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Write_Community_Notice_Free_Activity"
-    android:background="@drawable/write_img3">
+    android:background="@drawable/background_write">
 
     <TextView
         android:layout_width="350dp"
@@ -53,7 +53,7 @@
         android:layout_height="60dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/color_orange_gradient_circle"
+        android:background="@drawable/color_orangered_gradient_circle"
         android:backgroundTintMode="screen"
         android:fontFamily="@font/diary"
         android:text="답변 달기"
