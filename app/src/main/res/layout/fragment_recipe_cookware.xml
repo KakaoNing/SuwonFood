@@ -5,59 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".recipe_cookware">
 
-    <!--일단 주석해봐
-    <TableRow>
-        <Button
-            android:layout_marginLeft="5dp"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_marginRight="5dp"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
-    </TableRow>
-
-    <TableRow>
-        <Button
-            android:layout_marginLeft="5dp"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_marginRight="5dp"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
-    </TableRow>
--->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="조리도구"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:backgroundTintMode="screen"/>
+
+        <!---
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/opt_recycle_recipe_cookware"
             android:layout_width="375dp"
             android:layout_marginLeft="17dp"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_recipe_cookware_recycle"
-            android:background="#88FFAB40"/>
+            tools:listitem="@layout/item_recipe_cookware_recycle" />
+            -->
 
     </LinearLayout>
 

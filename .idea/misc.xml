@@ -31,6 +31,7 @@
         <entry key="..\:/Food3/app/src/main/res/drawable/color_origin_cookbook_manage_back.xml" value="0.2505" />
         <entry key="..\:/Food3/app/src/main/res/drawable/color_origin_gradient_littlecircle.xml" value="0.305" />
         <entry key="..\:/Food3/app/src/main/res/drawable/color_origin_main_recipe_littlecircle.xml" value="0.2505" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/color_origin_recipe_orange.xml" value="0.2505" />
         <entry key="..\:/Food3/app/src/main/res/drawable/color_origin_theme_orange.xml" value="0.2505" />
         <entry key="..\:/Food3/app/src/main/res/drawable/color_whiteyellow_gradient_circle.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/cook_ex1_200dp.xml" value="0.3375" />
@@ -74,12 +75,12 @@
         <entry key="..\:/Food3/app/src/main/res/drawable/theme_icon_western_dish_50dp.xml" value="0.3375" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_communuity.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Food3/app/src/main/res/layout/activity_recipe.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food3/app/src/main/res/layout/activity_recipe.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_search.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/activity_theme.xml" value="0.5" />
         <entry key="..\:/Food3/app/src/main/res/layout/base_community_layout.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/base_main_layout.xml" value="0.5208333333333334" />
-        <entry key="..\:/Food3/app/src/main/res/layout/base_recipe_layout.xml" value="0.5208333333333334" />
+        <entry key="..\:/Food3/app/src/main/res/layout/base_recipe_layout.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/base_theme_layout.xml" value="0.5197916666666667" />
         <entry key="..\:/Food3/app/src/main/res/layout/cookbook_community.xml" value="0.3765625" />
         <entry key="..\:/Food3/app/src/main/res/layout/cookbook_get.xml" value="0.36666666666666664" />
@@ -102,10 +103,13 @@
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_middle_recipe3.xml" value="0.4083333333333333" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_navi_check_viewpager.xml" value="0.4046875" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_right.xml" value="0.25" />
-        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_cookware.xml" value="0.4083333333333333" />
-        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_introduce.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_cookware.xml" value="0.33" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_done.xml" value="0.3125" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_introduce.xml" value="0.33" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_recipe.xml" value="0.3125" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_recipe_viewpager1.xml" value="0.4083333333333333" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_recipe_viewpager2.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_recipe_source.xml" value="0.3125" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_community_cook_notice_recycle.xml" value="0.4046875" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_community_free_notice_recycle.xml" value="0.4046875" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_community_today_notice.xml" value="0.3640625" />
@@ -115,6 +119,7 @@
         <entry key="..\:/Food3/app/src/main/res/layout/item_cookbook_get_recommand.xml" value="0.4046875" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_dialog_refrigerator_add_material.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_recipe_done_recycle.xml" value="0.4083333333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/item_recipe_source_recycle.xml" value="0.3125" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_refrigerator_source_recycle.xml" value="0.5" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_search_recycle.xml" value="0.28020833333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/opt_drawer_header.xml" value="0.28020833333333334" />
