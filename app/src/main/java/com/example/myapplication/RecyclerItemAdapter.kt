@@ -346,7 +346,7 @@ class RecyclerFreeAdapter(private val items_free: ArrayList<community_free_recyc
     //리사이클러 각 item값 지정
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val free_notice: community_free_recycle_data = filteredFreeCycle[position]
-        items_free.get(position).profile?.let { holder.recycle_free_profile.setImageResource(it) }
+        items_free.get(position).profile?.let { holder.recycle_free_profile.setImageResource(position) }
         holder.recycle_free_title.text = free_notice.title
         holder.recycle_free_script.text = free_notice.script
     }
