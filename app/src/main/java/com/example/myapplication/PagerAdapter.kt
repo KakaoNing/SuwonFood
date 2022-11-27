@@ -93,8 +93,32 @@ class RecipePagerAdapter(fragment: RecipeActivity) : FragmentStateAdapter(fragme
 
 }
 
-//요리책화면 레시피 관리중 뷰페이저 어댑터
-class CookBookManagementAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
+//요리책화면 레시피 관리중 내가 작성한 글 어댑터
+class CookBookManagementWriteAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
+    var fragments:ArrayList<Fragment> = ArrayList()
+
+    override fun getItemCount(): Int {
+        return fragments.size
+    }
+
+    override fun createFragment(position: Int): Fragment {
+        return fragments[position]
+    }
+
+    fun addFragment(fragment: Fragment){
+        fragments.add(fragment)
+        notifyItemInserted(fragments.size-1)
+
+    }
+
+    fun removeFragement(){
+        fragments.removeLast()
+        notifyItemRemoved(fragments.size)
+    }
+}
+
+//요리책화면 레시피 관리중 내가 가져온 글 어댑터
+class CookBookManagementBringAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
     var fragments:ArrayList<Fragment> = ArrayList()
 
     override fun getItemCount(): Int {

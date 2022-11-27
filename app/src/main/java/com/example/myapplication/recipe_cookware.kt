@@ -26,6 +26,7 @@ class recipe_cookware : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /*
         val items = arrayListOf(
             recipe_cookware_recycle_data("후라이팬"),
             recipe_cookware_recycle_data("뒤집개"),
@@ -38,7 +39,7 @@ class recipe_cookware : Fragment() {
         opt_recycle_recipe_cookware.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         opt_recycle_recipe_cookware.setHasFixedSize(true)
-        opt_recycle_recipe_cookware.adapter = RecyclerRecipeCookwareAdapter(items)
+        opt_recycle_recipe_cookware.adapter = RecyclerRecipeCookwareAdapter(items)*/
     }
 
 

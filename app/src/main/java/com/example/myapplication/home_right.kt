@@ -75,7 +75,7 @@ class home_right : Fragment() {
         cookbook_cookingtimemanagement.setOnClickListener {
 
             //Cookbook_Community_Activity::class.java로 화면전환(intent 사용)
-            var intent = Intent(context, Cookbook_Community_Activity::class.java)
+            var intent = Intent(context, ThemeActivity::class.java)
             startActivity(intent)
         }
 

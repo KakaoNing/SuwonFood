@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".recipe_done">
+    android:layout_height="wrap_content"
+    tools:context=".recipe_done"
+    android:orientation="vertical">
 
-    <TableLayout
-        android:layout_width="375dp"
-        android:layout_marginLeft="17dp"
-        android:layout_height="match_parent"
-        android:background="#88FFAB40">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
             android:id="@+id/opt_recycle_recipe_done_image"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             tools:listitem="@layout/item_recipe_done_recycle">
 
 
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <TableRow>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <Button
                 android:layout_width="0dp"
@@ -34,7 +35,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
                 android:backgroundTintMode="screen"
-                android:background="#FFF25A" />
+                android:background="@drawable/color_orange_gradient_circle" />
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -45,37 +46,13 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
                 android:backgroundTintMode="screen"
-                android:background="#FFF25A"/>
-
-        </TableRow>
+                android:background="@drawable/color_orange_gradient_circle"/>
 
 
 
 
+        </LinearLayout>
 
 
 
-
-
-
-
-    </TableLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</ScrollView>
+</LinearLayout>
