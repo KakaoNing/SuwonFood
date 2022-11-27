@@ -28,7 +28,10 @@
         <entry key="..\:/Food3/app/src/main/res/drawable/color_greenbrown_gradient_circle.xml" value="0.2475" />
         <entry key="..\:/Food3/app/src/main/res/drawable/color_orange_gradient_circle.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/color_orangered_gradient_circle.xml" value="0.2745" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/color_origin_cookbook_manage_back.xml" value="0.2505" />
         <entry key="..\:/Food3/app/src/main/res/drawable/color_origin_gradient_littlecircle.xml" value="0.305" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/color_origin_main_recipe_littlecircle.xml" value="0.2505" />
+        <entry key="..\:/Food3/app/src/main/res/drawable/color_origin_theme_orange.xml" value="0.2505" />
         <entry key="..\:/Food3/app/src/main/res/drawable/color_whiteyellow_gradient_circle.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/drawable/cook_ex1_200dp.xml" value="0.3375" />
         <entry key="..\:/Food3/app/src/main/res/drawable/cook_ex1_270dp.xml" value="0.306" />
@@ -80,12 +83,17 @@
         <entry key="..\:/Food3/app/src/main/res/layout/base_theme_layout.xml" value="0.5197916666666667" />
         <entry key="..\:/Food3/app/src/main/res/layout/cookbook_community.xml" value="0.3765625" />
         <entry key="..\:/Food3/app/src/main/res/layout/cookbook_get.xml" value="0.36666666666666664" />
-        <entry key="..\:/Food3/app/src/main/res/layout/cookbook_management.xml" value="0.5" />
+        <entry key="..\:/Food3/app/src/main/res/layout/cookbook_management.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/cookbook_write.xml" value="0.3765625" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__community_viewpager1.xml" value="0.4046875" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__community_viewpager2.xml" value="0.3765625" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__management_bring1.xml" value="0.39375" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__management_bring2.xml" value="0.37552083333333336" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__management_viewpager1.xml" value="0.3640625" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__management_viewpager2.xml" value="0.4046875" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook__management_write1.xml" value="0.4046875" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook_management_bring1.xml" value="0.3927083333333333" />
+        <entry key="..\:/Food3/app/src/main/res/layout/fragment_cookbook_management_bring2.xml" value="0.3927083333333333" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_left.xml" value="0.33" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_middle.xml" value="0.25" />
         <entry key="..\:/Food3/app/src/main/res/layout/fragment_home_middle2.xml" value="0.4083333333333333" />
@@ -103,6 +111,8 @@
         <entry key="..\:/Food3/app/src/main/res/layout/item_community_today_notice.xml" value="0.3640625" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_community_today_recipe.xml" value="0.36666666666666664" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_community_todayrecipe.xml" value="0.36302083333333335" />
+        <entry key="..\:/Food3/app/src/main/res/layout/item_cookbook_get_favorite.xml" value="0.4046875" />
+        <entry key="..\:/Food3/app/src/main/res/layout/item_cookbook_get_recommand.xml" value="0.4046875" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_dialog_refrigerator_add_material.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_recipe_done_recycle.xml" value="0.4083333333333333" />
         <entry key="..\:/Food3/app/src/main/res/layout/item_refrigerator_source_recycle.xml" value="0.5" />

@@ -17,16 +17,16 @@ class CookBook_Write_Activity : AppCompatActivity() {
         setContentView(R.layout.cookbook_write)
 
 
-        /*
+
         cookbook_write_img_title.setOnClickListener {
             val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
-            intent.setType("image/**/-뒤에껀지워야함")
+            intent.setType("image/*")
             startActivityForResult(intent,GALLERY)
         }
 
 
-    }*/
-    /*
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -44,6 +44,6 @@ class CookBook_Write_Activity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
-        }*/
+        }
     }
 }

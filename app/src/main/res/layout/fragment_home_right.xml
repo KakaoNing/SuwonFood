@@ -74,7 +74,7 @@
             android:id="@+id/cookbook_button_CookingtimeManagement"
             android:layout_width="120dp"
             android:layout_height="80dp"
-            android:text="커뮤니티       레시피관리"
+            android:text="레시피        백과사전"
             android:textSize="20dp"
             app:layout_constraintTop_toBottomOf="@+id/cookbook_button_Import"
             app:layout_constraintRight_toRightOf="parent"
