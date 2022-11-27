@@ -25,6 +25,13 @@ class RecipeActivity : AppCompatActivity() {
         val binding = ActivityRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        recipe_button_theme.setOnClickListener{
+            var intent = Intent(this, ThemeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+
 
         recipe_button_recipe.setOnClickListener{
             var intent = Intent(this, MainActivity::class.java)
