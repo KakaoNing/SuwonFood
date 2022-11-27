@@ -20,7 +20,7 @@ import java.util.*
 class RecipeActivity3 : AppCompatActivity() {
     private val apiKey = "a0b0314639de4e13bbbb"
     private val address =
-        "https://openapi.foodsafetykorea.go.kr/api/" + apiKey + "/COOKRCP01/json/2/50/"
+        "https://openapi.foodsafetykorea.go.kr/api/" + apiKey + "/COOKRCP01/json/2/6/"
     private var btnData: Button? = null
     private var recyclerview: RecyclerView? = null
     private val adapter: RecyclerAdapter = RecyclerAdapter() // adapter 생성
@@ -40,7 +40,7 @@ class RecipeActivity3 : AppCompatActivity() {
 
         // 데이터 불러오기 버튼 클릭
         btnData!!.setOnClickListener(View.OnClickListener {
-            // 오늘 날짜를 20210723 < 이런 형태로 불러온다.
+
 
             object : Thread() {
                 override fun run() {

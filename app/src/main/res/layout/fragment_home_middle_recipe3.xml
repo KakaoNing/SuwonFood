@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".home_middle_recipe3">
+
+    <Button
+        android:id="@+id/home_middle_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="파스타"
+        android:textSize="30dp"
+        android:drawableTop="@drawable/cook_ex3_base_img"
+        android:paddingTop="15dp"
+        android:backgroundTintMode="screen"
+        android:textStyle="bold"
+        android:fontFamily="@font/diary"
+        android:textColor="#FFAB40"
+        android:background="@drawable/color_origin_main_recipe_littlecircle"/>
+
+</FrameLayout>
