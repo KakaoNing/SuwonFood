@@ -70,7 +70,7 @@ class CommunityActivity : AppCompatActivity() {
         //오늘의 레시피
 
         val items_recipe = arrayListOf(
-            community_today_recipe(R.drawable.icon_community_user_ex_50dp,"name",R.drawable.cook_ex1_base_img,"요리이름")
+            community_today_recipe(R.drawable.icon_community_user_ex_50dp,"김환",R.drawable.cook_ex1_base_img,"steak")
         )
 
         opt_community_today_recipe_recycle.layoutManager =
@@ -81,7 +81,7 @@ class CommunityActivity : AppCompatActivity() {
         //오늘의 게시글
 
         val items_notice = arrayListOf(
-            community_today_notice(R.drawable.icon_community_user_ex_50dp,"제목")
+            community_today_notice(R.drawable.icon_community_user_ex_50dp,"오늘은 11월 29일")
         )
 
         opt_community_today_notice_recycle.layoutManager =

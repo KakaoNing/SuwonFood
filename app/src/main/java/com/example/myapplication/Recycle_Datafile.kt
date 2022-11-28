@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.graphics.drawable.Drawable
 import android.net.Uri
+import java.net.URI
 import java.util.jar.Attributes
 
 
@@ -41,11 +42,20 @@ data class recipe_source_recycle_data(
 )
 
 //요리게시판 리사이클러 데이터
+
+//필요한 데이터
+//대표 이미지, 레시피 한줄 요약, 레시피 제목, 레시피 내용(ArrayList), 조리도구, 재료, 추가 사진
 data class community_cook_recycle_data(
-    val profile : Int? = 0,
+    val profile: String? = "",
+    val title : String? = "",
     val name : String? = "",
-    val img : Int? = 0,
-    val title : String? = ""
+    val script : String? = "",
+    //val tools : String? = "",
+    //val ingredients : String? = "",
+    //val img_plus : String? = "",
+    //val img_plus_2 : String? = "",
+    //val img_plus_3 : String? = "",
+    //val img_plus_4 : String? = ""
 )
 
 
@@ -59,7 +69,7 @@ data class community_free_recycle_data(
 
 // 질문 게시판 리사이클러 데이터
 data class community_qna_recycle_data(
-    val profile: Int? = 0,
+    val profile: String? = "",
     val title : String? = "",
     val script : String? = ""
 )

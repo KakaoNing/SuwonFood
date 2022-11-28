@@ -4,6 +4,10 @@
     package="com.example.myapplication" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -63,7 +67,7 @@
             android:name=".RecipeActivity"
             android:exported="true" />
         <activity
-            android:name=".Write_Community_Notice_Qna_Info_Activity"
+            android:name=".Community_Notice_Qna_Info_Activity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

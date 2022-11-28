@@ -27,12 +27,13 @@
             android:fontFamily="@font/diary" />
 
         <ImageView
+            android:id="@+id/cook_title_image"
             android:layout_width="350dp"
             android:layout_height="140dp"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:scaleType="fitCenter"
+            android:layout_marginTop="10dp"
             android:background="#90FFFFFF"
+            android:scaleType="fitCenter"
             android:src="@drawable/icon_write_plus_60dp" />
         <TextView
             android:layout_width="match_parent"
@@ -57,12 +58,12 @@
             android:fontFamily="@font/diary"/>
 
 
-
         <EditText
-            android:layout_marginLeft="30dp"
+            android:id="@+id/title_summary"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="한줄로 요약해 레시피를 소개하자면?"/>
+            android:layout_marginLeft="30dp"
+            android:hint="한줄로 요약해 레시피를 소개하자면?" />
 
         <TextView
             android:layout_marginTop="30dp"
@@ -76,12 +77,12 @@
             android:fontFamily="@font/diary"/>
 
 
-
         <EditText
-            android:layout_marginLeft="30dp"
+            android:id="@+id/title"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="레시피의 제목은?"/>
+            android:layout_marginLeft="30dp"
+            android:hint="레시피의 제목은?" />
 
         <TextView
             android:layout_marginTop="30dp"
@@ -108,24 +109,28 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <Button
+                android:id="@+id/button_delete"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:backgroundTintMode="screen"
+                android:fontFamily="@font/diary"
                 android:text="레시피 페이지 삭제"
                 android:textSize="15dp"
-                android:textStyle="bold"
-                android:backgroundTintMode="screen"
-                android:fontFamily="@font/diary" />
+                android:textStyle="bold" />
+
             <Button
+                android:id="@+id/button_add"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:backgroundTintMode="screen"
+                android:fontFamily="@font/diary"
                 android:text="레시피 페이지 추가"
                 android:textSize="15dp"
-                android:textStyle="bold"
-                android:backgroundTintMode="screen"
-                android:fontFamily="@font/diary"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -141,11 +146,13 @@
             android:textStyle="bold"
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"/>
+
         <EditText
-            android:layout_marginLeft="30dp"
+            android:id="@+id/tools"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="조리도구를 적어보세요"/>
+            android:layout_marginLeft="30dp"
+            android:hint="조리도구를 적어보세요" />
 
         <TextView
             android:layout_marginTop="30dp"
@@ -171,26 +178,29 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/ingredients"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:hint="재료"/>
+                android:layout_weight="1"
+                android:hint="재료" />
 
             <EditText
+                android:id="@+id/number"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:hint="단위"/>
+                android:layout_weight="1"
+                android:hint="단위" />
 
             <Button
+                android:id="@+id/ingre_button"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTintMode="screen"
+                android:fontFamily="@font/diary"
                 android:text="입력"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:backgroundTintMode="screen"
-                android:fontFamily="@font/diary"/>
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -216,48 +226,56 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_margin="10dp"
+                android:id="@+id/image_plus_1"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/icon_write_plus_60dp"
-                android:background="#90FFFFFF"/>
+                android:background="#90FFFFFF"
+                android:src="@drawable/icon_write_plus_60dp" />
+
             <ImageView
-                android:layout_margin="10dp"
+                android:id="@+id/image_plus_2"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/icon_write_plus_60dp"
-                android:background="#90FFFFFF"/>
+                android:background="#90FFFFFF"
+                android:src="@drawable/icon_write_plus_60dp" />
+
             <ImageView
-                android:layout_margin="10dp"
+                android:id="@+id/image_plus_3"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/icon_write_plus_60dp"
-                android:background="#90FFFFFF"/>
+                android:background="#90FFFFFF"
+                android:src="@drawable/icon_write_plus_60dp" />
+
             <ImageView
-                android:layout_margin="10dp"
+                android:id="@+id/image_plus_4"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/icon_write_plus_60dp"
-                android:background="#90FFFFFF"/>
+                android:background="#90FFFFFF"
+                android:src="@drawable/icon_write_plus_60dp" />
 
         </LinearLayout>
 
         <Button
+            android:id="@+id/submit"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:text="완성하기!!"
-            android:textSize="30dp"
-            android:textStyle="bold"
+            android:background="@drawable/color_orangered_gradient_circle"
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"
-            android:background="@drawable/color_orangered_gradient_circle"/>
+            android:text="완성하기!!"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
 
 

@@ -3,22 +3,28 @@ package com.example.myapplication
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.ContextCompat.startActivity
+import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.conn.util.PublicSuffixMatcherLoader.load
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.item_cookbook_get_favorite.view.*
 import kotlinx.android.synthetic.main.item_cookbook_get_recommand.view.*
-
-
+import java.lang.System.load
+import java.net.URI
 
 
 //냉장고 재료 리사이클러
 class RecyclerRefrigeratorSourceAdapter(private val items_source: ArrayList<refrigerator_source_recycle_data>) : RecyclerView.Adapter<RecyclerRefrigeratorSourceAdapter.CustomViewHolder>() {
+
+
 
     private val mData: ArrayList<String>? = null
     override fun getItemCount(): Int = items_source.size
@@ -77,8 +83,6 @@ class RecyclerRefrigeratorSourceAdapter(private val items_source: ArrayList<refr
 }
 
 
-
-
 //레시피 조리도구 리사이클러
 class RecyclerRecipeCookwareAdapter(private val items_cookware: ArrayList<recipe_cookware_recycle_data>) : RecyclerView.Adapter<RecyclerRecipeCookwareAdapter.CustomViewHolder>() {
 
@@ -96,11 +100,9 @@ class RecyclerRecipeCookwareAdapter(private val items_cookware: ArrayList<recipe
         }
     }
 
-
     override fun onBindViewHolder(holder: RecyclerRecipeCookwareAdapter.CustomViewHolder, position: Int) {
         holder.name.text = items_cookware.get(position).name
     }
-
 
     inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name = itemView.findViewById<TextView>(R.id.recycle_recipe_cookware_data)
@@ -190,9 +192,30 @@ class CookBookGetRecommandAdapter(var list: ArrayList<String>):  RecyclerView.Ad
 
 
 
+//data class community_cook_recycle_data(
+//    val profile: String? = "",
+//    val img : Int? = 0,
+//    val title : String? = "",
+//    val name : String? = "",
+//    val script : ArrayList<String>,
+//    val tools : String? = "",
+//    val ingredients : recipe_source_recycle_data,
+//    val img_plus : String? = "",
+//    val img_plus_2 : String? = "",
+//    val img_plus_3 : String? = "",
+//    val img_plus_4 : String? = ""
+//)
 // 요리 게시판 리사이클러
 //https://greensky0026.tistory.com/226 이쪽 참고함 recycler 를 searchview하기
 class RecyclerCookAdapter(var items_cook: ArrayList<community_cook_recycle_data>) : RecyclerView.Adapter<RecyclerCookAdapter.ViewHolder>(), Filterable {
+
+
+    var getImageName : String? = ""
+    val storage: FirebaseStorage = FirebaseStorage.getInstance("gs://suwonfood-final.appspot.com/")
+    val storageReference = storage.reference
+
+    //getImageName = item.profile
+    val pathReference = storageReference.child("images/$getImageName")
 
 
     //선언
@@ -208,6 +231,27 @@ class RecyclerCookAdapter(var items_cook: ArrayList<community_cook_recycle_data>
         var recycle_cook_img : ImageView
         var recycle_cook_title : TextView
 
+        fun bind(item: community_cook_recycle_data){
+            getImageName = item.profile
+            val pathReference = storageReference.child("images/$getImageName")
+            pathReference.downloadUrl.addOnSuccessListener { uri ->
+                Glide.with(itemView.context)
+                    .load(uri)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .centerCrop()
+                    .into(recycle_cook_img)
+                Glide.with(itemView.context)
+                    .load(uri)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .centerCrop()
+                    .into(recycle_cook_profile)
+            }
+//            item.profile
+            //items_qna.get(position).profile?.let{recycle_qna_profile.setImageURI(Uri.parse(item.profile))}
+            //recycle_qna_profile.setImageURI(Uri.parse(item.profile))
+            recycle_cook_title.text=item.title
+            recycle_cook_name.text=item.script
+        }
 
         init {
             recycle_cook_profile = itemView.findViewById(R.id.recycle_cook_profile)
@@ -236,9 +280,24 @@ class RecyclerCookAdapter(var items_cook: ArrayList<community_cook_recycle_data>
     //리사이클러 각 item값 지정
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val cook_notice: community_cook_recycle_data = filteredCookCycle[position]
-        items_cook.get(position).profile?.let { holder.recycle_cook_profile.setImageResource(it) }
         holder.recycle_cook_name.text = cook_notice.name
-        items_cook.get(position).img?.let { holder.recycle_cook_img.setImageResource(it) }
+        holder.apply {
+            getImageName = cook_notice.profile
+            val pathReference = storageReference.child("images/$getImageName")
+            pathReference.downloadUrl.addOnSuccessListener { uri ->
+                Glide.with(itemView.context)
+                    .load(uri)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .centerCrop()
+                    .into(holder.recycle_cook_img)
+                Glide.with(itemView.context)
+                    .load(uri)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .centerCrop()
+                    .into(recycle_cook_profile)
+                Log.d("kimhwan","이미지 로드 성공")
+            }
+        }
         holder.recycle_cook_title.text=cook_notice.title
     }
 
@@ -346,7 +405,7 @@ class RecyclerFreeAdapter(private val items_free: ArrayList<community_free_recyc
     //리사이클러 각 item값 지정
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val free_notice: community_free_recycle_data = filteredFreeCycle[position]
-        items_free.get(position).profile?.let { holder.recycle_free_profile.setImageResource(position) }
+        //items_free.get(position).profile?.let { holder.recycle_free_profile.setImageResource(position) }
         holder.recycle_free_title.text = free_notice.title
         holder.recycle_free_script.text = free_notice.script
     }
@@ -422,7 +481,11 @@ class RecyclerQnaAdapter(private val items_qna: ArrayList<community_qna_recycle_
     var filteredQnaCycle = ArrayList<community_qna_recycle_data>()
     var itemFilter = ItemFilter()
 
+    var getImageName : String? = ""
+    val storage: FirebaseStorage = FirebaseStorage.getInstance("gs://suwonfood-final.appspot.com/")
+    val storageReference = storage.reference
 
+    //val pathReference = storageReference.child("images/$getImageName")
     //이너클래스 안에 선언
     inner class ViewHolder(itemView: View, con: Context) : RecyclerView.ViewHolder(itemView) {
 
@@ -431,6 +494,18 @@ class RecyclerQnaAdapter(private val items_qna: ArrayList<community_qna_recycle_
         var recycle_qna_script: TextView
 
         fun bind(item: community_qna_recycle_data){
+            getImageName = item.profile
+            val pathReference = storageReference.child("images/$getImageName")
+            pathReference.downloadUrl.addOnSuccessListener { uri ->
+                Glide.with(itemView.context)
+                    .load(uri)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .centerCrop()
+                    .into(recycle_qna_profile)
+            }
+//            item.profile
+            //items_qna.get(position).profile?.let{recycle_qna_profile.setImageURI(Uri.parse(item.profile))}
+            //recycle_qna_profile.setImageURI(Uri.parse(item.profile))
             recycle_qna_title.text=item.title
             recycle_qna_script.text=item.script
         }
@@ -442,9 +517,10 @@ class RecyclerQnaAdapter(private val items_qna: ArrayList<community_qna_recycle_
 
             itemView.setOnClickListener(View.OnClickListener {
                 Log.d("Click",recycle_qna_script.text.toString()+"클릭되었다")
-                val intent = Intent(con, Write_Community_Notice_Qna_Info_Activity::class.java)
+                val intent = Intent(con, Community_Notice_Qna_Info_Activity::class.java)
                 intent.putExtra("title",recycle_qna_title.text.toString())
                 intent.putExtra("script",recycle_qna_script.text.toString())
+                intent.putExtra("profile",getImageName)
 //                intent.putExtra("title",recycle_qna_profile.text.toString())
                 con.startActivity(intent)
             })
@@ -469,7 +545,24 @@ class RecyclerQnaAdapter(private val items_qna: ArrayList<community_qna_recycle_
     //리사이클러 각 item값 지정
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val free_notice: community_qna_recycle_data = filteredQnaCycle[position]
-        items_qna.get(position).profile?.let { holder.recycle_qna_profile.setImageResource(it) }
+        //items_qna.get(position).profile?.let { holder.recycle_qna_profile.setImageResource(it) }
+
+        holder.apply {
+
+            //Glide.with().load(Uri.parse(free_notice.profile)).into(holder.recycle_qna_profile)
+            //items_qna.get(position).profile?.let{holder.recycle_qna_profile.setImageURI(Uri.parse(free_notice.profile))}
+            //GlideApp.with(itemView).load("gs://suwonfood-final.appspot.com/images/Image_20221128_143744_.png").override(200,200).into(recycle_qna_profile)
+            getImageName = free_notice.profile
+            val pathReference = storageReference.child("images/$getImageName")
+            pathReference.downloadUrl.addOnSuccessListener { uri ->
+                Glide.with(itemView.context)
+                    .load(uri)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .centerCrop()
+                    .into(holder.recycle_qna_profile)
+                Log.d("kimhwan","이미지 로드 성공")
+            }
+        }
         holder.recycle_qna_title.text = free_notice.title
         holder.recycle_qna_script.text = free_notice.script
     }
@@ -537,14 +630,10 @@ class RecyclerQnaAdapter(private val items_qna: ArrayList<community_qna_recycle_
 }
 
 
-
-
 //  레시피 완성 리사이클러
 class RecyclerRecipeDoneImageAdapter(private val items_done_image: ArrayList<recipe_done_image_recycle_data>) : RecyclerView.Adapter<RecyclerRecipeDoneImageAdapter.CustomViewHolder>() {
 
-
     override fun getItemCount(): Int = items_done_image.size
-
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -561,14 +650,12 @@ class RecyclerRecipeDoneImageAdapter(private val items_done_image: ArrayList<rec
         }
     }
 
-
     override fun onBindViewHolder(
         holder: RecyclerRecipeDoneImageAdapter.CustomViewHolder,
         position: Int
     ) {
         holder.image.setImageResource(items_done_image.get(position).image)
     }
-
 
     inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image = itemView.findViewById<ImageView>(R.id.recycle_recipe_done_image)

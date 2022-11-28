@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.Image
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,9 @@ import com.example.myapplication.databinding.WriteCommunityNoticeQnaBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.coroutines.selects.select
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Write_Community_Notice_Qna_Activity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
@@ -28,6 +32,7 @@ class Write_Community_Notice_Qna_Activity : AppCompatActivity() {
     val DEFAULT_GALLERY_REQUEST_CODE = 200
     val IMAGE_PICK = 111
     var selectImage: Uri? = null
+    var image : String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,9 +44,6 @@ class Write_Community_Notice_Qna_Activity : AppCompatActivity() {
         var script = binding.writeCommunityNoticeQnaScript
         val button_qna = binding.buttonQna
         val button_qna2 = binding.buttonQna2
-
-        val String = "content://com.google.android.apps.photos.contentprovider/-1/1/content%3A%2F%2Fmedia%2Fexternal%2Fimages%2Fmedia%2F41/ORIGINAL/NONE/image%2Fpng/1563818880"
-        val uri = Uri.parse(String)
 
         storage = FirebaseStorage.getInstance()
 
@@ -56,11 +58,13 @@ class Write_Community_Notice_Qna_Activity : AppCompatActivity() {
 
         //저장
         button_qna.setOnClickListener(View.OnClickListener {
-            val data = community_qna_recycle_data(R.drawable.icon_community_user_ex_50dp,title.text.toString(),script.text.toString())
+            ImageUpload()
+            val data = community_qna_recycle_data(image,title.text.toString(),script.text.toString())
             db.collection("qna")
                 .add(data)
                 .addOnSuccessListener { documentReference ->
                     Log.d("kimhwan","add successfully")
+                    Log.d("kimhwan","image : $image")
                     Toast.makeText(baseContext,"업로드가 완료되었습니다.", Toast.LENGTH_SHORT).show()
                 }
 
@@ -87,6 +91,23 @@ class Write_Community_Notice_Qna_Activity : AppCompatActivity() {
             binding.imageViewQna.setImageURI(selectImage)
             Log.d("selectImage Type ",selectImage.toString())
         }
+    }
+
+    //이미지 업로드
+    private fun ImageUpload(){
+        var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        var imgFileName = "Image_"+timeStamp+"_.png"
+        var storageRef = storage?.reference?.child("images")?.child(imgFileName)
+        image = imgFileName
+
+        storageRef?.putFile(selectImage!!)?.addOnSuccessListener {
+            Log.d("kimhwan","Image Upload successfully")
+            Toast.makeText(this, "Image upload successful", Toast.LENGTH_SHORT).show()
+        }
+            ?.addOnFailureListener{ e->
+                Log.w("kimhwan","업로드 실패")
+                Toast.makeText(baseContext,"업로드에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            }
     }
 
 }

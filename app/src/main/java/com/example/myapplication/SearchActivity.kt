@@ -75,10 +75,10 @@ class SearchActivity : AppCompatActivity() {
     //recycler에 값을 추가한다
     fun AddCookData(): ArrayList<community_cook_recycle_data> {
         var CookData = ArrayList<community_cook_recycle_data>()
-        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex2_base_img,"김치찌개"))
-        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex3_base_img,"파스타"))
-        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex4_base_img,"우동"))
-        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex1_base_img,"계란말이"))
+//        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex2_base_img,"김치찌개"))
+//        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex3_base_img,"파스타"))
+//        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex4_base_img,"우동"))
+//        CookData.add(community_cook_recycle_data(R.drawable.icon_community_user_ex_50dp,"User",R.drawable.cook_ex1_base_img,"계란말이"))
 
         return CookData
 

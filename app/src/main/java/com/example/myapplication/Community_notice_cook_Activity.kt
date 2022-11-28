@@ -29,8 +29,6 @@ class Community_notice_cook_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.community_notice_cook)
 
-
-
         opt_community_notice_cook_recycle = findViewById(R.id.opt_community_notice_cook_recycle)
         opt_search_cook = findViewById(R.id.opt_search_cook)
         opt_search_cook.setOnQueryTextListener(searchViewTextListener)
@@ -82,7 +80,6 @@ class Community_notice_cook_Activity : AppCompatActivity() {
         recyclerCookAdapter = RecyclerCookAdapter(items_cook)
         opt_community_notice_cook_recycle.adapter = recyclerCookAdapter
         recyclerCookAdapter?.notifyDataSetChanged()
-
     }
 
 
@@ -90,7 +87,7 @@ class Community_notice_cook_Activity : AppCompatActivity() {
     fun AddCookData(): ArrayList<community_cook_recycle_data> {
         var CookData = ArrayList<community_cook_recycle_data>()
         Log.d("초기 FREEdata",CookData.toString())
-        db.collection("free")
+        db.collection("cook")
             .get()
             .addOnSuccessListener{ result ->
                 //val itemList = mutableListOf<community_free_recycle_data>()
