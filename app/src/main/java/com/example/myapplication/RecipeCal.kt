@@ -35,8 +35,22 @@ class RecipeCal : AppCompatActivity() {
                 val s1 = e1!!.text.toString() //값 가져오기
                 t1!!.text = ":$s1"
             }
-
-            //t1.setText(String.valueOf(result));
         }
+        t1!!.setOnClickListener {
+            if (t1!!.text.toString()=="") {
+                Toast.makeText(
+                this@RecipeCal,
+                "재료가없습니다.",
+                Toast.LENGTH_LONG
+                ).show()
+            }else{
+                Toast.makeText(
+                this@RecipeCal,
+                "값이 추가되었습니다.",
+                Toast.LENGTH_LONG
+            )
+            }
+         }
+            //t1.setText(String.valueOf(result));
     }
 }
