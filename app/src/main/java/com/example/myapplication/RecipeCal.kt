@@ -15,6 +15,7 @@ class RecipeCal : AppCompatActivity() {
     var b1: Button? = null
     var t1: TextView? = null
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.item_dialog_refrigerator_add_material) //전체뷰(xml파일) 들고오기
