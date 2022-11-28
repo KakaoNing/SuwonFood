@@ -4,22 +4,15 @@ import android.graphics.drawable.Drawable
 import android.net.Uri
 import java.util.jar.Attributes
 
+//레시피 작성 중 재료추가 리사이클러 데이터
+data class recipe_write_material_data(
+    val name: String,
+    val value: String
+)
 
 //냉장고 재료 데이터
 data class refrigerator_source_recycle_data(
-    var name:String
-)
-
-//레시피 작성 중 요리재료 리사이클러 데이터
-data class recipe_write_Matarialrecycle_data(
-    val image: Int,
-    val title:String
-)
-
-//레시피 작성 중 요리도구 리사이클러 데이터
-data class recipe_write_Cookwarerecycle_data(
-    val image: Int,
-    val title:String
+    var name:String,
 )
 
 //레시피 완료화면 리사이클러 데이터

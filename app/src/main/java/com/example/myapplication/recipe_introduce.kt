@@ -1,41 +1,28 @@
 package com.example.myapplication
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import kotlinx.android.synthetic.main.fragment_recipe_introduce.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [recipe_introduce.newInstance] factory method to
- * create an instance of this fragment.
- */
 class recipe_introduce : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
+    private lateinit var recipeyoutube: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
 
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
 
     }
-
 
 
     override fun onCreateView(
@@ -46,15 +33,16 @@ class recipe_introduce : Fragment() {
         return inflater.inflate(R.layout.fragment_recipe_introduce, container, false)
     }
 
-    companion object {
-        fun newInstance(param1: String, param2: String) =
-            recipe_introduce().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        recipeyoutube=view.findViewById(R.id.recipe_recipe_yotube)
+
+        recipeyoutube.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=T7YJviWhquo&t=21s"))
+            startActivity(i)
+
+        }
+
     }
-
-
 }

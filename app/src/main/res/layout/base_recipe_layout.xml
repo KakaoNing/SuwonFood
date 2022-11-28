@@ -1,76 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/layout_recipe_toolbar_check"
+
+
+    <include layout="@layout/opt_main_toolbar" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@drawable/cook_ex1"
+        android:padding="10dp"
+        android:background="@drawable/color_origin_recipe_orange"/>
+
+    <com.google.android.material.tabs.TabLayout
+
+        android:id="@+id/recipe_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <include layout="@layout/opt_main_toolbar" />
+        android:layout_gravity="top"
+        android:background="@drawable/color_origin_recipe_orange"
+        app:tabMode="fixed">
 
-    </LinearLayout>
 
-    <LinearLayout
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/recipe_pager"
         android:layout_width="match_parent"
-        android:layout_height="530dp"
-        android:orientation="vertical"
-        android:layout_below="@+id/layout_recipe_toolbar_check"
-        >
+        android:layout_height="match_parent"
+        android:layout_marginBottom="59dp"
+        android:background="@drawable/color_origin_recipe_orange">
 
-        <LinearLayout
-            android:id="@+id/screen_recipe_check01"
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
-
-            <ImageView
-                android:layout_width="375dp"
-                android:layout_marginLeft="17dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/cook_ex1"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/screen_recipe_check01"
-            android:orientation="vertical">
-
-            <com.google.android.material.tabs.TabLayout
-
-                android:id="@+id/recipe_tab"
-                android:layout_width="375dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_marginLeft="17dp"
-                android:background="#FFAB40"
-                app:tabMode="fixed">
-
-
-            </com.google.android.material.tabs.TabLayout>
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/recipe_pager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-            </androidx.viewpager2.widget.ViewPager2>
-
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </androidx.viewpager2.widget.ViewPager2>
 
 
 
-
-
-
-
-
-
-
-</RelativeLayout>
+</LinearLayout>

@@ -6,14 +6,10 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.databinding.ActivityRecipeBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_recipe.*
-import kotlinx.android.synthetic.main.base_recipe_layout.*
-import kotlinx.android.synthetic.main.base_main_layout.*
 import kotlinx.android.synthetic.main.base_recipe_layout.*
 
 class RecipeActivity : AppCompatActivity() {
@@ -25,6 +21,25 @@ class RecipeActivity : AppCompatActivity() {
         val binding = ActivityRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        recipe_button_theme.setOnClickListener{
+            var intent = Intent(this, ThemeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+
+
+        recipe_button_recipe.setOnClickListener{
+            var intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+        recipe_button_community.setOnClickListener{
+            var intent = Intent(this, CommunityActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
 
         recipe_button_recipe.setOnClickListener{
             var intent = Intent(this, MainActivity::class.java)
@@ -80,20 +95,7 @@ class RecipeActivity : AppCompatActivity() {
                 3 -> tab.text = "레시피"
                 4 -> tab.text = "완성"
             }
-
-
-
-
         }.attach()
-
-
-
-
-
-
-
-
-
 
     }
 
@@ -107,7 +109,6 @@ class RecipeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu,menu)
         return true

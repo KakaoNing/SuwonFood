@@ -1,26 +1,24 @@
 package com.example.myapplication.Home
 
-import android.content.Intent
+//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Cooking_Utensils
+//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Material
+//import com.example.myapplication.Other.Home_Middle_ViewPager2adapter
+//import com.example.myapplication.Recipe.RecipeActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Cooking_Utensils
-//import com.example.myapplication.Cookbook.Write.Cookbook_Create_Material
 import com.example.myapplication.Home_Middle_ViewPager2adapter
-//import com.example.myapplication.Other.Home_Middle_ViewPager2adapter
 import com.example.myapplication.R
 import com.example.myapplication.home_middle_recipe2
 import com.example.myapplication.home_middle_recipe3
-//import com.example.myapplication.Recipe.RecipeActivity
 import kotlinx.android.synthetic.main.base_main_layout.*
 import kotlinx.android.synthetic.main.fragment_home_middle.*
 import kotlinx.android.synthetic.main.fragment_home_middle_recipe.*
+
 // 홈 화면중 가운데에 해당하는 추천화면에 대한 Fragment이다.
 class home_middle : Fragment() {
 
@@ -36,16 +34,9 @@ class home_middle : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+    //private val sliderImageRunnable = Runnable { home_recipe_viewpager2.currentItem = home_recipe_viewpager2.currentItem + 1 }
 
         /* 여백, 너비에 대한 정의 */
-
-
-
-
-
-
-
-
 
     }
     /*companion object {
@@ -185,5 +176,4 @@ class home_middle : Fragment() {
 
             }
         }
-    }
-}
+}}

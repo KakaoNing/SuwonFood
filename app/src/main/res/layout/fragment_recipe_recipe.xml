@@ -7,17 +7,18 @@
 
 
     <androidx.viewpager2.widget.ViewPager2
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/frag_recipe_recipe_pager"
-        android:layout_width="375dp"
-        android:layout_marginLeft="17dp"
-        android:layout_height="350dp"
-        android:background="#88FFAB40"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
     <Button
         android:id="@+id/opt_recipe_button_left"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
-        android:layout_marginLeft="10dp"
+
         android:layout_marginBottom="30dp"
         android:drawableTop="@drawable/icon_recipe_leftarrow_60dp"
         android:background="#00FFFFFF"/>
@@ -26,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginBottom="30dp"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="280dp"
         android:layout_gravity="bottom"
         android:drawableTop="@drawable/icon_recipe_rightarrow_60dp"
         android:background="#00FFFFFF"/>

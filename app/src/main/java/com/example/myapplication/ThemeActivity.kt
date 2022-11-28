@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import androidx.core.view.GravityCompat
+import kotlinx.android.synthetic.main.activity_recipe.*
 import kotlinx.android.synthetic.main.activity_theme.*
 import kotlinx.android.synthetic.main.cookbook_management.*
 import kotlinx.android.synthetic.main.cookbook_management.view.*
@@ -50,6 +53,17 @@ class ThemeActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.toolbar_menu,menu)
         return true
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home->{
+                recipe_main.openDrawer(GravityCompat.START)
+            }
+            R.id.tool_search->{
+                var intent = Intent(this,SearchActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
 }

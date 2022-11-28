@@ -13,6 +13,8 @@ class recipe_cookware : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
     }
 
     override fun onCreateView(
@@ -25,6 +27,7 @@ class recipe_cookware : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         val items = arrayListOf(
             recipe_cookware_recycle_data("후라이팬"),

@@ -113,10 +113,7 @@ class Community_notice_qna_Activity : AppCompatActivity() {
                 Log.d("kimhwan","데이터 불러오지 못했습니다.", e)
                 Toast.makeText(this,"서버로부터 데이터를 불러오지 못했습니다.", Toast.LENGTH_SHORT).show()
             }
-
         return QnaData
-
     }
-
 
 }

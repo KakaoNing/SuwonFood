@@ -81,7 +81,7 @@
             android:layout_marginRight="68dp"
             android:layout_marginBottom="12dp"
             android:text="자주 찾는 질문"
-            android:background="@drawable/color_dark_green_gradient_square"
+            android:background="@drawable/color_origin_cookbook_manage_back"
             android:textSize="30dp"
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"

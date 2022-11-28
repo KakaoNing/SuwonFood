@@ -38,7 +38,7 @@
             android:id="@+id/recycle_today_recipe_img"
             android:layout_width="350dp"
             android:layout_height="150dp"
-            android:background="@drawable/color_brown_gradient_square"
+            android:background="@drawable/color_origin_cookbook_manage_back"
             android:src="@drawable/icon_community_mostqa"/>
 
         <TextView

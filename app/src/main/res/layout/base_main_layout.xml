@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
@@ -8,20 +8,20 @@
 
 
 
-
-
     <include layout="@layout/opt_main_toolbar" />
 
 
 
     <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/home_pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="55dp">
+        android:id="@+id/home_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
     </androidx.viewpager2.widget.ViewPager2>
 
 
 
 
-</FrameLayout>
+</LinearLayout>
