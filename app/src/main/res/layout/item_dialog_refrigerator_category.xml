@@ -38,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="카테고리이름"
+                    android:text="반찬"
                     android:layout_gravity="center"/>
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="카테고리이름"
+                    android:text="일품"
                     android:layout_gravity="center"/>
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="카테고리이름"
+                    android:text="국and찌개"
                     android:layout_gravity="center"/>
                 <RadioButton
                     android:layout_width="wrap_content"
