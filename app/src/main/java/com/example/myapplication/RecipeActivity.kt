@@ -41,6 +41,18 @@ class RecipeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        recipe_button_recipe.setOnClickListener{
+            var intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+        recipe_button_community.setOnClickListener{
+            var intent = Intent(this, CommunityActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
 
         //툴바
         setSupportActionBar(findViewById(R.id.toolbar))
