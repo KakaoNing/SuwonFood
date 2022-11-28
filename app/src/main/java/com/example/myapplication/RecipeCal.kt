@@ -48,7 +48,7 @@ class RecipeCal : AppCompatActivity() {
                 this@RecipeCal,
                 "값이 추가되었습니다.",
                 Toast.LENGTH_LONG
-            )
+            ).show()
             }
          }
             //t1.setText(String.valueOf(result));
