@@ -19,7 +19,7 @@
             android:id="@+id/dialog_Textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="카테고리"
+            android:text="반찬"
             android:textSize="30dp"/>
             <Button
                 android:id="@+id/dialog_material_choicbutton"

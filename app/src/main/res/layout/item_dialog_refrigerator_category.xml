@@ -21,11 +21,12 @@
             android:layout_gravity="center">
 
             <EditText
+                android:id="@+id/edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:hint="직접적기"/>
-            <RadioButton
+                        <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>

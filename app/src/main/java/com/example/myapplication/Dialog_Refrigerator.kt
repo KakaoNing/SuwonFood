@@ -67,7 +67,6 @@ class Dialog_Refrigerator(context: Context){
 
             //화면 연결
             var v3 = dialog.layoutInflater.inflate(R.layout.item_dialog_refrigerator_add_material,null)
-
             //화면을 다이얼로그빌드에 세트
             vlist3dialog.setView(v3)
 

@@ -25,7 +25,6 @@ class YouTubeActivity : YouTubeBaseActivity() {
                 b: Boolean
             ) {
                 youTubePlayer.loadVideo("7rFtdZv4AZY") //
-                //https://www.youtube.com/watch?v=NmkYHmiNArc 유투브에서 v="" 이부분이 키에 해당
             }
 
             override fun onInitializationFailure(
