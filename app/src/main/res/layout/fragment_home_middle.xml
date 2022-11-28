@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home.home_middle">
+    tools:context=".Home.home_middle"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="레시피"
         android:gravity="center"
@@ -18,86 +19,95 @@
         android:textColor="#FFAB40"/>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableTop="@drawable/icon_main_random_60dp"
-        android:text="Random"
-        android:background="#00FFFFFF"
-        android:backgroundTintMode="screen"
-        android:textStyle="bold"
-        android:fontFamily="@font/diary"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="40dp"
-        android:textColor="#F96167" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/icon_main_random_60dp"
+            android:text="Random"
+            android:background="#00FFFFFF"
+            android:backgroundTintMode="screen"
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:textColor="#F96167" />
 
 
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/icon_main_cycle"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="70dp"
-        android:background="#00FFFFFF"
-        android:translationZ="-1dp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_main_cycle"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="105dp"
+            android:background="#00FFFFFF"
+            android:translationZ="-1dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableTop="@drawable/icon_main_ai_60dp"
-        android:text="AI"
-        android:background="#00FFFFFF"
-        android:backgroundTintMode="screen"
-        android:textStyle="bold"
-        android:fontFamily="@font/diary"
-        android:textColor="#F96167"
-        android:layout_gravity="end"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="40dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/icon_main_ai_60dp"
+            android:text="AI"
+            android:background="#00FFFFFF"
+            android:backgroundTintMode="screen"
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:textColor="#F96167"
+            android:layout_gravity="end"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"/>
 
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/icon_main_cycle"
-        android:layout_gravity="end"
-        android:layout_marginTop="70dp"
-        android:layout_marginRight="45dp"
-        android:translationZ="-1dp"/>
-
-
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_main_cycle"
+            android:layout_gravity="end"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="45dp"
+            android:translationZ="-1dp"/>
 
 
 
-
+    </FrameLayout>
 
     <TextView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="오늘의 요리 추천"
-        android:gravity="center"
         android:background="@drawable/color_orangered_gradient_circle"
         android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="160dp"
         android:backgroundTintMode="screen"
         android:textStyle="bold"
-        android:fontFamily="@font/diary"/>
-
+        android:fontFamily="@font/diary"
+        android:layout_gravity="center"
+        android:gravity="center"/>
 
     <LinearLayout
-        android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="385dp">
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/home_recipe_viewpager2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:id="@+id/home_recipe_viewpager2"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:clipToPadding="false"
-            android:clipChildren="false" />
+            android:clipChildren="false">
+
+        </androidx.viewpager2.widget.ViewPager2>
 
     </LinearLayout>
 
-</FrameLayout>
+
+</LinearLayout>

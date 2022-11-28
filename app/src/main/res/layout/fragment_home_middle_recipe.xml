@@ -6,14 +6,15 @@
     tools:context=".Home.Home_Middle_Recipe">
 
     <Button
+        android:padding="20dp"
         android:id="@+id/home_middle_button"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:text="계란말이"
         android:textSize="30dp"
-        android:drawableTop="@drawable/cook_ex1_270dp"
+        android:drawableTop="@drawable/cook_ex1_170dp"
         android:paddingTop="15dp"
         android:backgroundTintMode="screen"
         android:textStyle="bold"

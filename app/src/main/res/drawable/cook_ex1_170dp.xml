@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:width="250dp"
-        android:height="250dp"
+        android:width="170dp"
+        android:height="170dp"
         android:drawable="@drawable/cook_ex1"/>
 </layer-list>
