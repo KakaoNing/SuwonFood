@@ -35,7 +35,7 @@ class YoutubeActivity : YouTubeBaseActivity() {
 
     //유튜브 플레이어 메서드
     private fun initPlayer() {
-        playerView = findViewById(R.id.playerView)
+        ///playerView = findViewById(R.id.playerView)
         playerView!!.initialize(
             YoutubeActivity.Companion.API_KEY,
             object : YouTubePlayer.OnInitializedListener {

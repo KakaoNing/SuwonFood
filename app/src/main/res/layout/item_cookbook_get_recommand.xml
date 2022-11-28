@@ -6,15 +6,16 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_margin="20dp"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:orientation="vertical"
         android:background="@drawable/color_origin_cookbook_manage_back">
 
         <ImageView
             android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
             android:src="@drawable/icon_empty_data"/>
 
         <TextView

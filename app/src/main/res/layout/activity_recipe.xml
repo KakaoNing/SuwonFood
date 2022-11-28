@@ -57,7 +57,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
                 android:drawableTop="@drawable/icon_underbar_theme_40dp"
-                android:background="#80FFFFFF"/>
+                android:background="#FFFFFF"/>
             <Button
                 android:id="@+id/recipe_button_recipe"
                 android:layout_width="0dp"
@@ -69,7 +69,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/diary"
                 android:drawableTop="@drawable/icon_underbar_recipe_40dp"
-                android:background="#80FFFFFF"/>
+                android:background="#FFFFFF"/>
             <Button
                 android:id="@+id/recipe_button_community"
                 android:layout_width="0dp"
@@ -81,7 +81,7 @@
                 android:fontFamily="@font/diary"
                 android:backgroundTintMode="screen"
                 android:drawableTop="@drawable/icon_underbar_community_40dp"
-                android:background="#80FFFFFF"/>
+                android:background="#FFFFFF"/>
 
 
         </LinearLayout>

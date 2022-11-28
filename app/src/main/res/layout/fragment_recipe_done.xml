@@ -9,10 +9,13 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
             android:id="@+id/opt_recycle_recipe_done_image"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            tools:listitem="@layout/item_recipe_done_recycle">
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            tools:listitem="@layout/item_recipe_done_recycle"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
 
 
 
@@ -22,7 +25,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:orientation="horizontal">
 
         <Button

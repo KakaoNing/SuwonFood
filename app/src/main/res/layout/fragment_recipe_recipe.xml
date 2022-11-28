@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
-        android:layout_marginLeft="10dp"
+
         android:layout_marginBottom="30dp"
         android:drawableTop="@drawable/icon_recipe_leftarrow_60dp"
         android:background="#00FFFFFF"/>
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginBottom="30dp"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="280dp"
         android:layout_gravity="bottom"
         android:drawableTop="@drawable/icon_recipe_rightarrow_60dp"
         android:background="#00FFFFFF"/>

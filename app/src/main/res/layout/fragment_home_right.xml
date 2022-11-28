@@ -23,10 +23,6 @@
         android:layout_width="match_parent"
         android:layout_height="500dp">
 
-
-
-
-
         <ImageView
             android:layout_marginTop="50dp"
             android:id="@+id/cookbook_background"
@@ -38,7 +34,7 @@
             />
 
         <Button
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="200dp"
             android:id="@+id/cookbook_button_Create"
             android:layout_width="120dp"
@@ -53,7 +49,7 @@
             android:fontFamily="@font/diary"/>
 
         <Button
-            android:layout_marginRight="60dp"
+            android:layout_marginRight="40dp"
             android:layout_marginTop="200dp"
             android:id="@+id/cookbook_button_Import"
             android:layout_width="120dp"
@@ -70,7 +66,7 @@
         <!--요리타임 레시피관리 버튼-->
         <Button
             android:layout_marginTop="40dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginRight="40dp"
             android:id="@+id/cookbook_button_CookingtimeManagement"
             android:layout_width="120dp"
             android:layout_height="80dp"
@@ -86,7 +82,7 @@
         <!--레시피 관리 버튼-->
         <Button
             android:layout_marginTop="40dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="40dp"
             android:id="@+id/cookbook_button_Management"
             android:layout_width="120dp"
             android:layout_height="80dp"

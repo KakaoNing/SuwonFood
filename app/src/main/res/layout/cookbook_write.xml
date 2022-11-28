@@ -10,6 +10,7 @@
 
 
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -18,7 +19,6 @@
         <TextView
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:text="레시피 작성"
             android:textSize="40dp"
@@ -49,7 +49,7 @@
 
         <TextView
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="레시피 한줄요약"
@@ -62,7 +62,6 @@
 
         <EditText
             android:id="@+id/cookbook_recipe_inform_editSummary"
-            android:layout_marginLeft="30dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:hint="한줄로 요약해 레시피를 소개하자면?"/>
@@ -71,7 +70,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"
@@ -81,14 +79,12 @@
 
         <EditText
             android:id="@+id/cookbook_recipe_inform_editTitle"
-            android:layout_marginLeft="30dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:hint="레시피의 제목은?"/>
 
         <TextView
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="레시피 설명"
@@ -99,14 +95,12 @@
 
         <EditText
             android:id="@+id/cookbook_recipe_inform_editDescription"
-            android:layout_marginLeft="30dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:hint="이 요리에 대해 설명해주세요"/>
 
         <TextView
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="레시피 내용"
@@ -118,12 +112,10 @@
             android:id="@+id/cookbook_recipe_inform_pager"
             android:layout_width="350dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:background="#90FFFFFF" />
 
         <LinearLayout
-            android:layout_marginLeft="30dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -154,7 +146,6 @@
 
         <TextView
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="조리 도구"
@@ -176,13 +167,11 @@
             android:id="@+id/cookbook_recipe_inform_editCookware"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
             android:hint="조리도구를 적어보세요" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:backgroundTintMode="screen"
             android:fontFamily="@font/diary"
@@ -194,12 +183,10 @@
             android:id="@+id/recyclerview_write_material"
             android:layout_width="350dp"
             android:layout_height="150dp"
-            android:layout_marginLeft="30dp"
             android:background="#90FFFFFF"
             tools:listitem="@layout/item_cookbook_write_source_recycle" />
 
         <LinearLayout
-            android:layout_marginLeft="30dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -236,7 +223,6 @@
 
         <TextView
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="추가 사진"
@@ -247,7 +233,6 @@
 
 
         <LinearLayout
-            android:layout_marginLeft="30dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -289,7 +274,6 @@
 
         <Button
             android:id="@+id/recipe_write_savebutton"
-            android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
             android:layout_width="350dp"

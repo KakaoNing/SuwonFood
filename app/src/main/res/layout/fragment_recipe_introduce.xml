@@ -48,7 +48,24 @@
                 android:backgroundTintMode="screen" />
 
 
+
+
         </LinearLayout>
+
+
+        <Button
+            android:id="@+id/recipe_recipe_yotube"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="유튜브 링크 보기"
+            android:textSize="30dp"
+            android:backgroundTintMode="screen"
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:background="@drawable/color_orangered_gradient_circle"/>
+
+
+
 
 
 
