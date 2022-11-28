@@ -87,20 +87,7 @@ class RecipeActivity : AppCompatActivity() {
                 3 -> tab.text = "레시피"
                 4 -> tab.text = "완성"
             }
-
-
-
-
         }.attach()
-
-
-
-
-
-
-
-
-
 
     }
 

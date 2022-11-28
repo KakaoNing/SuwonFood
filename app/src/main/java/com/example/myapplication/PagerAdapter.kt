@@ -59,6 +59,7 @@ class PagerFragmentStateAdapter(fragmentActivity: FragmentActivity) : FragmentSt
     }
 }
 
+//
 class FragRecipeAdapter(fragment: recipe_recipe) : FragmentStateAdapter(fragment){
     var fragment = listOf<Fragment>()
 
@@ -66,6 +67,23 @@ class FragRecipeAdapter(fragment: recipe_recipe) : FragmentStateAdapter(fragment
 
     override fun createFragment(position: Int): Fragment {
         return fragment.get(position)
+    }
+
+}
+//레시피 저장 설명 뷰페이저 어뎁터
+class FragRecipeWriteAdapter(fragment: Fragment) : FragmentStateAdapter(fragment){
+    var fragments:ArrayList<Fragment> = ArrayList()
+
+    override fun getItemCount(): Int = fragments.size
+
+    override fun createFragment(position: Int): Fragment {
+        return fragments.get(position)
+    }
+
+    fun addFragment(fragment: Fragment){
+        fragments.add(fragment)
+        notifyItemInserted(fragments.size-1)
+
     }
 
 }
@@ -88,10 +106,8 @@ class RecipePagerAdapter(fragment: RecipeActivity) : FragmentStateAdapter(fragme
 
     override fun getItemCount(): Int = 5
 
-
-
-
 }
+
 
 //요리책화면 레시피 관리중 내가 작성한 글 어댑터
 class CookBookManagementWriteAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
@@ -145,6 +161,29 @@ class CookBookManagementBringAdapter(fragmentActivity: FragmentActivity):Fragmen
 class CookBookCommunityManagementAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
     var fragments:ArrayList<Fragment> = ArrayList()
 
+    override fun getItemCount(): Int {
+        return fragments.size
+    }
+
+    override fun createFragment(position: Int): Fragment {
+        return fragments[position]
+    }
+
+    fun addFragment(fragment: Fragment){
+        fragments.add(fragment)
+        notifyItemInserted(fragments.size-1)
+
+    }
+
+    fun removeFragement(){
+        fragments.removeLast()
+        notifyItemRemoved(fragments.size)
+    }
+}
+
+//요리 레시피 작성 추가 어댑터
+class Recipe_Write_add_ViewPager2adapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
+    var fragments:ArrayList<Fragment> = ArrayList()
     override fun getItemCount(): Int {
         return fragments.size
     }

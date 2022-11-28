@@ -58,12 +58,9 @@
             android:layout_height="350dp"
             android:layout_gravity="end|center"
             android:layout_marginRight="25dp"
+            android:background="#FF8A65"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_refrigerator_source_recycle"
-            android:background="#FF8A65"/>
-
-
-
+            tools:listitem="@layout/item_refrigerator_source_recycle" />
 
 
     </FrameLayout>

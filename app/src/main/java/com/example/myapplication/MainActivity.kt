@@ -68,8 +68,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         initpager()
 
+    fun initpager(){
+        //pagerAdapter의 초기화 설정(PagerFragmentStateAdapter사용)
+        val pagerAdapter= PagerFragmentStateAdapter(this)
 
 
+    }
+
+        initpager()
 
 
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="false"
     android:visibility="visible"
-    tools:context=".MainActivity"
+    tools:context=".RecipeActivity"
     android:background="@drawable/color_background_brown">
 
     <!-- 레시피 화면 -->

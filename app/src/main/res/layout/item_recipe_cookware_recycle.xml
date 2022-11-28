@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/recycle_recipe_cookware_data"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_weight="1"
         android:text="조리도구"

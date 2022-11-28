@@ -7,34 +7,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_margin="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="조리도구"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:fontFamily="@font/diary"
-            android:backgroundTintMode="screen"/>
-
-        <!---
+        android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/opt_recycle_recipe_cookware"
             android:layout_width="375dp"
             android:layout_marginLeft="17dp"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_recipe_cookware_recycle" />
-            -->
+            tools:listitem="@layout/item_recipe_cookware_recycle"
+            android:background="#88FFAB40"/>
 
     </LinearLayout>
-
-
-
-
 
 
 </TableLayout>
