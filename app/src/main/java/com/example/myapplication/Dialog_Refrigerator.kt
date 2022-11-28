@@ -45,6 +45,7 @@ class Dialog_Refrigerator(context: Context){
 
             //다이얼로그 빌드 실행
             vlist1dialog.show()
+
         }
         dialog.dialog_material_button2.setOnClickListener {
 
