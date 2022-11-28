@@ -77,12 +77,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         initpager()
 
-
-
-
-
-
-
     }
 
 

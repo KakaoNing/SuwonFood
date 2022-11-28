@@ -3,9 +3,12 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.core.view.GravityCompat
 import androidx.viewpager2.widget.ViewPager2
 
 import com.example.myapplication.databinding.CookbookManagementBinding
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.cookbook_management.*
 
 //레시피 관리에 대한 Activity이다.
@@ -83,6 +86,19 @@ class Cookbook_Management_Activity : AppCompatActivity() {
                 }
             })
         }
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home->{
+                home_main.openDrawer(GravityCompat.START)
+
+            }
+            R.id.tool_search->{
+                var intent = Intent(this,SearchActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }

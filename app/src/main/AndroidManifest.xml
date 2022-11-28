@@ -15,9 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
-        <activity
-            android:name=".RecipeWriteAcivity"
-            android:exported="false" />
 
         <activity
             android:name=".ThemeActivity"
@@ -30,9 +27,6 @@
         <!-- <activity -->
         <!-- android:name=".Cookbook_CookingtimeManagement_Activity" -->
         <!-- android:exported="false" /> -->
-        <activity
-            android:name=".Cookbook_Community_Activity"
-            android:exported="false" />
         <activity
             android:name=".Cookbook_Management_Activity"
             android:exported="false" />

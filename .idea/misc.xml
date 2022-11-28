@@ -130,6 +130,11 @@
         <entry key="..\:/Food3/app/src/main/res/menu/navigation_menu.xml" value="0.5208333333333334" />
         <entry key="..\:/Food3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2745" />
         <entry key="..\:/Food3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2745" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFooFinal/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFooFinal/app/src/main/res/layout/activity_recipe.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFooFinal/app/src/main/res/layout/cookbook_get.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFooFinal/app/src/main/res/layout/cookbook_management.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFooFinal/app/src/main/res/layout/cookbook_write.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/brain/AndroidStudioProjects/SuwonFooFinal/app/src/main/res/layout/fragment_recipe_write_recipe.xml" value="0.1875" />
       </map>
     </option>

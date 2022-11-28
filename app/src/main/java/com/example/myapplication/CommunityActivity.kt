@@ -99,6 +99,10 @@ class CommunityActivity : AppCompatActivity() {
             android.R.id.home->{
                 community_main.openDrawer(GravityCompat.START)
             }
+            R.id.tool_search->{
+                var intent = Intent(this,SearchActivity::class.java)
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }

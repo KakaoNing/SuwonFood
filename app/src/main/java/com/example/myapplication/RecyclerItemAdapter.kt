@@ -667,28 +667,4 @@ class RecipeWriteMaterialAdapter(private val items_source: ArrayList<recipe_writ
         val value = itemView.findViewById<TextView>(R.id.recycle_cookbook_source_value)
     }
 }
-/*
-
-//레시피 요리도구 추가 어뎁터
-class RecipeWriteCookwareAdapter(private val items_source: ArrayList<recipe_write_cookware_data>) : RecyclerView.Adapter<RecipeWriteCookwareAdapter.CustomViewHolder>() {
-
-    override fun getItemCount(): Int = items_source.size
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeWriteCookwareAdapter.CustomViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recipe_cookware_recycle, parent, false)
-        return CustomViewHolder(view).apply {
-            itemView.setOnClickListener {
-                val curPos: Int = adapterPosition
-                val profile: recipe_write_cookware_data = items_source.get(curPos)
-            }
-        }
-    }
-    override fun onBindViewHolder(holder: RecipeWriteCookwareAdapter.CustomViewHolder, position: Int) {
-        holder.name.text = items_source.get(position).name
-    }
-    inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name = itemView.findViewById<TextView>(R.id.recycle_recipe_cookware_data)
-    }
-}*/
-
 

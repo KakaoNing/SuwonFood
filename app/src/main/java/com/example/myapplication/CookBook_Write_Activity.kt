@@ -3,52 +3,32 @@ package com.example.myapplication
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
+import android.os.Build.VERSION_CODES.M
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
-import android.util.Log.i
+import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
+import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.databinding.CookbookWriteBinding
-import com.google.firestore.v1.StructuredAggregationQuery
+import kotlinx.android.synthetic.main.activity_main.*
 
-/*import kotlinx.android.synthetic.main.cookbook_write.*
-import kotlinx.android.synthetic.main.fragment_home_left.*
-import kotlinx.android.synthetic.main.fragment_home_middle.**/
 
 
 class CookBook_Write_Activity : AppCompatActivity() {
 
-    var count=0
     private val GALLERY=1
+    private val SUBGALLERY1=2
+    private val SUBGALLERY2=3
+    private val SUBGALLERY3=4
+    private val SUBGALLERY4=5
     val binding by lazy { CookbookWriteBinding.inflate(layoutInflater) }
-    private val FRAGMENT_TAG: String? = "FRAGMENT_TAG"
-    private val KEY_NUMBER = "KEY_NUMBER"
-    private var mNumber = 0
-    private val viewpagerarray= arrayOf<String>("")
 
-    private val mListener: FragmentManager.OnBackStackChangedListener =
-        object : FragmentManager.OnBackStackChangedListener {
-            override fun onBackStackChanged() {
-                val fragmentManager: FragmentManager = supportFragmentManager
-                var count = 0
-                for (f in fragmentManager.getFragments()) {
-                    if (f != null) {
-                        count++
-                    }
-                }
-                mNumber = count
-                Log.d("MainActivity", "onBackStackChanged mNumber=$mNumber")
-            }
-        }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
 
         //버튼 클릭
         binding.cookbookWriteImgTitle.setOnClickListener {
@@ -60,14 +40,12 @@ class CookBook_Write_Activity : AppCompatActivity() {
         val pagerAdapter= Recipe_Write_add_ViewPager2adapter(this)
 
         binding.cookbookRecipeInformPagerAddbutton.setOnClickListener {
-            count=count+1
             pagerAdapter.addFragment(CookBook_Write_Fragment())
             //추가시 배열 등록 함수
 
         }
 
         binding.cookbookRecipeInformPagerDelbutton.setOnClickListener{
-            if(count>0) count=count-1
             pagerAdapter.removeFragement()
         }
 
@@ -87,7 +65,10 @@ class CookBook_Write_Activity : AppCompatActivity() {
         binding.recyclerviewWriteMaterial.layoutManager=
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
 
+
+        //재료 추가 리사이클러 함수
         var Materialadditems= arrayListOf(recipe_write_material_data("",""))
+        binding.recyclerviewWriteMaterial.adapter = RecipeWriteMaterialAdapter(Materialadditems)
         var additemmaterialnumber=1
         binding.writeEditAddMaterialInput.setOnClickListener{
 
@@ -95,8 +76,6 @@ class CookBook_Write_Activity : AppCompatActivity() {
             val write_editadd_MaterialValue:String=binding.writeEditAddMaterialValue.text.toString()
             if(additemmaterialnumber==1){
                 additemmaterialnumber=0
-
-                //viewpagerarray= arrayOf()
 
                 Materialadditems=
                     arrayListOf(recipe_write_material_data("$write_editadd_MaterialName","$write_editadd_MaterialValue"))
@@ -106,37 +85,29 @@ class CookBook_Write_Activity : AppCompatActivity() {
             binding.recyclerviewWriteMaterial.adapter = RecipeWriteMaterialAdapter(Materialadditems)
         }
 
+        //사진 추가 버튼 함수
         binding.writePluseImage1.setOnClickListener {
             val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.setType("image/*")
-            startActivityForResult(intent,GALLERY)
+            startActivityForResult(intent,SUBGALLERY1)
         }
 
         binding.writePluseImage2.setOnClickListener {
             val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.setType("image/*")
-            startActivityForResult(intent,GALLERY)
+            startActivityForResult(intent,SUBGALLERY2)
         }
 
         binding.writePluseImage3.setOnClickListener {
             val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.setType("image/*")
-            startActivityForResult(intent,GALLERY)
+            startActivityForResult(intent,SUBGALLERY3)
         }
 
         binding.writePluseImage4.setOnClickListener {
             val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.setType("image/*")
-            startActivityForResult(intent,GALLERY)
-        }
-
-        binding.recipeWriteSavebutton.setOnClickListener{
-            //edit 사용한 글 담는 변수
-            val write_TextCookware=binding.cookbookRecipeInformEditCookware.text.toString()
-            val write_TextSummary = binding.cookbookRecipeInformEditSummary.text.toString()
-            val write_TextTitle=binding.cookbookRecipeInformEditTitle.text.toString()
-            val write_TextDescription=binding.cookbookRecipeInformEditDescription.text.toString()
-
+            startActivityForResult(intent,SUBGALLERY4)
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -150,6 +121,58 @@ class CookBook_Write_Activity : AppCompatActivity() {
                 try {
                     val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, ImnageData)
                     binding.cookbookWriteImgTitle.setImageBitmap(bitmap)
+                }
+                catch (e:Exception)
+                {
+                    e.printStackTrace()
+                }
+            }
+            if (requestCode==SUBGALLERY1)
+            {
+                var ImnageData: Uri? = data?.data
+                Toast.makeText(this,ImnageData.toString(), Toast.LENGTH_SHORT ).show()
+                try {
+                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, ImnageData)
+                    binding.writePluseImage1.setImageBitmap(bitmap)
+                }
+                catch (e:Exception)
+                {
+                    e.printStackTrace()
+                }
+            }
+            if (requestCode==SUBGALLERY2)
+            {
+                var ImnageData: Uri? = data?.data
+                Toast.makeText(this,ImnageData.toString(), Toast.LENGTH_SHORT ).show()
+                try {
+                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, ImnageData)
+                    binding.writePluseImage2.setImageBitmap(bitmap)
+                }
+                catch (e:Exception)
+                {
+                    e.printStackTrace()
+                }
+            }
+            if (requestCode==SUBGALLERY3)
+            {
+                var ImnageData: Uri? = data?.data
+                Toast.makeText(this,ImnageData.toString(), Toast.LENGTH_SHORT ).show()
+                try {
+                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, ImnageData)
+                    binding.writePluseImage3.setImageBitmap(bitmap)
+                }
+                catch (e:Exception)
+                {
+                    e.printStackTrace()
+                }
+            }
+            if (requestCode==SUBGALLERY4)
+            {
+                var ImnageData: Uri? = data?.data
+                Toast.makeText(this,ImnageData.toString(), Toast.LENGTH_SHORT ).show()
+                try {
+                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, ImnageData)
+                    binding.writePluseImage4.setImageBitmap(bitmap)
                 }
                 catch (e:Exception)
                 {

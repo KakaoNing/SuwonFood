@@ -6,14 +6,10 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.databinding.ActivityRecipeBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_recipe.*
-import kotlinx.android.synthetic.main.base_recipe_layout.*
-import kotlinx.android.synthetic.main.base_main_layout.*
 import kotlinx.android.synthetic.main.base_recipe_layout.*
 
 class RecipeActivity : AppCompatActivity() {
@@ -101,7 +97,6 @@ class RecipeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu,menu)
         return true

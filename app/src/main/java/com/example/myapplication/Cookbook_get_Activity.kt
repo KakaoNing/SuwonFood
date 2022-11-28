@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -92,6 +94,22 @@ class Cookbook_get_Activity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu,menu)
         return true
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home->{
+                home_main.openDrawer(GravityCompat.START)
+
+            }
+            R.id.tool_search->{
+                var intent = Intent(this,SearchActivity::class.java)
+                startActivity(intent)
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

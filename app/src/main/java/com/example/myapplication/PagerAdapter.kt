@@ -70,23 +70,6 @@ class FragRecipeAdapter(fragment: recipe_recipe) : FragmentStateAdapter(fragment
     }
 
 }
-//레시피 저장 설명 뷰페이저 어뎁터
-class FragRecipeWriteAdapter(fragment: Fragment) : FragmentStateAdapter(fragment){
-    var fragments:ArrayList<Fragment> = ArrayList()
-
-    override fun getItemCount(): Int = fragments.size
-
-    override fun createFragment(position: Int): Fragment {
-        return fragments.get(position)
-    }
-
-    fun addFragment(fragment: Fragment){
-        fragments.add(fragment)
-        notifyItemInserted(fragments.size-1)
-
-    }
-
-}
 //레시피화면 탭레이아웃 + 뷰페이저 어뎁터
 class RecipePagerAdapter(fragment: RecipeActivity) : FragmentStateAdapter(fragment){
 
