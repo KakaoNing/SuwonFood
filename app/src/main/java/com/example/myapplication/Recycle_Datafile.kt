@@ -7,7 +7,7 @@ import java.util.jar.Attributes
 
 //냉장고 재료 데이터
 data class refrigerator_source_recycle_data(
-    var name:String,
+    var name:String
 )
 
 //레시피 작성 중 요리재료 리사이클러 데이터
