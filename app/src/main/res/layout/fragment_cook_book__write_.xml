@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CookBook_Write_Fragment">
+<!--
+    <EditText
+        android:id="@+id/recipe_write_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="30dp"
+        android:hint="레시피 작성해 주세요" />
+-->
+    <EditText
+        android:id="@+id/recipe_write_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:maxLength="100"
+        android:hint="레시피를 작성해 주세요"/>
+</LinearLayout>

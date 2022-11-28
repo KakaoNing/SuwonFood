@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    tools:context=".Cookbook_Management_write1"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/color_origin_cookbook_manage_back">
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/icon_empty_data"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="비어있음!"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:backgroundTintMode="screen"
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:textColor="#FFAB40"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/color_origin_cookbook_manage_back">
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/icon_empty_data"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="비어있음!"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:backgroundTintMode="screen"
+            android:textStyle="bold"
+            android:fontFamily="@font/diary"
+            android:textColor="#FFAB40"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
